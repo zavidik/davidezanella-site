@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formazione — Davide Zanella</title>
+  <meta name="description" content="La mia esperienza con la Banda Musicale di Palazzolo Milanese.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Formazione & Lavoro</span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current" id="bc-current">La mia formazione</span>
+  </nav>
+  <div id="activity-content"></div>
+  <footer><p>&copy; 2026 Davide Zanella</p></footer>
+</div>
+
+<script src="posts.js"></script>
+<script src="blog-utils.js"></script>
+<script src="nav.js"></script>
+<script src="activity.js"></script>
+<script>
+initNav('');
+
+initActivity({
+  title: 'La mia formazione',
+  role: '',            // ← aggiorna l'anno
+  categoryLabel: 'Lavoro',
+
+  // Tags multipli: filtra articoli ed eventi che hanno ALMENO uno di questi tag
+  tags: ['polimi', 'università'],
+
+  cover: 'img/copertine/formazione_copertina2.jpg',                                  // es. 'img/cover-palazzolo.jpg'
+
+  description: `
+    <p>Sono cresciuto a Nova Milanese dove ho frequentato le scuole pubbliche elementari e medie:<br>
+        - Scuola primaria "Gianni Rodari"<br>- Scuola secondaria (medie) "Giovanni XXIII-Segantini"
+    </p>
+    <p>Invece la scuola superiore che ho scelto e frequentato è stata:<br>
+        - Liceo "Ettore Majorana" di Desio, indirizzo Scientifico (tradizionale)
+    </p>
+    <p>Nel 2021 mi sono diplomato e a settembre ho iniziato a frequentare l'universita. Ancora oggi sono iscritto alla<br>
+        - Facoltà di Ingegneria Informatica, presso il Politecnico di Milano
+    </p>
+    <p>Al momento sono nettamente fuori corso, ma sto cercando di ricevere finalmente quella sudata pergamena e avere una buona base per il mio futuro lavorativo.
+    </p>
+  `,
+
+  links: [
+    { icon: '🌐', name: 'Scuola primaria e secondaria',        desc: 'Istituto Comprensivo Giovanni XXIII, Nova Milanese',          url: 'https://www.icnova.edu.it' },
+    { icon: '🌐', name: 'Scuola superiore',        desc: 'Liceo Ettore Majorana, Desio',          url: 'https://www.liceodesio.edu.it' },
+    { icon: '🌐', name: 'Università',        desc: 'Politecnico di Milano',          url: 'https://www.polimi.it' },
+    { icon: '📘', logo: 'img/loghi/instagram_logo.png', name: 'Instagram',        desc: 'PoliMi',          url: 'https://www.instagram.com/polimi' },
+    // Esempio con logo:
+    // { icon: '🎺', logo: 'img/loghi/logo-palazzolo.png', name: 'Banda Palazzolo', url: '#' },
+  ],
+
+  // Instagram — prova con il profilo, se non funziona metti URL di un post specifico
+  // es. post: 'https://www.instagram.com/p/CODICE_POST/'
+  instagramUrl: 'https://www.instagram.com/polimi',
+
+  youtubeId: 'IAnaQoyVDrg',                              // ← es. 'dQw4w9WgXcQ'
+  videoTitle: 'Il giorno del mio diploma',
+});
+</script>
+</body>
+</html>

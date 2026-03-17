@@ -5,32 +5,35 @@
 
 const CATEGORIES = [
   {
-    id: 'music',
+    id: 'musica',
     icon: '🎺',
     title: 'Musica',
     items: [
-      { icon: '🎺', title: 'Banda di Palazzolo Milanese', desc: 'Dir. Enrico Tiso',    url: 'banda-palazzolo.html' },
-      { icon: '🎶', title: 'Banda di Cusano Milanino',   desc: 'Dir. Stefano Bertoni', url: 'banda-cusano.html' },
-      { icon: '🎵', title: 'i DoReMitici',               desc: 'Gruppo musicale',      url: 'doremi.html' },
+      { icon: '🎵', logo: 'img/loghi/doremitici_logo.png', title: 'i DoReMitici',               desc: 'Gruppo musicale',      url: 'doremitici.html' },
+      { icon: '🎺', logo: 'img/loghi/banda_palazzolo_logo.png', title: 'Banda di Palazzolo Milanese', desc: 'Dir. Enrico Tiso',    url: 'banda-palazzolo.html' },
+      { icon: '🏫', title: 'La Scuola che sBanda', desc: '',   url: 'scuola-che-sbanda.html', indent: true },
+      { icon: '🎶', logo: 'img/loghi/banda_cusano_logo.png', title: 'Banda di Cusano Milanino',   desc: 'Dir. Stefano Bertoni', url: 'banda-cusano.html' },
+      { icon: '🎼', title: 'La mia storia musicale', desc: 'Trombone e bande', url: 'musica.html' },
+      
     ]
   },
   {
-    id: 'content',
+    id: 'media',
     icon: '🎬',
     title: 'Contenuti',
     items: [
-      { icon: '▶️',  title: 'YouTube',          desc: 'Davide Zanella',       url: '#' },
-      { icon: '📱', title: 'Here, The Series', desc: 'Instagram & Facebook', url: 'here-the-series.html' },
-      { icon: '✍️', title: 'Blog',             desc: 'Altervista',           url: '#' },
+      { icon: '▶️',  logo: 'img/loghi/youtube_logo.png', title: 'YouTube',          desc: 'Davide Zanella',       url: 'youtube.html' },
+      { icon: '📱', title: 'Here, The Series', desc: 'Video e Blog', url: 'here-the-series.html', indent: true },
     ]
   },
   {
-    id: 'study',
+    id: 'lavoro',
     icon: '🎓',
     title: 'Formazione & Lavoro',
     items: [
-      { icon: '🎓', title: 'Percorso di Studi', desc: 'Ingegneria Informatica · PoliMI', url: '#' },
-      { icon: '📐', title: 'Ripetizioni',        desc: 'Matematica e fisica · Liceo',     url: '#' },
+      { icon: '🎓', title: 'Percorso di Studi', desc: 'Ingegneria Informatica · PoliMI', url: 'formazione.html' },
+      { icon: '📐', title: 'Ripetizioni',        desc: 'Matematica e fisica · Liceo',     url: 'ripetizioni.html' },
+      { icon: '🗳️', title: 'Presidente di Seggio',        desc: 'Elezioni politiche e referendum',     url: 'seggio-elettorale.html' },
     ]
   },
   {
@@ -38,7 +41,7 @@ const CATEGORIES = [
     icon: '🏠',
     title: 'Progetti Digitali',
     items: [
-      { icon: '🏠', title: 'Smart Home', desc: 'Home Assistant & domotica', url: '#' },
+      { icon: '🏠', title: 'SmartHome', desc: 'Home Assistant & domotica', url: 'smart-home.html' }, // Smart Home - Home Assistant & domotica
     ]
   },
   {
@@ -59,7 +62,7 @@ const CARDS_CSS = `
     background: var(--card); border: 1px solid var(--border);
     border-radius: var(--radius); box-shadow: var(--shadow);
     overflow: hidden; transition: box-shadow .25s, border-color .25s, transform .25s;
-    cursor: pointer; width: 100%;
+    cursor: pointer; width: 100%; min-height: 104px;
   }
   @media (hover: hover) {
     .cat-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.13); transform: translateY(-3px); }
@@ -74,34 +77,37 @@ const CARDS_CSS = `
   .cat-card.open .cat-bar { height: 4px; }
   .cat-card.open .sub-divider { opacity: 1; }
   .cat-bar { height: 3px; width: 100%; transition: height .25s; }
-  .card-head { display: flex; align-items: center; gap: 14px; padding: 18px 18px 16px; }
+  .card-head { display: flex; align-items: flex-start; gap: 14px; padding: 18px 18px 16px; }
   .cat-icon { font-size: 1.9rem; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: var(--bg); flex-shrink: 0; }
   .card-head-text { flex: 1; min-width: 0; }
   .card-head-title { font-weight: 600; font-size: 1rem; line-height: 1.2; margin-bottom: 3px; }
-  .card-head-count { font-size: .75rem; color: var(--muted); }
+  .card-head-count { font-size: .75rem; color: var(--muted); display: block; }
   .card-chevron { color: var(--muted); font-size: .8rem; transition: transform .25s; flex-shrink: 0; margin-left: 8px; }
   .sub-links { max-height: 0; opacity: 0; overflow: hidden; transition: max-height .35s ease, opacity .25s ease, padding-bottom .25s; padding: 0 12px; }
   .sub-link { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 10px; text-decoration: none; color: var(--text); font-size: .85rem; transition: background .15s, color .15s; margin-bottom: 2px; }
   .sub-link:hover { background: var(--bg); }
+  .sub-link.indented { margin-left: 14px; padding-left: 10px; border-left: 2px solid var(--border); border-radius: 0 10px 10px 0; font-size: .82rem; }
+  .sub-link.indented .sub-link-text { color: var(--muted); }
+  .sub-link.indented:hover .sub-link-text { color: var(--text); }
   .sub-link-icon { font-size: 1rem; width: 24px; text-align: center; flex-shrink: 0; }
   .sub-link-text { flex: 1; line-height: 1.3; min-width: 0; }
   .sub-link-desc { font-size: .72rem; color: var(--muted); display: block; }
   .sub-link-arrow { font-size: .75rem; color: var(--muted); transition: transform .15s; flex-shrink: 0; margin-left: 6px; }
   .sub-link:hover .sub-link-arrow { transform: translateX(2px); }
   .sub-divider { height: 1px; background: var(--border); margin: 0 18px 8px; opacity: 0; transition: opacity .25s; }
-  .c-music   .cat-bar { background: var(--accent-music); }
-  .c-study   .cat-bar { background: var(--accent-study); }
-  .c-content .cat-bar { background: var(--accent-content); }
+  .c-musica   .cat-bar { background: var(--accent-music); }
+  .c-lavoro   .cat-bar { background: var(--accent-study); }
+  .c-media .cat-bar { background: var(--accent-content); }
   .c-tech    .cat-bar { background: var(--accent-tech); }
   .c-sport   .cat-bar { background: var(--accent-sport); }
-  .c-music   .cat-card:hover, .c-music   .cat-card.open { border-color: var(--accent-music); }
-  .c-study   .cat-card:hover, .c-study   .cat-card.open { border-color: var(--accent-study); }
-  .c-content .cat-card:hover, .c-content .cat-card.open { border-color: var(--accent-content); }
+  .c-musica   .cat-card:hover, .c-musica   .cat-card.open { border-color: var(--accent-music); }
+  .c-lavoro   .cat-card:hover, .c-lavoro   .cat-card.open { border-color: var(--accent-study); }
+  .c-media .cat-card:hover, .c-media .cat-card.open { border-color: var(--accent-content); }
   .c-tech    .cat-card:hover, .c-tech    .cat-card.open { border-color: var(--accent-tech); }
   .c-sport   .cat-card:hover, .c-sport   .cat-card.open { border-color: var(--accent-sport); }
-  .c-music   .sub-link:hover { color: var(--accent-music); }
-  .c-study   .sub-link:hover { color: var(--accent-study); }
-  .c-content .sub-link:hover { color: var(--accent-content); }
+  .c-musica   .sub-link:hover { color: var(--accent-music); }
+  .c-lavoro   .sub-link:hover { color: var(--accent-study); }
+  .c-media .sub-link:hover { color: var(--accent-content); }
   .c-tech    .sub-link:hover { color: var(--accent-tech); }
   .c-sport   .sub-link:hover { color: var(--accent-sport); }
   @media (max-width: 500px) {
@@ -110,16 +116,23 @@ const CARDS_CSS = `
 `;
 
 function buildCategoryCard(cat) {
-  const subs = cat.items.map(i => `
-    <a class="sub-link" href="${i.url}" ${i.url.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}>
-      <span class="sub-link-icon">${i.icon}</span>
+  const subs = cat.items.map(i => {
+    const iconHtml = i.logo
+      ? `<img src="${i.logo}" alt="${i.title}" style="width:22px;height:22px;object-fit:contain;border-radius:4px" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span style="display:none">${i.icon}</span>`
+      : i.icon;
+    return `<a class="sub-link${i.indent ? ' indented' : ''}" href="${i.url}" ${i.url.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}>
+      <span class="sub-link-icon">${iconHtml}</span>
       <span class="sub-link-text">${i.title}<span class="sub-link-desc">${i.desc}</span></span>
       <span class="sub-link-arrow">&#8594;</span>
-    </a>`).join('');
+    </a>`;
+  }).join('');
   return `<div class="c-${cat.id}"><div class="cat-card">
     <div class="cat-bar"></div>
     <div class="card-head">
-      <span class="cat-icon">${cat.icon}</span>
+      <span class="cat-icon">${cat.logo
+        ? `<img src="${cat.logo}" alt="${cat.title}" style="width:32px;height:32px;object-fit:contain"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span style="display:none;font-size:1.9rem">${cat.icon}</span>`
+        : cat.icon}</span>
       <span class="card-head-text">
         <span class="card-head-title">${cat.title}</span>
         <span class="card-head-count">${cat.items.length} link</span>
@@ -150,3 +163,15 @@ function initCards(containerId) {
     });
   }
 }
+
+/*
+  NOTA SUI LOGHI:
+  Usa nomi file senza spazi e tutto minuscolo.
+  ✅  img/loghi/logo-doremitici.png
+  ❌  img/loghi/Logo DoReMitici.PNG   (spazi e maiuscole causano problemi)
+
+  Esempio di item con logo:
+  { icon: '🎵', logo: 'img/loghi/logo-doremitici.png', title: 'i DoReMitici', desc: '...', url: 'doremi.html' }
+
+  Se il file immagine non viene trovato, viene mostrata automaticamente l'emoji.
+*/

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="it">
+    
+<style>
+.timeline {
+  border-left: 3px solid #ccc;
+  margin: 30px 0;
+  padding-left: 25px;
+}
+
+.timeline-item {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: #555;
+  border-radius: 50%;
+}
+
+.timeline-year {
+  font-weight: bold;
+}
+
+.image-text {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
+.image-text img {
+  width: 200px;
+  border-radius: 8px;
+}
+
+.image-right {
+  flex-direction: row-reverse;
+}
+</style>
+
+
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sport — Davide Zanella</title>
+  <meta name="description" content="La mia storia sportiva: ginnastica artistica, acrogym e atletica leggera.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏃‍♂️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Sport</span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current" id="bc-current">La mia storia sportiva</span>
+  </nav>
+  <div id="activity-content"></div>
+  <footer><p>&copy; 2026 Davide Zanella</p></footer>
+</div>
+
+<script src="posts.js"></script>
+<script src="blog-utils.js"></script>
+<script src="nav.js"></script>
+<script src="activity.js"></script>
+<script>
+initNav('');
+
+initActivity({
+  title: 'La mia storia sportiva',
+  role: '',            // ← aggiorna l'anno
+  categoryLabel: 'Sport',
+
+  // Tags multipli: filtra articoli ed eventi che hanno ALMENO uno di questi tag
+  tags: ['atletica', 'allenamenti', 'sport'],
+
+  cover: 'img/copertine/sport_copertina2.jpg',                                  // es. 'img/cover-palazzolo.jpg'
+
+  description: `
+    <h2>L'importanza dello sport</h2>
+    <p>
+    Lo sport ha sempre fatto parte della mia vita. Fin da piccolo i miei genitori mi hanno
+    spinto a praticare qualche attività fisica ed è stata una parte importante della mia crescita.
+    </p>
+
+    <h3>Timeline sportiva</h3>
+
+        <div class="timeline">
+
+        <div class="timeline-item">
+        <span class="timeline-year">Scuole elementari</span>
+        <p>Inizio della ginnastica artistica e primi anni di attività agonistica.</p>
+        </div>
+
+        <div class="timeline-item">
+        <span class="timeline-year">Scuole medie</span>
+        <p>Esperienze tra ginnastica artistica, atletica e Acrogym.</p>
+        </div>
+
+        <div class="timeline-item">
+        <span class="timeline-year">Campionato italiano</span>
+        <p>Vittoria del titolo italiano di Acrogym nella categoria duo misto durante una gara nazionale a Udine.</p>
+        </div>
+
+        <div class="timeline-item">
+        <span class="timeline-year">Terza media → 2025</span>
+        <p>Ritorno definitivo all'atletica leggera con ASD La Fenice e anni dedicati al mezzofondo.</p>
+        </div>
+
+        <div class="timeline-item">
+        <span class="timeline-year">2024</span>
+        <p>Conseguimento del patentino FIDAL e inizio dell'attività come allenatore.</p>
+        </div>
+
+        <div class="timeline-item">
+        <span class="timeline-year">2025</span>
+        <p>Pausa dall'attività sportiva agonistica per dedicarmi agli studi e ad altri impegni.</p>
+        </div>
+
+        </div>
+
+
+
+    <h3>I primi ricordi</h3>
+    <p>
+    Fin da piccolo i miei genitori mi hanno sempre spinto a fare qualche attività sportiva.
+    Ho qualche ricordo sfumato di quando ero molto piccolo e partecipavo a un corso di acquaticità insieme a mio papà.
+    </p>
+
+    <h3>La ginnastica artistica</h3>
+
+    <div class="image-text">
+
+    <img src="img/activity/ginnastica_artistica.jpg" alt="Ginnastica artistica">
+
+    <div>
+    <p>
+    La mia vera carriera sportiva inizia però intorno ai 6 anni. Frequentavo una palestra in cui si svolgevano allenamenti
+    di ginnastica artistica, sport che praticava anche mia sorella, così decisi di provare anch’io.
+    Ho fatto ginnastica artistica dalla prima alla quinta elementare. La prima società si chiamava "Polisportiva Domani",
+    ma ci sono rimasto solo il primo anno. Subito dopo, e per tutti gli anni successivi, sono stato iscritto alla "Pro Lissone".
+    </p>
+
+    <p>
+    Ero discretamente bravo e ho partecipato a diverse gare anche a livello agonistico.
+    Non saprei dire con precisione la categoria, perché non la ricordo, ma ricordo una trasferta
+    per una gara di livello nazionale.
+    </p>
+    </div>
+
+    </div>
+
+    <p>
+    A prescindere dal livello raggiunto, credo che la ginnastica artistica mi abbia plasmato sia nel fisico
+    sia nella mentalità. Per l’età che avevo era uno sport davvero impegnativo: gli allenamenti previsti erano
+    12 ore alla settimana, divise in 4 sedute da 3 ore ciascuna.
+    Per alcuni può sembrare eccessivo, ma sono convinto che questo sport mi abbia insegnato cosa siano
+    il sacrificio, la resilienza, la fatica e la disciplina necessari per raggiungere un obiettivo.
+    </p>
+
+    <p>
+    Con il passare degli anni però mi sono stufato di questo sport (o più probabilmente dell’impegno che richiedeva)
+    e ho deciso di cambiare.
+    </p>
+
+    <h3>Il breve tentativo con il calcio</h3>
+    <p>
+    All’inizio della prima media decisi di provare il calcio. Questa esperienza durò pochissimo,
+    non perché fossi scarso o scoordinato, ma perché l’unica settimana di prova che feci
+    era la settimana di preparazione atletica: il pallone lo vidi forse una o due volte,
+    mentre il resto del tempo lo passai a correre.
+    </p>
+
+    <h3>L'arrivo dell'atletica</h3>
+    <div class="image-text image-right">
+
+    <img src="img/activity/atletica_cross.jpg" alt="Atletica Cross">
+
+    <div>
+    <p>
+    Proprio in quell’occasione mi accorsi di essere discretamente portato per la corsa di resistenza.
+    Così, spinto anche da mio padre (che corre fin da ragazzo), decisi di provare atletica leggera.
+    Mi iscrissi alla società di Nova Milanese "ASD La Fenice".
+    </p>
+
+    <p>
+    Essendo una società appena fondata non c’erano ancora molti iscritti e non trovai subito
+    un gruppo di amici con cui legare. Nel frattempo mi tornò anche un po’ di nostalgia
+    per la ginnastica artistica. Ma con l’atletica la storia non finirà così…
+    </p>
+    </div>
+
+    </div>
+
+    <h3>Il ritorno alla ginnastica e l’Acrogym</h3>
+    <p>
+    L’anno successivo, durante la seconda media, mi iscrissi di nuovo a ginnastica artistica,
+    questa volta in una nuova società: "Elga Sport", una società di Nova Milanese fondata
+    da poco da alcuni amici dei miei genitori.
+    </p>
+
+    <p>
+    Come molti sanno, la ginnastica artistica è uno sport praticato soprattutto da ragazze.
+    A differenza della "Pro Lissone", dove avevo trovato una squadra maschile, qui non c’era.
+    Mi allenavo quindi insieme alle ragazze, tra cui anche mia sorella.
+    Qualcuno potrebbe pensare che fossi fortunato, ma in realtà mi sentivo un po’ fuori posto.
+    </p>
+
+    <p>
+    La società Elga non faceva però solo ginnastica artistica, ma anche Acrogym.
+    Non so bene come, ma riuscirono a convincermi a iniziare anche questa disciplina
+    in parallelo agli allenamenti di ginnastica.
+    </p>
+
+    <p>
+    La sezione di Acrogym era proprio agli inizi: quando ho iniziato eravamo forse 5 o 6 atleti
+    e ovviamente io ero l’unico maschio.
+    </p>
+
+    <h3>Il titolo italiano di Acrogym</h3>
+    <div class="image-text">
+
+    <img src="img/activity/acrogym_campione_italiano.jpg" alt="Acrogym">
+
+    <div>
+    <p>
+    Nonostante i numeri ridotti, l’Acrogym mi ha regalato una grande soddisfazione:
+    sono riuscito a vincere il titolo di campione italiano.
+    Ricordo ancora la trasferta a Udine e la gara nazionale, a cui partecipammo
+    dopo aver già vinto a livello regionale.
+    </p>
+
+    <p>
+    Gareggiavo in coppia con una ragazza nella categoria "duo misto".
+    È vero che le coppie miste erano poche, ma tra quelle poche siamo stati i migliori.
+    Da qualche parte ho ancora lo scudetto che avrei dovuto cucire sul body l’anno successivo.
+    </p>
+    </div>
+
+    </div>
+    
+
+    <h3>Il ritorno definitivo all'atletica</h3>
+    <p>
+    L’anno successivo lasciai sia la ginnastica artistica sia l’Acrogym,
+    quindi quello scudetto non è mai stato cucito (ho risparmiato un lavoro a mia mamma).
+    Siamo solo in terza media, ma da qui la storia sportiva diventa più lineare:
+    mi iscrissi di nuovo ad atletica, sempre con la "ASD La Fenice".
+    </p>
+
+    <p>
+    Nel frattempo la società aveva guadagnato qualche nuovo iscritto
+    e finalmente trovai anche un gruppo di amici.
+    Rimasi in quella società per molti anni, fino al 2025.
+    </p>
+
+    <h3>Gli anni nell'atletica</h3>
+    <div class="image-text image-right">
+
+    <img src="img/activity/atletica_cinque_mulini.jpg" alt="Atletica, Cinque Mulini">
+
+    <div>
+    <p>
+    Come accennato prima, uno dei miei punti di forza era la resistenza
+    e infatti la mia specialità era il mezzofondo.
+    Anche in questo sport me la cavavo discretamente: non vincevo,
+    ma riuscivo comunque a ottenere buone posizioni nelle gare.
+    Per chi fosse curioso può vedere qualche mio tempo
+    <a href="https://atletica.me/atleta/Davide-Zanella/167173">cliccando qui</a>.
+    </p>
+
+    <p>
+    Nel corso degli anni però mi sono infortunato più volte e ho avuto diversi problemi fisici:
+    prima al muscolo popliteo, poi ai tendini d’Achille (mai risolti completamente),
+    per cui ho provato anche a usare solette plantari su misura,
+    e infine ai bicipiti femorali.
+    </p>
+
+    <p>
+    Alla lunga correre non era più uno sport, ma stava diventando un peso.
+    Con il tempo mi rendevo conto anche che difficilmente avrei raggiunto risultati importanti.
+    L’atletica è uno sport estremamente competitivo e, forse più di altri,
+    il cronometro non perdona.
+    </p>
+    </div>
+
+    </div>
+    
+    
+
+    <h3>L'esperienza da allenatore</h3>
+    <p>
+    Dato che quell’ambiente era diventato una seconda casa,
+    non volevo semplicemente andarmene e lasciare tutto.
+    Così smisi di correre ma mi proposero di iniziare ad allenare.
+    </p>
+
+    <p>
+    Nel 2024 frequentai anche il corso FIDAL e ottenni il patentino da allenatore
+    (istruttore, il primo livello).
+    </p>
+
+    <h3>Una pausa necessaria</h3>
+    <p>
+    A metà novembre del 2025 ho smesso anche di allenare.
+    Per il momento la mia carriera sportiva, sia da atleta sia da allenatore,
+    è in pausa.
+    </p>
+
+    <p>
+    Dato che sono indietro con gli studi e considerando anche gli altri impegni
+    (bande, scuola di musica, ripetizioni),
+    ho dovuto prendere una decisione.
+    Lo sport a livello agonistico richiede davvero molto tempo ed energie,
+    quindi questa è stata la scelta più sensata.
+    </p>
+
+    <h3>Il presente</h3>
+    <p>
+    Ora siamo nel 2026 e ho comunque l’intenzione di riprendere
+    a fare un po’ di attività sportiva.
+    L’idea che si sta chiarendo nella mia mente è quella di praticare
+    uno sport a livello amatoriale, per il benessere fisico e mentale.
+    </p>
+
+    <p>
+    I miei infortuni passati e gli altri impegni mi frenano dall’impegnarmi
+    seriamente in uno sport agonistico.
+    L’importante però è ricominciare: poi chissà se la passione
+    non prenda di nuovo il sopravvento...
+    </p>
+
+  `,
+
+  links: [
+    { icon: '🌐', name: 'Atletica.me',        desc: 'I tempi delle mie gare di atletica',          url: 'https://atletica.me/atleta/Davide-Zanella/167173' },
+    { icon: '🌐', logo: 'img/loghi/la_fenice_logo.png', name: 'ASD LA Fenice',        desc: 'Sito ufficiale',          url: 'https://www.atleticalafenice.it' },
+    { icon: '🌐', name: 'Elga Sport',        desc: 'Sito ufficiale',          url: 'https://www.elgasport.it' },
+    { icon: '🌐', name: 'Pro Lissone Ginnastica',        desc: 'Sito ufficiale',          url: 'https://www.prolissoneginnastica.it' },
+    // Esempio con logo:
+    // { icon: '🎺', logo: 'img/loghi/logo-palazzolo.png', name: 'Banda Palazzolo', url: '#' },
+  ],
+
+  // Instagram — prova con il profilo, se non funziona metti URL di un post specifico
+  // es. post: 'https://www.instagram.com/p/CODICE_POST/'
+  instagramUrl: 'https://www.instagram.com/reel/DFXdEuJN25y',
+
+  youtubeId: 'playlist?list=PLkCKC-9ELJ8grDcW--EYJjGt1O4xUz9AK&si=pXzeT1NK1rKL2D1O',                              // ← es. 'dQw4w9WgXcQ'
+  videoTitle: 'La playlist del camp estivo di atletica',
+});
+</script>
+</body>
+</html>

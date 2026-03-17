@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banda di Palazzolo Milanese — Davide Zanella</title>
+  <meta name="description" content="La mia esperienza con la Banda Musicale di Palazzolo Milanese.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎺</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Musica</span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current" id="bc-current">Banda di Palazzolo Milanese</span>
+  </nav>
+  <div id="activity-content"></div>
+  <footer><p>&copy; 2026 Davide Zanella</p></footer>
+</div>
+
+<script src="posts.js"></script>
+<script src="blog-utils.js"></script>
+<script src="nav.js"></script>
+<script src="activity.js"></script>
+<script>
+initNav('');
+
+initActivity({
+  title: 'Banda di Palazzolo Milanese',
+  role: 'Trombonista · Dal 2018',            // ← aggiorna l'anno
+  categoryLabel: 'Musica',
+
+  // Tags multipli: filtra articoli ed eventi che hanno ALMENO uno di questi tag
+  tags: ['banda palazzolo'],
+
+  cover: 'img/copertine/banda_palazzolo_copertina.jpg',                                  // es. 'img/cover-palazzolo.jpg'
+
+  description: `
+    <p>Il Corpo Musicale “Santa Cecilia – 1900” APS di Palazzolo Milanese è una delle realtà musicali più radicate del territorio. 
+      Fondato nel 1900 per iniziativa di don Filippo Anghilieri e di alcuni giovani dell’oratorio, il complesso bandistico rappresenta da 
+      oltre un secolo un punto di riferimento per la vita culturale e sociale della comunità. 
+      Per approfondire la storia dell’associazione rimando al sito ufficiale, nel primo link qui sotto.
+    </p>
+    <p>Sono entrato a far parte della banda nel 2018 come trombonista, poco dopo essermi trasferito a Palazzolo Milanese. 
+      Da allora partecipo attivamente alla vita dell’associazione, prendendo parte all’attività concertistica e collaborando ad alcuni 
+      progetti educativi dedicati ai più giovani.
+    </p>
+    <p>Oggi la banda è diretta dal maestro Enrico Tiso e conta circa cinquanta musicisti. 
+      È una realtà molto attiva sul territorio e partecipa regolarmente a concerti, sfilate e manifestazioni civili e religiose, 
+      contribuendo alla vita culturale della città.
+    </p>
+    <p>Grande attenzione è rivolta anche alla formazione musicale delle nuove generazioni. 
+      Tra le iniziative dell’associazione ci sono la banda giovanile Junior Band e il progetto <a href="scuola-che-sbanda.html">“La Scuola che sBanda” (clicca per approfondire)</a>
+      , un percorso educativo realizzato nelle scuole del territorio con il quale collaboro attivamente.
+    </p>
+    <p>L’obiettivo della banda è diffondere la cultura bandistica e avvicinare bambini, ragazzi e adulti al mondo della musica, 
+      favorendo allo stesso tempo la crescita culturale e l’aggregazione sociale della comunità.
+    </p>
+  `,
+
+  links: [
+    { icon: '🌐', name: 'Sito ufficiale', desc: 'santacecilia1900.it', url: 'https://www.santacecilia1900.it' },
+    { icon: '📘', logo: 'img/loghi/instagram_logo.png', name: 'Instagram',        desc: 'Pagina ufficiale',          url: 'https://www.instagram.com/bandapalazzolo_1900' },
+    { icon: '📘', logo: 'img/loghi/facebook_logo.png', name: 'Facebook',        desc: 'Pagina ufficiale',          url: 'https://www.facebook.com/bandapalazzolo' },
+    { icon: '▶️', logo: 'img/loghi/youtube_logo.png', name: 'YouTube',         desc: 'Concerti e altri video',          url: 'https://youtube.com/playlist?list=PL1o1uYsfqEiNMoUeWcZdVanJ-cvprRj1a&si=JUxDDZAFk2lzpbcl' },
+    // Esempio con logo:
+    // { icon: '🎺', logo: 'img/loghi/logo-palazzolo.png', name: 'Banda Palazzolo', url: '#' },
+  ],
+
+  // Instagram — prova con il profilo, se non funziona metti URL di un post specifico
+  // es. post: 'https://www.instagram.com/p/CODICE_POST/'
+  instagramUrl: 'https://www.instagram.com/bandapalazzolo_1900',
+
+  youtubeId: 'videoseries?si=ORVpNBNvhfz51IVA&amp;list=PL1o1uYsfqEiNMoUeWcZdVanJ-cvprRj1a',                              // ← es. 'dQw4w9WgXcQ'
+  videoTitle: 'La PlayList YouTube della Banda',
+});
+</script>
+</body>
+</html>

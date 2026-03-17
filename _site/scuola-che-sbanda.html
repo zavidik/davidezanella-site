@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Scuola che sBanda — Davide Zanella</title>
+  <meta name="description" content="Il progetto nelle scuole per avvicinare i bambini alla musica">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏫</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Musica</span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current" id="bc-current">La Scuola che sBanda</span>
+  </nav>
+  <div id="activity-content"></div>
+  <footer><p>&copy; 2026 Davide Zanella</p></footer>
+</div>
+
+<script src="posts.js"></script>
+<script src="blog-utils.js"></script>
+<script src="nav.js"></script>
+<script src="activity.js"></script>
+<script>
+initNav('');
+
+initActivity({
+  title: 'La Scuola che sBanda',
+  role: 'Insegnante di Trombone & Euphonium · Dal 2024',            // ← aggiorna l'anno
+  categoryLabel: 'Musica',
+
+  // Tags multipli: filtra articoli ed eventi che hanno ALMENO uno di questi tag
+  tags: ['banda palazzolo', 'scuola che sbanda'],
+
+  cover: 'img/copertine/scuola_che_sbanda_copertina.jpg',                                  // es. 'img/cover-palazzolo.jpg'
+
+  description: `
+    <p>“La Scuola che sBanda” è un progetto educativo promosso dal Corpo Musicale “Santa Cecilia – 1900” APS di Palazzolo Milanese in collaborazione con alcune scuole 
+        primarie di Paderno Dugnano. L’iniziativa nasce con l’obiettivo di avvicinare bambini e ragazzi al mondo della musica e far 
+        conoscere gli strumenti tipici della banda attraverso un percorso pratico e coinvolgente.
+    </p>
+    <p>Il progetto è rivolto principalmente agli alunni delle classi terze, quarte e quinte della scuola primaria. 
+        I partecipanti hanno la possibilità di iniziare a suonare uno strumento a fiato o a percussione, messo a disposizione dalla banda, seguendo un percorso di 
+        lezioni in piccoli gruppi guidate da insegnanti qualificati. Accanto allo studio dello strumento, sono previsti momenti di musica d’insieme in cui i ragazzi 
+        imparano ad ascoltarsi, collaborare e suonare come un vero gruppo musicale.
+    </p>
+    <p>Oltre all’apprendimento musicale, il progetto pone grande attenzione agli aspetti educativi e sociali: la musica diventa uno strumento per sviluppare creatività, 
+        collaborazione e senso di appartenenza al gruppo. L’esperienza si conclude generalmente con un saggio o un concerto finale, durante il quale i ragazzi 
+        presentano il lavoro svolto davanti a famiglie, insegnanti e alla comunità.
+    </p>
+    <p>All’interno di questo progetto collaboro alle attività didattiche lavorando direttamente con i bambini. 
+        È un’esperienza che mi piace molto, perché mi permette di accompagnarli nei loro primi passi nella musica e nella scoperta degli strumenti bandistici. 
+        Vedere come, lezione dopo lezione, prendono confidenza con lo strumento e con la musica d’insieme è sempre molto stimolante. 
+        Allo stesso tempo è anche un percorso di crescita per me, perché con il tempo sto imparando sempre di più cosa significa insegnare e come trasmettere la musica ai più giovani.
+    </p>
+  `,
+
+  links: [
+    { icon: '🌐', name: 'Sito ufficiale', desc: 'santacecilia1900.it', url: 'https://www.santacecilia1900.it' },
+    { icon: '📘', logo: 'img/loghi/instagram_logo.png', name: 'Instagram',        desc: 'Pagina ufficiale Banda Palazzolo',          url: 'https://www.instagram.com/bandapalazzolo_1900' },
+    { icon: '📘', logo: 'img/loghi/facebook_logo.png', name: 'Facebook',        desc: 'Pagina ufficiale Banda Palazzolo',          url: 'https://www.facebook.com/bandapalazzolo' },
+    { icon: '▶️', logo: 'img/loghi/youtube_logo.png', name: 'YouTube',         desc: 'Saggi di fine anno e di Natale',          url: 'https://youtube.com/playlist?list=PL1o1uYsfqEiNMoUeWcZdVanJ-cvprRj1a&si=JUxDDZAFk2lzpbcl' },
+    // Esempio con logo:
+    // { icon: '🎺', logo: 'img/loghi/logo-palazzolo.png', name: 'Banda Palazzolo', url: '#' },
+  ],
+
+  // Instagram — prova con il profilo, se non funziona metti URL di un post specifico
+  // es. post: 'https://www.instagram.com/p/CODICE_POST/'
+  instagramUrl: 'https://www.instagram.com/reel/CkMQuWNoPl_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+
+  youtubeId: 'S4ZEL4lbeEE?list=PL1o1uYsfqEiNMoUeWcZdVanJ-cvprRj1a',                         // ← es. 'dQw4w9WgXcQ'
+  videoTitle: 'Il Saggio di fine anno!',
+});
+</script>
+</body>
+</html>

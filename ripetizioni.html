@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ripetizioni e tutoraggio — Davide Zanella</title>
+  <meta name="description" content="Da diversi anni seguo ragazzi di varie età per aiutarli nello studio">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Formazione & Lavoro</span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current" id="bc-current">Ripetizioni e tutoraggio</span>
+  </nav>
+  <div id="activity-content"></div>
+  <footer><p>&copy; 2026 Davide Zanella</p></footer>
+</div>
+
+<script src="posts.js"></script>
+<script src="blog-utils.js"></script>
+<script src="nav.js"></script>
+<script src="activity.js"></script>
+<script>
+initNav('');
+
+initActivity({
+  title: 'Ripetizioni e tutoraggio',
+  role: 'Dal 2022',            // ← aggiorna l'anno
+  categoryLabel: 'Lavoro',
+
+  // Tags multipli: filtra articoli ed eventi che hanno ALMENO uno di questi tag
+  tags: ['ripetizioni'],
+
+  cover: 'img/copertine/ripetizioni_copertina.jpg',                                  // es. 'img/cover-palazzolo.jpg'
+
+  description: `
+    <p>Ho iniziato nel 2022 a seguire alcuni ragazzi nel loro studio facendo lezioni private a domicilio.
+        In questi anni ho avuto modo di lavorare con studenti di varie età, dall'inizio della scuola media
+        fino anche agli ultimi anni delle scuole superiori.
+    </p>
+    <p>Con alcuni studenti si è trattato di poche lezioni alla bisogna, magari per chiarire
+        alcuni argomenti prima di una verifica o di un'interrogazione.
+        Con altri invece abbiamo impostato un percorso più continuativo, con appuntamenti settimanali
+        e un lavoro più strutturato nel tempo.
+    </p>
+    <p>Le materie che ho trattato più spesso sono matematica e fisica, ma mi è capitato di aiutare
+        gli studenti anche in altre materie scientifiche e in informatica.
+        In alcune occasioni ho dato una mano anche in altre materie scolastiche, quando era necessario
+        un supporto generale nello studio e nell'organizzazione del lavoro.
+    </p>
+    <p>Cerco sempre di adattare le lezioni alle esigenze dello studente, puntando soprattutto a far capire
+        il ragionamento dietro agli argomenti e non solo a svolgere gli esercizi.
+    </p>
+    <p>Svolgo lezioni sia in presenza sia online. Se hai bisogno di un aiuto nello studio o vuoi avere qualche informazione in più, 
+        puoi <a href="mailto:davide.zanella02@gmail.com?subject=Richiesta%20ripetizioni&body=Buongiorno,%20vorrei%20avere%20informazioni%20sulle%20ripetizioni.">scrivermi una mail</a>.
+    </p>
+  `,
+
+  links: [
+    { icon: '✉️', logo: 'img/loghi/email_logo.png', name: 'Mail',         desc: 'Scrivimi una mail',          url: 'mailto:davide.zanella02@gmail.com?subject=Richiesta%20ripetizioni&body=Buongiorno,%20vorrei%20avere%20informazioni%20sulle%20ripetizioni.' },
+    // Esempio con logo:
+    // { icon: '🎺', logo: 'img/loghi/logo-palazzolo.png', name: 'Banda Palazzolo', url: '#' },
+  ],
+
+  // Instagram — prova con il profilo, se non funziona metti URL di un post specifico
+  // es. post: 'https://www.instagram.com/p/CODICE_POST/'
+  instagramUrl: '',
+
+  youtubeId: '',                              // ← es. 'dQw4w9WgXcQ'
+  videoTitle: 'Il mio ultimo video pubblicato',
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti — Davide Zanella</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contatti-header { margin-bottom: 40px; animation: fadeUp .5s ease both; }
+    .contatti-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem,5vw,2.4rem); font-weight: 700;
+      letter-spacing: -.02em; margin-bottom: 10px;
+    }
+    .contatti-header p { color: var(--muted); font-size: .95rem; line-height: 1.6; }
+
+    .contatti-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+      margin-bottom: 48px;
+      animation: fadeUp .5s .06s ease both;
+    }
+
+    .contatto-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 22px 20px;
+      text-decoration: none; color: var(--text);
+      box-shadow: var(--shadow);
+      display: flex; align-items: center; gap: 16px;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .contatto-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0,0,0,.11);
+    }
+    .contatto-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--bg); display: flex; align-items: center;
+      justify-content: center; font-size: 1.5rem; flex-shrink: 0;
+      overflow: hidden;
+    }
+    .contatto-icon img { width: 100%; height: 100%; object-fit: contain; }
+    .contatto-body { flex: 1; min-width: 0; }
+    .contatto-name { font-weight: 600; font-size: .95rem; margin-bottom: 3px; }
+    .contatto-handle { font-size: .8rem; color: var(--muted); }
+    .contatto-arrow { color: var(--muted); font-size: .9rem; transition: transform .15s; flex-shrink: 0; }
+    .contatto-card:hover .contatto-arrow { transform: translateX(3px); }
+
+    /* sezione note */
+    .contatti-note {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 22px 24px;
+      font-size: .88rem; line-height: 1.7; color: var(--muted);
+      animation: fadeUp .5s .1s ease both;
+    }
+    .contatti-note strong { color: var(--text); }
+  </style>
+</head>
+<body>
+<div class="container" style="max-width:680px">
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">Contatti</span>
+  </nav>
+
+  <div class="contatti-header">
+    <h1>Contatti</h1>
+    <p>Puoi scrivermi direttamente via email o trovarmi sui social.<br>
+       Rispondo sempre, prima o poi! 😄</p>
+  </div>
+
+  <div class="contatti-grid">
+
+    <!-- EMAIL -->
+    <!-- ✏️ Sostituisci con la tua email -->
+    <a class="contatto-card" href="mailto:davide.zanella02@gmail.com">
+      <div class="contatto-icon">
+        <img src="img/loghi/email_logo.png" alt="Mail"
+          onerror="this.outerHTML='✉️'">
+      </div>
+      <div class="contatto-body">
+        <div class="contatto-name">Email</div>
+        <div class="contatto-handle">davide.zanella02@gmail.com</div>
+      </div>
+      <span class="contatto-arrow">&#8594;</span>
+    </a>
+  </div>
+
+  <!-- NOTE -->
+  <div class="contatti-note">
+    <strong>💡 Per le ripetizioni</strong> — se sei interessato a lezioni di matematica o fisica (o altre materie scientifiche)
+    scrivimi via email con una breve descrizione del livello e degli argomenti su cui hai bisogno.
+    Ti rispondo entro 24 ore.
+    <!-- ✏️ Modifica o rimuovi questa nota -->
+  </div>
+
+  <br>
+
+  <div class="contatti-grid">
+    <h3>Profili social</h3>
+    <h3>  </h3>
+
+    <!-- YOUTUBE -->
+    <!-- ✏️ Sostituisci # con il tuo URL -->
+    <a class="contatto-card" href="https://www.youtube.com/@davide.zanella" target="_blank" rel="noopener noreferrer">
+      <div class="contatto-icon">
+        <img src="img/loghi/youtube_logo.png" alt="YouTube"
+          onerror="this.outerHTML='▶️'">
+      </div>
+      <div class="contatto-body">
+        <div class="contatto-name">YouTube</div>
+        <div class="contatto-handle">Davide Zanella</div>
+      </div>
+      <span class="contatto-arrow">&#8594;</span>
+    </a>
+
+    <!-- INSTAGRAM (personale / Here The Series) -->
+    <a class="contatto-card" href="https://www.instagram.com/here.theseries" target="_blank" rel="noopener noreferrer">
+      <div class="contatto-icon">
+        <img src="img/loghi/instagram_logo.png" alt="Instagram"
+          onerror="this.outerHTML='📸'">
+      </div>
+      <div class="contatto-body">
+        <div class="contatto-name">Instagram</div>
+        <div class="contatto-handle">Here, The Series</div>
+      </div>
+      <span class="contatto-arrow">&#8594;</span>
+    </a>
+
+    <!-- FACEBOOK -->
+    <a class="contatto-card" href="https://www.facebook.com/heretheseries" target="_blank" rel="noopener noreferrer">
+      <div class="contatto-icon">
+        <img src="img/loghi/facebook_logo.png" alt="Facebook"
+          onerror="this.outerHTML='📘'">
+      </div>
+      <div class="contatto-body">
+        <div class="contatto-name">Facebook</div>
+        <div class="contatto-handle">Here, The Series</div>
+      </div>
+      <span class="contatto-arrow">&#8594;</span>
+    </a>
+    <!-- Tik Tok-->
+    <a class="contatto-card" href="https://www.tiktok.com/@here.theseries" target="_blank" rel="noopener noreferrer">
+      <div class="contatto-icon">
+        <img src="img/loghi/tiktok_logo.png" alt="Tik Tok"
+          onerror="this.outerHTML='🎵'">
+      </div>
+      <div class="contatto-body">
+        <div class="contatto-name">Tik Tok</div>
+        <div class="contatto-handle">Here, The Series</div>
+      </div>
+      <span class="contatto-arrow">&#8594;</span>
+    </a>
+
+    <!-- X-->
+    <a class="contatto-card" href="https://x.com/here_theseries" target="_blank" rel="noopener noreferrer">
+      <div class="contatto-icon">
+        <img src="img/loghi/x_logo.png" alt="X"
+          onerror="this.outerHTML='💬'">
+      </div>
+      <div class="contatto-body">
+        <div class="contatto-name">X</div>
+        <div class="contatto-handle">Here, The Series</div>
+      </div>
+      <span class="contatto-arrow">&#8594;</span>
+    </a>
+
+    <!-- Threads-->
+    <a class="contatto-card" href="https://www.threads.com/@here.theseries" target="_blank" rel="noopener noreferrer">
+      <div class="contatto-icon">
+        <img src="img/loghi/threads_logo.png" alt="Threads"
+          onerror="this.outerHTML='﹫'">
+      </div>
+      <div class="contatto-body">
+        <div class="contatto-name">Threads</div>
+        <div class="contatto-handle">Here, The Series</div>
+      </div>
+      <span class="contatto-arrow">&#8594;</span>
+    </a>
+
+    <!-- ✏️ Aggiungi altri contatti copiando un blocco contatto-card -->
+
+  </div>
+
+  <div class="contatti-grid">
+    <h3>Profili personali</h3>
+    <h3>  </h3>
+    
+    <!-- INSTAGRAM (personale / Here The Series) -->
+    <a class="contatto-card" href="https://www.instagram.com/davide.zanella_" target="_blank" rel="noopener noreferrer">
+      <div class="contatto-icon">
+        <img src="img/loghi/instagram_logo.png" alt="Instagram"
+          onerror="this.outerHTML='📸'">
+      </div>
+      <div class="contatto-body">
+        <div class="contatto-name">Instagram</div>
+        <div class="contatto-handle">Davide Zanella</div>
+      </div>
+      <span class="contatto-arrow">&#8594;</span>
+    </a>
+
+    <!-- FACEBOOK -->
+    <a class="contatto-card" href="https://www.facebook.com/davide.zanella.353" target="_blank" rel="noopener noreferrer">
+      <div class="contatto-icon">
+        <img src="img/loghi/facebook_logo.png" alt="Facebook"
+          onerror="this.outerHTML='📘'">
+      </div>
+      <div class="contatto-body">
+        <div class="contatto-name">Facebook</div>
+        <div class="contatto-handle">Davide Zanella</div>
+      </div>
+      <span class="contatto-arrow">&#8594;</span>
+    </a>
+
+    <!-- ✏️ Aggiungi altri contatti copiando un blocco contatto-card -->
+
+  </div>
+
+  
+
+  <footer><p>&copy; 2026 Davide Zanella</p></footer>
+</div>
+
+<script src="nav.js"></script>
+<script>initNav('contatti.html');</script>
+</body>
+</html>

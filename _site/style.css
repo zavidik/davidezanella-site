@@ -128,14 +128,14 @@ a { color: inherit; }
   transition: background .15s, color .15s, border-color .15s; cursor: pointer;
 }
 .tag:hover, .tag.active { background: var(--text); color: var(--bg); border-color: var(--text); }
-.tag[data-cat=music]   { border-color: var(--accent-music);   color: var(--accent-music); }
-.tag[data-cat=study]   { border-color: var(--accent-study);   color: var(--accent-study); }
-.tag[data-cat=content] { border-color: var(--accent-content); color: var(--accent-content); }
+.tag[data-cat=musica]   { border-color: var(--accent-music);   color: var(--accent-music); }
+.tag[data-cat=lavoro]   { border-color: var(--accent-study);   color: var(--accent-study); }
+.tag[data-cat=media] { border-color: var(--accent-content); color: var(--accent-content); }
 .tag[data-cat=tech]    { border-color: var(--accent-tech);    color: var(--accent-tech); }
 .tag[data-cat=sport]   { border-color: var(--accent-sport);   color: var(--accent-sport); }
-.tag[data-cat=music].active   { background: var(--accent-music);   color: #fff; border-color: var(--accent-music); }
-.tag[data-cat=study].active   { background: var(--accent-study);   color: #fff; border-color: var(--accent-study); }
-.tag[data-cat=content].active { background: var(--accent-content); color: #fff; border-color: var(--accent-content); }
+.tag[data-cat=musica].active   { background: var(--accent-music);   color: #fff; border-color: var(--accent-music); }
+.tag[data-cat=lavoro].active   { background: var(--accent-study);   color: #fff; border-color: var(--accent-study); }
+.tag[data-cat=media].active { background: var(--accent-content); color: #fff; border-color: var(--accent-content); }
 .tag[data-cat=tech].active    { background: var(--accent-tech);    color: #fff; border-color: var(--accent-tech); }
 .tag[data-cat=sport].active   { background: var(--accent-sport);   color: #fff; border-color: var(--accent-sport); }
 

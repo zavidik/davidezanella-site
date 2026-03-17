@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoReMitici — Davide Zanella</title>
+  <meta name="description" content="Un gruppo di giovani musicisti a Palazzolo Milanese">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩷</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Musica</span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current" id="bc-current">DoReMitici</span>
+  </nav>
+  <div id="activity-content"></div>
+  <footer><p>&copy; 2026 Davide Zanella</p></footer>
+</div>
+
+<script src="posts.js"></script>
+<script src="blog-utils.js"></script>
+<script src="nav.js"></script>
+<script src="activity.js"></script>
+<script>
+initNav('');
+
+initActivity({
+  title: 'DoReMitici',
+  role: 'Trombonista · Dal 2023',            // ← aggiorna l'anno
+  categoryLabel: 'Musica',
+
+  // Tags multipli: filtra articoli ed eventi che hanno ALMENO uno di questi tag
+  tags: ['doremitici'],
+
+  cover: 'img/copertine/doremitici_copertina.jpg',                                  // es. 'img/cover-palazzolo.jpg'
+
+  description: `
+    <p>Il gruppo DoReMitici nasce nel settembre del 2023 grazie al grande aiuto di Maria Lores Galli che,
+        per la necessità di un intervento musicale durante la Festa dell'Addolorata di Palazzolo Milanese,
+        ha voluto proporre alcuni giovani musicisti, molti dei quali membri del
+        <a href="banda-palazzolo.html">Corpo Musicale "Santa Cecilia-1900" APS di Palazzolo Milanese</a>.
+    </p>
+    <p>Dopo aver fatto alcune prove nei giorni precedenti, il 17 settembre 2023 abbiamo debuttato in piazza Hiroshima
+        a Palazzolo Milanese. In quell'occasione eravamo in nove a suonare.
+        L'evento era dedicato all'Emilia Romagna: c'era un food truck che serviva piadine romagnole
+        e un piccolo palco dal quale noi abbiamo suonato per animare la piazza.
+        Dato che quella prima esperienza ci aveva entusiasmato molto, abbiamo deciso di non lasciare
+        che rimanesse un evento fine a sé stesso, ma di continuare a incontrarci per provare nuovi brani
+        e partecipare ad altri eventi.
+    </p>
+    <p>Da quel momento il gruppo si è piano piano stabilizzato con l'uscita di alcuni musicisti
+        e l'ingresso di altri. Oggi contiamo 9 elementi:
+        <p style="text-align: center;">
+            Davide Baldan - Clarinetto<br>
+            Eleonora Monolo - Clarinetto<br>
+            Mattia Cristino - Tromba<br>
+            Gabriele Busà - Sax Contralto<br>
+            Isabel Tedeschi - Corno<br>
+            Elisa Frau - Trombone<br>
+            Davide Zanella - Trombone<br>
+            Francesco Longo - Sax Baritono<br>
+            Emanuele Briscese - Percussioni<br>
+        </p>
+    </p>
+    <p>Alcuni di noi studiano musica al liceo musicale o in conservatorio, altri sono già diplomati,
+        altri ancora (tra cui anch'io) coltivano la musica come passione personale.
+        Per questo motivo siamo un gruppo molto eterogeneo, ma sicuramente la passione per la musica
+        è ciò che ci accomuna.
+    </p>
+    <p>Far parte di un gruppo di questo tipo mi stimola molto e mi sta facendo crescere tanto.
+        A differenza di una banda, infatti, siamo noi a decidere tutto ciò che riguarda i DoReMitici,
+        con vantaggi e responsabilità che ne derivano.
+        Poter scegliere i brani da suonare è sicuramente uno degli aspetti più belli,
+        ma allo stesso tempo dobbiamo occuparci anche dell'organizzazione delle prove
+        e della pianificazione degli eventi a cui partecipiamo.
+        In questo percorso abbiamo sempre l'appoggio della banda di Palazzolo
+        e in particolare di Maria Lores Galli e Renato Baldan, a cui dobbiamo davvero molto.
+    </p>
+  `,
+
+  links: [
+    { icon: '🌐', name: 'Sito ufficiale', desc: 'DoReMitici', url: 'https://davidezanella.altervista.org/wp-content/DoReMitici/index.php' },
+    { icon: '📘', logo: 'img/loghi/instagram_logo.png', name: 'Instagram',        desc: 'Pagina ufficiale',          url: 'https://www.instagram.com/doremitici' },
+    { icon: '📘', logo: 'img/loghi/facebook_logo.png', name: 'Facebook',        desc: 'Pagina ufficiale',          url: 'https://www.facebook.com/DoReMitici' },
+    { icon: '▶️', logo: 'img/loghi/youtube_logo.png', name: 'YouTube',         desc: 'Concerti e altri video',          url: 'https://youtube.com/playlist?list=PL1o1uYsfqEiN-UdOxwGtlDE8_PeGeDrts&si=caxWb6KH30KKE7Yw' },
+    // Esempio con logo:
+    // { icon: '🎺', logo: 'img/loghi/logo-palazzolo.png', name: 'Banda Palazzolo', url: '#' },
+  ],
+
+  // Instagram — prova con il profilo, se non funziona metti URL di un post specifico
+  // es. post: 'https://www.instagram.com/p/CODICE_POST/'
+  instagramUrl: 'https://www.instagram.com/doremitici',
+
+  youtubeId: 'playlist?list=PL1o1uYsfqEiN-UdOxwGtlDE8_PeGeDrts&si=DDVSjztFpAhmpmcb',                              // ← es. 'dQw4w9WgXcQ'
+  videoTitle: 'La PlayList YouTube dei DoReMitici',
+});
+</script>
+</body>
+</html>

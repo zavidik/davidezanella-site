@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<style>
+.timeline {
+  border-left: 3px solid #ccc;
+  margin: 30px 0;
+  padding-left: 25px;
+}
+
+.timeline-item {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: #555;
+  border-radius: 50%;
+}
+
+.timeline-year {
+  font-weight: bold;
+}
+</style>
+
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Home — Davide Zanella</title>
+  <meta name="description" content="Da alcuni anni sto utilizzando Home Assistant e vorrei condividere alcune idee e configurazioni.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Progetti Digitali</span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current" id="bc-current">Smart Home</span>
+  </nav>
+  <div id="activity-content"></div>
+  <footer><p>&copy; 2026 Davide Zanella</p></footer>
+</div>
+
+<script src="posts.js"></script>
+<script src="blog-utils.js"></script>
+<script src="nav.js"></script>
+<script src="activity.js"></script>
+<script>
+initNav('');
+
+initActivity({
+  title: 'Smart Home',
+  role: 'Dal 2021',            // ← aggiorna l'anno
+  categoryLabel: 'Tech',
+
+  // Tags multipli: filtra articoli ed eventi che hanno ALMENO uno di questi tag
+  tags: ['home assistant', 'smart home'],
+
+  cover: 'img/copertine/smart_home_copertina.jpg',                                  // es. 'img/cover-palazzolo.jpg'
+
+  description: `
+    <h2>La mia esperienza con la Smart Home</h2>
+
+    <p>
+    Il mio interesse per la smart home è nato quasi per caso nel 2019 con l’arrivo del primo assistente vocale in casa.
+    Da allora la curiosità è diventata una vera passione e la nostra casa si è trasformata lentamente in un piccolo
+    laboratorio di domotica.
+    </p>
+
+    <h3>La mia Smart Home in breve</h3>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+        <span class="timeline-year">2019</span>
+        <p>Arriva il primo Echo Dot</p>
+        </div>
+
+        <div class="timeline-item">
+        <span class="timeline-year">2020</span>
+        <p>Prime lampadine smart Wi-Fi</p>
+        </div>
+
+        <div class="timeline-item">
+        <span class="timeline-year">2021</span>
+        <p>Raspberry Pi e installazione di Home Assistant</p>
+        </div>
+
+        <div class="timeline-item">
+        <span class="timeline-year">Oggi</span>
+        <p>Rete Zigbee, automazioni e progetti con ESP32</p>
+        </div>
+
+    </div>
+
+    <h3>L'inizio: il primo assistente vocale</h3>
+
+    <p>
+    Nel Natale del 2019 mia mamma ricevette come regalo da un suo collega di lavoro
+    un Echo Dot (3ª generazione) di Amazon.
+    Fino a quel momento in casa non era mai entrato un dispositivo dedicato alla domotica,
+    ma quello fu il primo di quella che si sarebbe rivelata una lunga serie.
+    </p>
+
+    <p>
+    Per alcuni mesi lo abbiamo utilizzato, affascinati dalla novità,
+    per ascoltare musica, impostare timer, promemoria e svolgere altri compiti semplici.
+    Nel frattempo l’argomento della smart home iniziava a incuriosirmi
+    e così acquistai la mia prima lampadina smart Wi-Fi.
+    </p>
+
+    <h3>I primi esperimenti (e i primi problemi)</h3>
+
+    <p>
+    Con il passare del tempo, supportato da mia mamma (e facendo impazzire mio papà),
+    la casa si è riempita di lampadine smart e altri dispositivi compatibili con Alexa.
+    Chi ha un minimo di esperienza con la domotica può già immaginare il problema
+    che si era creato: avevamo lampadine smart ma interruttori tradizionali.
+    </p>
+
+    <p>
+    Il risultato era piuttosto curioso: non potevamo più usare gli interruttori
+    per accendere o spegnere le luci, ma dovevamo parlare con Alexa.
+    Più che una casa smart era diventata una casa un po’... stupida.
+    </p>
+
+    <p>
+    Per un po’ la situazione rimase così, mentre io continuavo a informarmi
+    su nuovi dispositivi e sulle possibilità offerte dalla domotica.
+    </p>
+
+    <h3>Il salto di qualità: Home Assistant</h3>
+
+    <p>
+    Nel 2021 arrivò finalmente il passo decisivo: mia mamma comprò un Raspberry Pi 4.
+    Da quel momento iniziò la mia vera esperienza con la smart home.
+    </p>
+
+    <p>
+    Insieme installammo Home Assistant e iniziai, passo dopo passo,
+    a esplorare questo nuovo mondo fatto di integrazioni, automazioni
+    e dispositivi di ogni tipo.
+    </p>
+
+    <p>
+    Subito dopo l’arrivo del Raspberry arrivò anche una chiavetta Sonoff
+    per creare una rete Zigbee.
+    Con la rete Zigbee iniziarono ad arrivare molti altri dispositivi
+    compatibili con questo protocollo e, lentamente,
+    la casa si riempì di sensori, pulsanti e relè.
+    </p>
+
+    <h3>Imparare facendo</h3>
+
+    <p>
+    Oggi abbiamo dispositivi di varie tipologie e la nostra casa è ancora
+    in continua evoluzione.
+    Ogni tanto si aggiunge un nuovo sensore, un relè o un pulsante,
+    e spesso nascono nuove automazioni.
+    </p>
+
+    <p>
+    Oltre alla configurazione software, ho sviluppato anche alcune competenze manuali:
+    dovendo installare molti dei dispositivi acquistati,
+    ho imparato a mettere le mani (senza fare lavori troppo complessi)
+    nell’impianto elettrico di casa.
+    </p>
+
+    <p>
+    Per fare esperimenti un po’ più avanzati ho iniziato a utilizzare
+    anche dei moduli ESP32 e ho imparato a fare qualche piccola saldatura.
+    Sono capacità che oggi spesso vengono un po’ trascurate,
+    ma che in realtà si rivelano molto utili quando si vuole costruire
+    o modificare qualcosa da soli.
+    </p>
+
+    <h3>Una passione che continua</h3>
+
+    <p>
+    Devo ammettere che in questi anni il mondo della smart home
+    mi ha affascinato parecchio e mi ha appassionato molto,
+    forse come solo la musica aveva fatto prima.
+    </p>
+
+    <p>
+    Mi piacerebbe, con il tempo, scrivere qualche articolo su questo sito
+    per raccontare alcuni dei progetti che sono riuscito a realizzare.
+    Chissà, magari potrebbero dare qualche idea anche a qualcun altro.
+    </p>
+
+  `,
+
+  links: [
+    { icon: '✉️', logo: 'img/loghi/home_assistant_logo.png', name: 'Home Assistant',         desc: 'Sito ufficiale',          url: 'https://www.home-assistant.io' },
+    // Esempio con logo:
+    // { icon: '🎺', logo: 'img/loghi/logo-palazzolo.png', name: 'Banda Palazzolo', url: '#' },
+  ],
+
+  // Instagram — prova con il profilo, se non funziona metti URL di un post specifico
+  // es. post: 'https://www.instagram.com/p/CODICE_POST/'
+  instagramUrl: '',
+
+  youtubeId: '',                              // ← es. 'dQw4w9WgXcQ'
+  videoTitle: 'Il mio ultimo video pubblicato',
+});
+</script>
+</body>
+</html>

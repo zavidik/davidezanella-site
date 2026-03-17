@@ -3,14 +3,14 @@
    costruire card di articoli e post pinnati
    ══════════════════════════════════════════ */
 
-const CATS = { music: 1, study: 1, content: 1, tech: 1, sport: 1 };
+const CATS = { musica: 1, lavoro: 1, media: 1, tech: 1, sport: 1 };
 
 const CAT_LABELS = {
-  music:   'Musica',
-  study:   'Formazione',
-  content: 'Contenuti',
-  tech:    'Tech',
-  sport:   'Sport',
+  musica: 'Musica',
+  lavoro: 'Lavoro',
+  media:  'Media',
+  tech:   'Tech',
+  sport:  'Sport',
 };
 
 function formatDate(d) {

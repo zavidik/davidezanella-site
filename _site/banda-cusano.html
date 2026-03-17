@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banda di Cusano Milanino — Davide Zanella</title>
+  <meta name="description" content="La mia esperienza con la Banda Musicale di Cusano Milanino.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>𝄢</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Musica</span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current" id="bc-current">Banda di Cusano Milanino</span>
+  </nav>
+  <div id="activity-content"></div>
+  <footer><p>&copy; 2026 Davide Zanella</p></footer>
+</div>
+
+<script src="posts.js"></script>
+<script src="blog-utils.js"></script>
+<script src="nav.js"></script>
+<script src="activity.js"></script>
+<script>
+initNav('');
+
+initActivity({
+  title: 'Banda di Cusano Milanino',
+  role: 'Trombonista · Dal 2021',            // ← aggiorna l'anno
+  categoryLabel: 'Musica',
+
+  // Tags multipli: filtra articoli ed eventi che hanno ALMENO uno di questi tag
+  tags: ['banda cusano'],
+
+  cover: 'img/copertine/banda_cusano_copertina.jpg',                                  // es. 'img/cover-palazzolo.jpg'
+
+  description: `
+    <p>Il Corpo Musicale Santa Cecilia di Cusano Milanino affonda le sue radici nei primi anni del '900, con la nascita della "Banda del Risveglio",
+        che successivamente prese il nome di "Banda del Masera", dal nome dell'azienda che la ospitava.
+        Quando l'azienda cessò la sua attività, anche la banda dovette fermarsi; alcuni componenti, però, spinti dalla passione per la musica,
+        decisero di rifondare il gruppo dando vita al Corpo Musicale Santa Cecilia di Cusano Milanino,
+        subito dopo la guerra, nel maggio del 1945.
+    </p>
+    <p>Dal 2021, con l'arrivo del maestro Stefano Bertoni e con la costituzione di un direttivo giovane e dinamico,
+        la banda di Cusano Milanino sta vivendo una fase di grande crescita: non solo nel numero dei musicanti,
+        ma anche nello spirito di aggregazione e nell'apprezzamento da parte del pubblico.
+    </p>
+    <p>Sono entrato a far parte della banda nel 2021, proprio dopo l'arrivo del nuovo maestro, che si è rivelato una persona incredibile
+        e con il quale è nata un'amicizia anche al di fuori del contesto musicale.
+        Da allora partecipo con entusiasmo all'attività della banda e ai concerti che sono diventati appuntamenti fissi e molto attesi
+        dai cittadini: il Concerto di Natale, il Concerto per la Festa della Mamma e il Concerto d'Estate.
+    </p>
+  `,
+
+  links: [
+    { icon: '📘', logo: 'img/loghi/instagram_logo.png', name: 'Instagram',        desc: 'Pagina ufficiale',          url: 'https://www.instagram.com/cusanomilaninobanda' },
+    { icon: '📘', logo: 'img/loghi/facebook_logo.png', name: 'Facebook',        desc: 'Pagina ufficiale',          url: 'https://www.facebook.com/profile.php?id=100063597247039' },
+    { icon: '▶️', logo: 'img/loghi/youtube_logo.png', name: 'YouTube',         desc: 'Canale ufficiale',          url: 'https://www.youtube.com/@corpomusicales.cecilia-cus1333' },
+    // Esempio con logo:
+    // { icon: '🎺', logo: 'img/loghi/logo-palazzolo.png', name: 'Banda Palazzolo', url: '#' },
+  ],
+
+  // Instagram — prova con il profilo, se non funziona metti URL di un post specifico
+  // es. post: 'https://www.instagram.com/p/CODICE_POST/'
+  instagramUrl: 'https://www.instagram.com/cusanomilaninobanda',
+
+  youtubeId: 'o_1Vz9YkIUU',                              // ← es. 'dQw4w9WgXcQ'
+  videoTitle: 'Baba Yetu',
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Here, The Series — Davide Zanella</title>
+  <meta name="description" content="Cos'è il progetto 'Here, The Series' e come è nato.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍿</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Media</span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current" id="bc-current">Here, The Series</span>
+  </nav>
+  <div id="activity-content"></div>
+  <footer><p>&copy; 2026 Davide Zanella</p></footer>
+</div>
+
+<script src="posts.js"></script>
+<script src="blog-utils.js"></script>
+<script src="nav.js"></script>
+<script src="activity.js"></script>
+<script>
+initNav('');
+
+initActivity({
+  title: 'Here, The Series',
+  role: 'Hobby · Dal 2020',            // ← aggiorna l'anno
+  categoryLabel: 'Media',
+
+  // Tags multipli: filtra articoli ed eventi che hanno ALMENO uno di questi tag
+  tags: ['youtube', 'here the series'],
+
+  cover: 'img/copertine/here_the_series_copertina.jpg',                                  // es. 'img/cover-palazzolo.jpg'
+
+  description: `
+    <p>Here, The Series nasce come spazio dedicato ai contenuti dei miei video e delle esperienze che racconto sul mio canale YouTube.
+    </p>
+    <p>Dal 2020, in concomitanza con l'apertura del <a href="youtube.html">mio canale YouTube</a>,
+        ho creato sui vari social network alcuni profili chiamati "Here, The Series".
+        La scelta è nata dal fatto che non volevo mischiare i contenuti pubblicati per il mio canale
+        con quelli dei miei profili personali e privati.
+        In questo modo posso mantenere una certa privacy online e decidere cosa pubblicare
+        come Davide "creatore di video" e cosa invece condividere solamente con amici o conoscenti.
+    </p>
+    <p>La prima serie di video che ho realizzato riguardava una gita in Sardegna e si chiamava
+        <a href="https://youtube.com/playlist?list=PL1o1uYsfqEiOtumaJ08OSP-hdBa5JP4xN&si=04KQv15VaB6cjzX4" target="_blank" rel="noopener noreferrer">"Isuledda, The Series"</a>. 
+        Da lì è nata l’idea di chiamare questi profili "Here, The Series",
+        con l’intenzione di creare una nuova serie di video per ogni viaggio.
+        Le varie serie avrebbero quindi mantenuto una struttura simile nel nome,
+        sostituendo semplicemente il luogo del viaggio alla parola "Here".
+    </p>
+    <p>Col tempo mi sono reso conto che questo nome non è particolarmente efficace
+        e oggi non rappresenta nemmeno più perfettamente i contenuti che pubblico,
+        dato che ho iniziato a realizzare video di generi diversi e non solo di viaggio.
+        Per il momento però non ho cambiato nome: in fondo potrebbe anche rimanere così,
+        come ricordo di come tutto è iniziato.
+    </p>
+    <p>Il canale YouTube, invece, ha sempre avuto il mio nome "Davide Zanella".
+        Non ho mai voluto nascondermi dietro uno pseudonimo e sono felice di pubblicare
+        i miei contenuti con il mio vero nome.
+        Inoltre non avevo idee convincenti per un alias, quindi ho semplicemente mantenuto
+        il nome dell’account Google con cui ho aperto il canale.
+    </p>
+    <p>Infine ho aperto anche un <a href="https://davidezanella.altervista.org" target="_blank" rel="noopener noreferrer">blog</a> (inizialmente non si chiamava "Here, The Series", ma questa è un'altra storia), ospitato su Altervista.
+        Oggi è un progetto abbastanza fermo: pubblico principalmente articoli con i link ai miei video YouTube. 
+        Però l'ho utilizzato anche per ospitare il <a href="doremitici.html">sito dei DoReMitici</a>.
+    </p>
+  `,
+
+  links: [
+    { icon: '▶️', logo: 'img/loghi/youtube_logo.png', name: 'YouTube',         desc: 'Davide Zanella',          url: 'https://www.youtube.com/@davide.zanella' },
+    { icon: '📘', logo: 'img/loghi/instagram_logo.png', name: 'Instagram',        desc: 'Here, The Series',          url: 'https://www.instagram.com/here.theseries' },
+    { icon: '🎵', logo: 'img/loghi/tiktok_logo.png', name: 'Tik Tok', desc: 'Here, The Series', url: 'https://www.tiktok.com/@here.theseries' },
+    { icon: '📘', logo: 'img/loghi/facebook_logo.png', name: 'Facebook',        desc: 'Here, The Series',          url: 'https://www.facebook.com/heretheseries' },
+    { icon: '📘', logo: 'img/loghi/x_logo.png', name: 'X',        desc: 'Here, The Series',          url: 'https://x.com/here_theseries' },
+    { icon: '📘', logo: 'img/loghi/threads_logo.png', name: 'Threads',        desc: 'Here, The Series',          url: 'https://www.threads.com/@here.theseries' },
+    { icon: '🌐', name: 'Blog',        desc: 'Altervista',          url: 'https://davidezanella.altervista.org' },
+    // Esempio con logo:
+    // { icon: '🎺', logo: 'img/loghi/logo-palazzolo.png', name: 'Banda Palazzolo', url: '#' },
+  ],
+
+  // Instagram — prova con il profilo, se non funziona metti URL di un post specifico
+  // es. post: 'https://www.instagram.com/p/CODICE_POST/'
+  instagramUrl: 'https://www.instagram.com/here.theseries',
+
+  youtubeId: '?listType=uploads&list=UUw5cRFF0EF3wnODSMYcrrGQ',                              // ← es. 'dQw4w9WgXcQ'
+  videoTitle: 'Il mio ultimo video pubblicato',
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="it">
+    
+<style>
+.timeline{
+flex:1;
+border-left:3px solid #ccc;
+padding-left:20px;
+}
+
+.timeline-container{
+display:flex;
+gap:40px;
+margin:30px 0;
+}
+
+.timeline-item {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: #555;
+  border-radius: 50%;
+}
+
+.timeline-year {
+  font-weight: bold;
+}
+
+.image-text {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
+.image-text img {
+  width: 200px;
+  border-radius: 8px;
+}
+
+.image-right {
+  flex-direction: row-reverse;
+}
+
+blockquote {
+  border-left: 4px solid #555;
+  padding: 15px 20px;
+  margin: 30px 0;
+  background-color: #f9f9f9;
+  font-style: italic;
+  line-height: 1.6;
+  position: relative;
+}
+
+blockquote::before {
+  content: "“";
+  font-size: 40px;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+  color: #aaa;
+}
+
+blockquote::after {
+  content: "”";
+  font-size: 40px;
+  position: absolute;
+  right: 10px;
+  bottom: -20px;
+  color: #aaa;
+}
+
+</style>
+
+
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musica — Davide Zanella</title>
+  <meta name="description" content="La mia storia musicale: dalle prime lezioni alle bande">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎼</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Musica</span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current" id="bc-current">La mia storia musicale</span>
+  </nav>
+  <div id="activity-content"></div>
+  <footer><p>&copy; 2026 Davide Zanella</p></footer>
+</div>
+
+<script src="posts.js"></script>
+<script src="blog-utils.js"></script>
+<script src="nav.js"></script>
+<script src="activity.js"></script>
+<script>
+initNav('');
+
+initActivity({
+  title: 'La mia storia musicale',
+  role: 'Trombonista · Dal 2021',            // ← aggiorna l'anno
+  categoryLabel: 'Musica',
+
+  // Tags multipli: filtra articoli ed eventi che hanno ALMENO uno di questi tag
+  tags: ['musica'],
+
+  cover: 'img/copertine/musica_copertina.jpg',                                  // es. 'img/cover-palazzolo.jpg'
+
+  description: `
+    <h3>Percorso musicale</h3>
+
+            <div class="timeline-container">
+
+            <div class="timeline">
+
+            <h4>Studio dello strumento</h4>
+
+            <p><strong>2013</strong> – Inizio trombone al CMI</p>
+            <p><strong>2013-2015</strong> – Lezioni con Valeria Gariboldi</p>
+            <p><strong>2015-2019</strong> – Lezioni con Giuseppe Schiariti</p>
+            <p><strong>2019-2025</strong> – Lezioni con Davide Pogliani</p>
+            <p><strong>2025-oggi</strong> – Nuovamente con Giuseppe Schiariti</p>
+
+            </div>
+
+            <div class="timeline">
+
+            <h4>Attività nelle bande</h4>
+
+            <p><strong>2015-2023</strong> – Banda di Nova Milanese</p>
+            <p><strong>2022-2023</strong> – Banda di Sovico</p>
+            <p><strong>2022-2023</strong> – 4 Bande: Palazzolo, Cusano, Nova e Sovico</p>
+            <p><strong>2018-oggi</strong> – Banda di Palazzolo Milanese</p>
+            <p><strong>2021-oggi</strong> – Banda di Cusano Milanino</p>
+
+            </div>
+
+            </div>
+
+
+    <h2>La mia storia musicale</h2>
+
+    <div class="image-text image-right">
+
+        <img src="img/activity/musica_nonno.jpg" alt="Con mio nonno, sassofono soprano">
+
+        <div>
+            <p>
+            Ho iniziato a suonare il trombone nel 2013. I miei genitori si accorsero presto che
+            la musica mi piaceva molto: in casa fischiettavo continuamente, spesso anche
+            in modo piuttosto insistente. I miei due cugini, più grandi di me, già suonavano
+            uno strumento e così i miei decisero di fare provare anche a me.
+            </p>
+        </div>
+
+    </div>
+
+        <p>
+        All’epoca abitavo a Nova Milanese e mi iscrissi al <a href="https://www.cminova.it" target="_blank" rel="noopener noreferrer">Centro Musica Insieme</a> (CMI),
+        la scuola di musica collegata alla banda della città.
+        Non avevo idea di quale strumento scegliere, ma quando andai a informarmi
+        incontrai l’allora direttrice della banda di Nova, Laura Rigamonti,
+        che mi propose di provare il trombone: nella banda c’era carenza di trombonisti.
+        Accettai il suggerimento e così iniziò il mio percorso musicale.
+        </p>
+
+        <h3>I primi anni di studio</h3>
+
+     <div class="image-text">
+
+        <img src="img/activity/musica_monto_trombone.jpg" alt="Musica, Monto lo strumento">
+
+        <div>
+            <p>
+            Le mie prime lezioni furono con Valeria Gariboldi, che in realtà era una cornista.
+            Quell’anno non era stato possibile trovare un orario compatibile con l’insegnante
+            di trombone, quindi iniziai con lei.
+            </p>
+            <p>
+            Valeria si rivelò comunque un’ottima insegnante e conservo un bel ricordo
+            delle sue lezioni: era severa quanto bastava per spronare un bambino
+            a impegnarsi e ottenere risultati, senza però esagerare.
+            </p>
+            <p>
+            Dopo alcuni anni iniziai invece a studiare con Giuseppe Schiariti,
+            trombonista con cui ho proseguito le lezioni fino al 2019.
+            </p>
+        </div>
+
+    </div>
+        
+        <p>
+        Nei primi anni al CMI, oltre alla lezione individuale di strumento,
+        era obbligatorio frequentare anche un corso di teoria musicale
+        principalmente dedicato al solfeggio.
+        Col tempo mi sono reso conto che è stato un metodo molto efficace:
+        oggi credo di avere una buona lettura musicale, che è fondamentale
+        per suonare bene in un gruppo.
+        </p>
+
+        <h3>I primi concerti</h3>
+
+        <p>
+        Già dopo il primo anno entrai nella Junior Band e iniziai così
+        a fare i primi piccoli concerti davanti al pubblico.
+        </p>
+
+        <p>
+        Nel settembre del 2015, all’inizio del mio terzo anno di trombone,
+        entrai ufficialmente nella banda “senior” di Nova Milanese.
+        La decisione fu facilitata dal fatto che c’era bisogno di trombonisti
+        e Valeria parlò bene di me alla direttrice Laura Rigamonti.
+        Da lì iniziarono i miei primi servizi e concerti bandistici veri e propri.
+        </p>
+
+        <h3>Il trasferimento a Palazzolo</h3>
+
+        <div class="image-text image-right">
+
+        <img src="img/activity/musica_brano_solista.jpg" alt="Musica, primo brano da solista">
+
+        <div>
+            <p>
+            Alla fine del 2018 mi trasferii a Palazzolo Milanese.
+            Per il primo anno continuai comunque a studiare al CMI,
+            ma nel 2019 decisi di cambiare insegnante.
+            </p>
+            <p>
+            A Palazzolo infatti esisteva la <a href="banda-palazzolo.html">banda cittadina</a> con la relativa scuola di musica,
+            così iniziai a prendere lezioni con Davide Pogliani,
+            trombonista dell’Aeronautica Militare.
+            </p>
+            <p>
+            Con Davide mi sono trovato davvero molto bene
+            e ho studiato con lui fino al 2025.
+            Purtroppo ha poi smesso di insegnare nella scuola della banda,
+            quindi ho dovuto cambiare nuovamente maestro.
+            </p>
+            <p>
+            Curiosamente, la scuola di musica, cercando un nuovo insegnate, chiamò 
+            proprio Giuseppe Schiariti,
+            con cui avevo già studiato anni prima.
+            Così oggi mi ritrovo nuovamente a fare lezione con lui.
+            </p>
+        </div>
+
+    </div> 
+
+        <h3>La mia attività nelle bande</h3>
+
+        <p>
+        Dopo il trasferimento a Palazzolo Milanese, nel 2018 entrai
+        nel <a href="banda-palazzolo.html">Corpo Musicale "Santa Cecilia-1900" di Palazzolo Milanese</a> diretto da Enrico Tiso,
+        banda di cui faccio ancora oggi parte.
+        </p>
+
+        <p>
+        Nel 2021 iniziai a suonare anche nel <a href="banda-cusano.html">Corpo Musicale Santa Cecilia
+        di Cusano Milanino</a>, diretto dal maestro Stefano Bertoni.
+        </p>
+
+        <p>
+        Nel 2022 la direttrice Laura Rigamonti lasciò la <a href="https://www.cminova.it/corpo-musicale/" target="_blank" rel="noopener noreferrer">banda di Nova Milanese</a>.
+        Essendomi sempre trovato molto bene con lei e apprezzando molto
+        il suo modo di dirigere, decisi di seguirla nella <a href="https://www.instagram.com/bandasovico" target="_blank" rel="noopener noreferrer">banda di Sovico</a>,
+        dove già ricopriva il ruolo di direttrice.
+        </p>
+
+
+        <div class="image-text">
+
+        <img src="img/activity/musica_bertoni.jpg" alt="Musica, con il Maestro Stefano Bertoni">
+
+        <div>
+            <p>
+            Per quell’anno mi ritrovai quindi a suonare in quattro bande contemporaneamente:
+            Palazzolo, Cusano, Nova e Sovico.
+            Col tempo mi resi conto che era davvero troppo impegnativo,
+            dato che significava avere prove quasi tutte le sere della settimana.
+            </p>
+            <p>
+            Lasciai quindi Sovico dopo un anno e continuai a suonare a Nova
+            fino alla fine del 2023.
+            </p>
+            <p>
+            Dal 2024 la situazione è rimasta stabile:
+            suono nel Corpo Musicale di Palazzolo Milanese
+            e nel Corpo Musicale di Cusano Milanino.
+            </p>
+        </div>
+
+    </div> 
+
+        <h3>Collaborazioni con altre bande</h3>
+
+        <p>
+        Negli ultimi anni il mio livello musicale è cresciuto
+        e ho avuto l’occasione di essere chiamato anche da altre bande
+        che avevano bisogno di trombonisti per concerti o servizi.
+        </p>
+
+        <p>
+        Tra queste ci sono Lomazzo, Gaggiano, Misinto,
+        Villa Cortese, Borgosesia, Como e Busto Arsizio.
+        </p>
+
+        <p>
+        Mi fa sempre molto piacere partecipare a queste esperienze,
+        perché permettono di conoscere nuovi repertori,
+        nuovi direttori, nuovi musicisti e modi diversi di lavorare durante le prove.
+        </p>
+
+        <h3>Altri progetti musicali</h3>
+
+        <div class="image-text image-right">
+
+        <img src="img/activity/musica_polo_doremitici.jpg" alt="Musica, la polo dei DoReMitici">
+
+        <div>
+            <p>
+            Un momento importante è stato nel 2023 con la nascita
+            del gruppo <a href="doremitici.html">DoReMitici</a>, formato da alcuni amici conosciuti
+            nelle bande. Oggi il gruppo è molto attivo e sono davvero
+            felice di aver contribuito alla sua creazione e di farne parte.
+            </p>
+            <p>
+            Nel 2024 ho iniziato anche a partecipare
+            al <a href="scuola-che-sbanda.html">progetto “La scuola che sBanda”</a>, promosso dalla banda
+            di Palazzolo Milanese.
+            Questo progetto mi sta permettendo di fare esperienza
+            come insegnante di trombone ed euphonium nelle scuole elementari.
+            </p>
+        </div>
+
+    </div> 
+
+        <h3>La musica in famiglia</h3>
+
+        <div class="image-text">
+
+        <img src="img/activity/musica_mamma.jpg" alt="Musica, insieme a mia mamma">
+
+        <div>
+            <p>
+            Un aspetto curioso della mia storia musicale è che,
+            un anno dopo che iniziai io, anche mia mamma decise
+            di iscriversi al CMI e iniziò a studiare clarinetto.
+            </p>
+            <p>
+            Oggi suoniamo insieme nelle stesse bande,
+            e andiamo insieme alle prove e ai concerti.
+            </p>
+            <p>
+            Anche mia sorella ha avuto un breve periodo musicale:
+            ha suonato per un anno l’euphonium e per due anni la tromba,
+            ma poi ha deciso di smettere.
+            </p>
+            <p>
+            Mio padre invece non ha mai provato a suonare,
+            ma è sempre presente tra il pubblico ai nostri concerti.
+            </p>
+        </div>
+
+    </div> 
+
+        <h3>Elisa</h3>
+        <p>
+            Un capitolo importante della mia vita musicale è anche Elisa.
+            L’ho conosciuta dopo essermi trasferito a Palazzolo:
+            all’epoca suonava la tromba in banda, mentre oggi è trombonista.
+            </p>
+
+        <div class="image-text image-right">
+
+        <img src="img/activity/musica_elisa.jpg" alt="Musica, insieme a Elisa">
+
+        <div>
+            
+            <p>
+            All’inizio eravamo semplicemente amici,
+            ma con il tempo il rapporto è diventato qualcosa di più.
+            Dal 2023 siamo fidanzati e condividiamo molte esperienze musicali.
+            </p>
+            <p>
+            Anche per lei la musica è un hobby,
+            infatti nella vita sta seguendo un’altra strada,
+            dato che studia medicina.
+            </p>
+            <p>
+            La nostra relazione è nata proprio in banda,
+            passando molte serate a suonare insieme.
+            La musica è stata il punto di partenza,
+            ma oggi il legame tra di noi va ben oltre quello.
+            </p>
+        </div>
+
+    </div> 
+
+ 
+
+        <h3>Una frase che mi accompagna da anni</h3>
+
+        <p>
+        Da più di dieci anni il mio stato su WhatsApp
+        è sempre rimasto lo stesso:
+        </p>
+
+        <blockquote>
+        La musica è la cosa più vicina all’amore.
+        Ti eleva. Personalmente mi dà emozioni molto simili
+        a quelle che provo quando mi sento innamorato.
+        </blockquote>
+
+
+  `,
+
+  links: [
+    { icon: '🌐', logo: 'img/loghi/doremitici_logo.png', name: 'DoReMitici',        desc: 'Pagina',          url: 'doremitici.html' },
+    { icon: '🌐', logo: 'img/loghi/banda_palazzolo_logo.png', name: 'Banda Palazzolo',        desc: 'Pagina',          url: 'banda-palazzolo.html' },
+    { icon: '🌐', logo: 'img/loghi/scuola_che_sbanda_logo.png', name: 'La Scuola che sBanda',        desc: 'Pagina',          url: 'scuola-che-sbanda.html' },
+    { icon: '🌐', logo: 'img/loghi/banda_cusano_logo.png', name: 'Banda Cusano',        desc: 'Pagina',          url: 'banda-cusano.html' },
+    { icon: '🌐', logo: 'img/loghi/instagram_logo.png', name: 'Banda Sovico',        desc: 'Profilo Instagram',          url: 'https://www.instagram.com/bandasovico' },
+    { icon: '🌐', name: 'Centro Musica Insieme',        desc: 'Sito ufficiale',          url: 'https://www.cminova.it' },
+    // Esempio con logo:
+    // { icon: '🎺', logo: 'img/loghi/logo-palazzolo.png', name: 'Banda Palazzolo', url: '#' },
+  ],
+
+  // Instagram — prova con il profilo, se non funziona metti URL di un post specifico
+  // es. post: 'https://www.instagram.com/p/CODICE_POST/'
+  instagramUrl: 'https://www.instagram.com/reel/DAtiVC4JW6k/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==',
+
+  youtubeId: '7rZ2ab32RA0',                              // ← es. 'dQw4w9WgXcQ'
+  videoTitle: 'Il mio primo brano da solista',
+});
+</script>
+</body>
+</html>

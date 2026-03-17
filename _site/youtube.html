@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canale YouTube — Davide Zanella</title>
+  <meta name="description" content="Perché aprire un canale YouTube?">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Media</span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current" id="bc-current">YouTube</span>
+  </nav>
+  <div id="activity-content"></div>
+  <footer><p>&copy; 2026 Davide Zanella</p></footer>
+</div>
+
+<script src="posts.js"></script>
+<script src="blog-utils.js"></script>
+<script src="nav.js"></script>
+<script src="activity.js"></script>
+<script>
+initNav('');
+
+initActivity({
+  title: 'YouTube',
+  role: 'Hobby · Dal 2020',            // ← aggiorna l'anno
+  categoryLabel: 'Media',
+
+  // Tags multipli: filtra articoli ed eventi che hanno ALMENO uno di questi tag
+  tags: ['youtube'],
+
+  cover: 'img/copertine/youtube_copertina.jpg',                                  // es. 'img/cover-palazzolo.jpg'
+
+  description: `
+    <p>Dal 2020 pubblico video di vario genere sul mio canale YouTube. Fin da piccolo mi ha sempre affascinato
+    l'idea di creare video che documentassero le mie attività e le mie esperienze.
+    Nel 2020 ho quindi aperto il mio canale e ho caricato i primi contenuti.
+    <a href="https://youtube.com/playlist?list=PL1o1uYsfqEiOtumaJ08OSP-hdBa5JP4xN&si=04KQv15VaB6cjzX4" target="_blank" rel="noopener noreferrer">I primi video</a> raccontavano 
+    una gita scolastica di una settimana in Sardegna, per la precisione a Isuledda,
+    dove dovevamo imparare ad andare in barca a vela.
+    </p>
+    <p>Con il tempo ho iniziato a realizzare video anche di altre esperienze personali:
+        vacanze con amici o con la famiglia, giri in bici, allenamenti di atletica e concerti con le bande.
+        Quest’ultima attività è diventata una parte molto importante del mio canale YouTube,
+        dato che negli ultimi anni la musica ha occupato uno spazio sempre più grande nella mia vita.
+        Nonostante questo, continuo comunque a pubblicare anche video delle altre attività.
+    </p>
+    <p>Grazie a questa passione per i video, nel tempo ho acquistato alcune videocamere e microfoni
+        e, soprattutto, ho imparato a montare i miei filmati. Non a livello professionale,
+        ma comunque in modo che ritengo soddisfacente.
+    </p>
+    <p>Questa competenza mi ha permesso anche di creare contenuti per <a href="https://youtube.com/playlist?list=PLkCKC-9ELJ8grDcW--EYJjGt1O4xUz9AK&si=wj2PdDCvESp1tPAZ" target="_blank" rel="noopener noreferrer">La Fenice</a>
+        (la società di atletica di cui facevo parte) e attualmente per i <a href="doremitici.html">DoReMitici</a>
+        e per la <a href="banda-palazzolo.html">Banda di Palazzolo Milanese</a>. I video di questi ultimi due gruppi sono pubblicati
+        sul mio canale YouTube all’interno di playlist dedicate.
+    </p>
+    <p>Pur rimanendo un hobby, cerco sempre di migliorare la qualità dei miei video,
+        sia dal punto di vista delle riprese e della risoluzione, sia per quanto riguarda il montaggio.
+        È un’attività che richiede molto tempo e per questo non sempre si riescono a ottenere
+        i risultati che si immaginano. La speranza che i miei video possano interessare sempre più persone
+        c’è, ma sono comunque felice soprattutto del fatto di star creando dei ricordi
+        che potrò io stesso riguardare in futuro.
+    </p>
+    <p>Nei link qui sotto si rimanda al mio canale YouTube e ai profili social di "Here, The Series" (<a href="here-the-series.html">link se vuoi approfondire questo nome</a>).
+    </p>
+  `,
+
+  links: [
+    { icon: '▶️', logo: 'img/loghi/youtube_logo.png', name: 'YouTube',         desc: 'Il mio canale',          url: 'https://www.youtube.com/@davide.zanella' },
+    { icon: '📘', logo: 'img/loghi/instagram_logo.png', name: 'Instagram',        desc: 'Here, The Series',          url: 'https://www.instagram.com/here.theseries' },
+    { icon: '🎵', logo: 'img/loghi/tiktok_logo.png', name: 'Tik Tok', desc: 'Here, The Series', url: 'https://www.tiktok.com/@here.theseries' },
+    { icon: '📘', logo: 'img/loghi/facebook_logo.png', name: 'Facebook',        desc: 'Here, The Series',          url: 'https://www.facebook.com/heretheseries' },
+    { icon: '📘', logo: 'img/loghi/x_logo.png', name: 'X',        desc: 'Here, The Series',          url: 'https://x.com/here_theseries' },
+    { icon: '📘', logo: 'img/loghi/threads_logo.png', name: 'Threads',        desc: 'Here, The Series',          url: 'https://www.threads.com/@here.theseries' },
+    // Esempio con logo:
+    // { icon: '🎺', logo: 'img/loghi/logo-palazzolo.png', name: 'Banda Palazzolo', url: '#' },
+  ],
+
+  // Instagram — prova con il profilo, se non funziona metti URL di un post specifico
+  // es. post: 'https://www.instagram.com/p/CODICE_POST/'
+  instagramUrl: 'https://www.instagram.com/here.theseries',
+
+  youtubeId: '?listType=uploads&list=UUw5cRFF0EF3wnODSMYcrrGQ',                              // ← es. 'dQw4w9WgXcQ'
+  videoTitle: 'Il mio ultimo video pubblicato',
+});
+</script>
+</body>
+</html>

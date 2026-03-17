@@ -62,8 +62,8 @@
 
     // breadcrumb: se è un post pinnato, punta alla bacheca
     if (post.pinned) {
-      document.querySelector('.breadcrumb a[href="articoli.html"]').href = 'bacheca.html';
-      document.querySelector('.breadcrumb a[href="articoli.html"]').textContent = 'Bacheca';
+      const bcLink = document.querySelector('.breadcrumb a[href="articoli.html"]');
+      if (bcLink) { bcLink.href = 'bacheca.html'; bcLink.textContent = 'Bacheca'; }
     }
 
     const tags = post.tags.map(t =>
