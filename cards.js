@@ -6,11 +6,11 @@
 const CATEGORIES = [
   {
     id: 'musica',
-    icon: '🎺',
+    icon: '🪊',
     title: 'Musica',
     items: [
       { icon: '🎵', logo: 'img/loghi/doremitici_logo.png', title: 'i DoReMitici',               desc: 'Gruppo musicale',      url: 'doremitici.html' },
-      { icon: '🎺', logo: 'img/loghi/banda_palazzolo_logo.png', title: 'Banda di Palazzolo Milanese', desc: 'Dir. Enrico Tiso',    url: 'banda-palazzolo.html' },
+      { icon: '🪊', logo: 'img/loghi/banda_palazzolo_logo.png', title: 'Banda di Palazzolo Milanese', desc: 'Dir. Enrico Tiso',    url: 'banda-palazzolo.html' },
       { icon: '🏫', title: 'La Scuola che sBanda', desc: '',   url: 'scuola-che-sbanda.html', indent: true },
       { icon: '🎶', logo: 'img/loghi/banda_cusano_logo.png', title: 'Banda di Cusano Milanino',   desc: 'Dir. Stefano Bertoni', url: 'banda-cusano.html' },
       { icon: '🎼', title: 'La mia storia musicale', desc: 'Trombone e bande', url: 'musica.html' },
