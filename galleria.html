@@ -184,7 +184,7 @@ const EXTRA_PHOTOS = [
 // ── Costruisce la lista unificata ──
 // 1. Cover dei post (automatico)
 const postPhotos = POSTS
-  .filter(p => p.cover)
+  .filter(p => p.cover && p.showInGallery !== false)
   .map(p => ({
     src:     p.cover,
     caption: p.title,

@@ -19,19 +19,19 @@ const POSTS = [
   { id: "concerto-mamma-cusano-2026",
     title: "Concerto per la Festa della Mamma — Banda di Cusano Milanino",
     date: "2026-04-16",
-    cover: "",
+    cover: "img/posts/concerto-mamma-cusano-2026.jpg",
+    showInGallery: false,
     pinned: true,
     eventDate: "2026-05-10",
-    eventTime: "",
+    eventTime: "16:30",
     eventPlace: "Cusano Milanino",
     tags: ["musica", "banda cusano", "concerto"],
     excerpt: "Concerto per la Festa della Mamma — Banda di Cusano Milanino",
     content: `
       <p>Vi aspettiamo al <strong>Concerto per la Festa della Mamma</strong> della Banda di Cusano Milanino!</p>
-      <p>Passa un pomeriggio primaverile all'aperto, magari con un gelato 🍦 e con della bella musica!</p>
+      <p>Fatevi una bella passeggiata primaverile all'aperto, magari con un gelato 🍦 e poi con della bella musicain teatro!</p>
       <p>L'ingresso è libero e aperto a tutti.</p>
-      <p>Per il <strong>luogo e l'orario preciso</strong> ci saranno aggiornamenti su questa pagina (arriverà anche la locandina!)</p>
-      <p>📅 10 Maggio 2026<br>📍 Cusano Milanino</p>
+      <p>📅 10 Maggio 2026 · ore 16:30<br>📍 Teatro Papa Giovanni XXIII, Viale G. Matteotti 57, Cusano Milanino</p>
     `
   },
 
