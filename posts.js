@@ -16,6 +16,36 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  { id: "raduno-bandistico-cogliate-2026",
+    title: "Raduno bandistico a Cogliate — com'è andata",
+    date: "2026-05-19",
+    cover: "img/posts/raduno-bandistico-cogliate-2026.jpg",
+    tags: ["musica", "banda palazzolo", "servizio"],
+    relatedPost: {
+      id: "raduno-bandistico-cogliate-2026-bacheca",
+      label: "📌 Questo evento era stato annunciato qui:"
+    },
+    excerpt: "Cinque bande, sole di maggio, marcette per le vie di Cogliate e un ottimo rinfresco. Un pomeriggio leggero e piacevole.",
+    content: `
+      <p>Domenica 17 maggio siamo andati a Cogliate per il raduno bandistico organizzato in occasione del centenario della loro banda. Cinque bande in tutto, ognuna partita da un punto diverso della città sfilando per le proprie vie, per poi convergere tutte insieme nella piazza centrale.</p>
+
+      <h4>La sfilata</h4>
+      <p>La <a href="banda-palazzolo.html">Banda di Palazzolo</a> è arrivata per prima in piazza — e poi abbiamo aspettato, sotto un sole di maggio che quando usciva dalle nuvole picchiava davvero. Niente di paragonabile al luglio, ma dopo un po' di sfilata con lo strumento in mano si fa sentire.</p>
+
+      <h4>Le esibizioni</h4>
+      <p>Una volta arrivate tutte le bande, ciascuna ha suonato due brani a turno facendo due giri. Noi abbiamo aperto con <em>Symbol of Freedom</em> e chiuso con <em>YMCA</em> — che funziona sempre, è ormai entrata nella cultura collettiva e il pubblico la conosce e la ama.</p>
+      <p>Le altre bande hanno fatto scelte molto diverse. La <strong>Banda di Cogliate</strong> si è distinta per qualità musicale — brani di livello superiore, eseguiti bene. Al secondo posto metterei la <strong>Banda di Camnago</strong>. La <strong>Banda di Misinto</strong>, pur contando pochi elementi, ha avuto il merito di distinguersi con scelte coraggiose: <em>Fireworks</em> di Katy Perry e <em>Smoke on the Water</em>. Quest'ultima non ha reso benissimo con un organico ridotto, ma apprezzo quando una banda ci mette un po' di personalità nel programma.</p>
+      <p>Noi di Palazzolo? Direi terzi — onestamente. La <strong>Banda di Usmate</strong> e quella di Misinto a seguire.</p>
+      <p>Ovviamente è una classifica personale, fatta in base a quello che ho sentito e puramente goliardica.</p>
+
+      <h4>Il gran finale</h4>
+      <p>Dopo le esibizioni singole, tutte e cinque le bande si sono compattate per suonare insieme la marcia <em>Centenario</em>, composta appositamente dal maestro di Cogliate per festeggiare i cento anni della banda. Il pubblico ha applaudito e ha chiesto ancora — e dato che con cinque bande diverse non è detto che tutti abbiano gli stessi spartiti, abbiamo chiuso con l'unico brano che obbligatoriamente tutte le bande conoscono: l'<strong>Inno di Mameli</strong>.</p>
+
+      <h4>Il rinfresco</h4>
+      <p>A evento concluso ci siamo spostati nell'oratorio per il rinfresco, e devo dire che l'hanno organizzato bene: diversi gazebo con zona salato, zona dolce, zona bevande — e birra alla spina. Un finale degno di una bella giornata.</p>
+      <p>L'evento nel complesso è durato circa due ore, dalle tre e quaranta alle sei circa. Il formato leggero ha funzionato benissimo — meglio di certi eventi che cercano di fare le cose in grande e alla fine stancano. Questo era semplice, piacevole e ben calibrato. Promosso. 🎶</p>
+    `
+},
 
   { id: "concerto-cusano-2-giugno-2026-bacheca",
     title: "Concerto per la Festa della Repubblica — Banda di Cusano Milanino",
@@ -73,6 +103,10 @@ const POSTS = [
     eventTime: "15:15",
     eventPlace: "Cogliate",
     tags: ["musica", "banda palazzolo", "servizio"],
+    relatedPost: {
+      id: "raduno-bandistico-cogliate-2026",
+      label: "📖 Leggi com'è andata:"
+    },
     excerpt: "Tante bande a Cogliate",
     content: `
       <p>Domenica 17 maggio c'è un raduno bandistico a Cogliate. Non so di preciso come sarà organizzato, io sarà lì insieme alla <a href="banda-palazzolo.html">Banda di Palazzolo</a>.</p>
