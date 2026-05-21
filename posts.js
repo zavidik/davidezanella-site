@@ -16,6 +16,7 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+
   { id: "raduno-bandistico-cogliate-2026",
     title: "Raduno bandistico a Cogliate — com'è andata",
     date: "2026-05-19",
@@ -45,7 +46,7 @@ const POSTS = [
       <p>A evento concluso ci siamo spostati nell'oratorio per il rinfresco, e devo dire che l'hanno organizzato bene: diversi gazebo con zona salato, zona dolce, zona bevande — e birra alla spina. Un finale degno di una bella giornata.</p>
       <p>L'evento nel complesso è durato circa due ore, dalle tre e quaranta alle sei circa. Il formato leggero ha funzionato benissimo — meglio di certi eventi che cercano di fare le cose in grande e alla fine stancano. Questo era semplice, piacevole e ben calibrato. Promosso. 🎶</p>
     `
-},
+  },
 
   { id: "concerto-cusano-2-giugno-2026-bacheca",
     title: "Concerto per la Festa della Repubblica — Banda di Cusano Milanino",
@@ -64,10 +65,11 @@ const POSTS = [
       <p>📅 2 Giugno 2026 · ore 16:00<br>📍 Cusano Milanino</p>
     `
   },
+
   { id: "saggio-scuola-che-sbanda-2026-bacheca",
     title: "Saggio di fine anno — La Scuola che sBanda",
     date: "2026-05-16",
-    cover: "",
+    cover: "img/posts/locandina-saggio-scuola-che-sbanda-2026.jpg",
     showInGallery: false,
     pinned: true,
     eventDate: "2026-05-28",
@@ -89,7 +91,7 @@ const POSTS = [
       <p>A chiudere la serata, come da tradizione, tutti i maestri sul palco insieme per un brano — ovviamente a tema Shrek. E sì, ci sarà qualche travestimento. 🤫</p>
 
       <p>L'ingresso è libero e aperto a tutti. Vi aspettiamo!</p>
-      <p>📅 28 Maggio 2026 · ore 21:00<br>📍 Palestra dell'oratorio di Palazzolo Milanese, Viale Bagatti 3</p>
+      <p>📅 28 Maggio 2026 · ore 21:00<br>📍 Palestra dell'oratorio di Palazzolo Milanese, Viale Bagatti 2</p>
     `
   },
 
