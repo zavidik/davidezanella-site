@@ -16,6 +16,42 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  { id: "concerto-anfiteatro-la-cava-2026",
+    title: "Fusione all'Anfiteatro La Cava",
+    date: "2026-05-25",
+    cover: "img/posts/concerto-palazzolo-cava-2026.jpg",
+    pinned: false,
+    tags: ["musica", "banda palazzolo", "concerto"],
+    relatedPost: {
+      id: "concerto-palazzolo-cava-2026-bacheca",
+      label: "📌 Questo evento era stato annunciato qui:"
+    },
+    excerpt: "Sole a picco, trentadue gradi, sudore sul bocchino del trombone e gelato alla fine. Il resoconto del concerto della Banda di Palazzolo all'Anfiteatro La Cava — terzo anno consecutivo a fonderci.",
+    content: `
+      <p>Sabato 24 maggio sono tornato all'Anfiteatro La Cava, nel Parco Lago Nord di Paderno Dugnano, per il concerto della <a href="banda-palazzolo.html">Banda di Palazzolo Milanese</a>. Terzo anno consecutivo in questa location. Bellissima, per carità — non tutte le città hanno un posto così. Ma il sole nel pomeriggio di fine maggio non perdona.</p>
+
+      <h2>La mattina: mixer, microfoni e sudore anticipato</h2>
+      <p>Sono arrivato all'anfiteatro già di mattina insieme a Fabio, un altro musicista della banda, per preparare il palco. La parte che mi stava più a cuore era il setup audio: per la prima volta ho registrato il concerto usando i microfoni e il mixer dei <a href="doremitici.html">DoReMitici</a>, invece del mio solito Shure MV88+.</p>
+      <p>Lo Shure è comodissimo — si collega direttamente all'iPhone, lo porto ovunque — ma ha i suoi limiti. Soprattutto sui bassi: si sentiva bene, ma mancava corpo. Questa volta volevo provare a fare le cose con più cura, e insieme a Fabio abbiamo montato tutto con calma. Il sole già picchiava forte alle dieci di mattina.</p>
+
+      <h2>Il pomeriggio: junior band, banda, e 32°C</h2>
+      <p>Sono tornato a casa, ho pranzato, e verso le tre sono uscito di nuovo per il ritrovo pre-concerto. Prima della banda suonava la <em>junior band</em>, e anche lì mi hanno coinvolto — come spesso succede, gli ottoni gravi scarseggiano tra i più giovani, quindi un trombone in più fa sempre comodo.</p>
+      <p>Il concerto è iniziato alle quattro e mezza. Quattro e mezza di un sabato di fine maggio, sotto il sole diretto, con le temperature al culmine della giornata. Crema solare applicata, cappellino con visiera fornito dalla banda, e una dose abbondante di rassegnazione.</p>
+      <p>Non sono contentissimo di come ho suonato, e non me ne faccio un dramma: con quel caldo faccio davvero fatica. Il bocchino del trombone scivola per il sudore, le labbra si stancano prima. Dopo pochi brani ero già a pezzi. Nel complesso però la banda ha suonato bene — i complimenti del pubblico e della sindaca presente lo confermano — e questo è quello che conta.</p>
+
+      <h2>Il gelato dalla Luna</h2>
+      <p>Dopo il concerto, la banda ha offerto il gelato. Non un gelato qualunque: quello del <strong>Gelato dalla Luna</strong>, una gelateria di Paderno che impiega e supporta persone con disabilità. Un bel modo per chiudere il pomeriggio, mentre smontavo microfoni, mixer e PC con le mani ancora sudate.</p>
+
+      <h2>Il video (quasi)</h2>
+      <p>Avevo portato la macchina fotografica per filmare il concerto, ma durante la giornata ho scoperto che c'era già un signore — appassionato di bande, gira per diverse città a documentarle — che si era occupato lui di riprendere tutto. Così ho potuto passare la fotocamera a mio papà, che l'ha usata per il suo scopo naturale: fare foto.</p>
+      <p>Il video arriverà quando il signore mi manderà il file. A quel punto monterò tutto con l'audio che ho registrato io, e spero che si senta finalmente quella differenza di qualità che cercavo.</p>
+
+      <h2>Una riflessione sulla location</h2>
+      <p>È il terzo anno che facciamo questo concerto all'Anfiteatro La Cava, e ogni volta la conversazione post-concerto tra i musicisti si concentra sullo stesso tema: il caldo. La location è davvero bella, ma le quattro e mezza di fine maggio è probabilmente l'orario peggiore possibile. Spero che in futuro si riesca a spostare il concerto in serata, magari dopo cena, quando la temperatura scende e anche la qualità sonora — per tutti, pubblico e musicisti — ne guadagna.</p>
+      <p>La sera ero distrutto e non soddisfatto di come ho suonato — il caldo ha sicuramente fatto la sua parte.</p>
+    `,
+},
+
 
   { id: "raduno-bandistico-cogliate-2026",
     title: "Raduno bandistico a Cogliate — com'è andata",
@@ -996,6 +1032,10 @@ const POSTS = [
     eventTime: "",
     eventPlace: "Paderno Dugnano",
     tags: ["musica", "banda palazzolo", "concerto"],
+    relatedPost: {
+      id: "concerto-anfiteatro-la-cava-2026",
+      label: "📖 Leggi com'è andata:"
+    },
     excerpt: "Il concerto della banda di Palazzolo nel magnifico anfiteatro della Cava!",
     content: `
       <p>Come l'anno scorso e anche quello prima, suonerò al concerto della banda di Palazzolo</p>
