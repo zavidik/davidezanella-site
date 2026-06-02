@@ -16,6 +16,54 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  { id: "saggio-scuola-che-sbanda-2026",
+    title: "Saggio di fine anno – La Scuola che sBanda",
+    date: "2026-05-30",
+    cover: "img/posts/saggio-scuola-che-sbanda-2026.jpg",
+    pinned: false,
+    tags: ["musica", "la scuola che sbanda"],
+    relatedPost: {
+      id: "saggio-scuola-che-sbanda-2026-bacheca",
+      label: "📌 Questo evento era stato annunciato qui:"
+    },
+    excerpt: "Tema Shrek, travestimenti, impianto audio da montare, niente cena e un pigiama da ciuchino. Il saggio di fine anno della Scuola che sBanda raccontato dall'interno.",
+    content: `
+      <p>Il saggio di fine anno della <a href="scuola-che-sbanda.html">Scuola che sBanda</a> è andato, ed è andato bene. Anzi, meglio che bene — sono uscito dalla palestra dell'oratorio di Palazzolo Milanese soddisfatto, sudato e con addosso un pigiama da asino. Ma per capire come ci sono arrivato, bisogna partire dal pomeriggio.</p>
+
+      <h3>Una giornata lunga</h3>
+      <p>Il saggio era alle 21, ma la mia giornata è cominciata subito dopo pranzo. Al mattino avevo già iniziato a mettere insieme tutto quello che dovevo portare: il mixer, i microfoni, i cavi, il MacBook per registrare, il costume, le parti musicali da distribuire. Prima uscita nel pomeriggio verso le tre, con la prima tappa in sala banda per stampare le parti dell'ultimo brano — quello che avremmo suonato noi insegnanti a chiusura della serata. Poi, purtroppo, il ritorno a casa perché avevo dimenticato una delle borse. Avanti e indietro, tempo perso, niente di grave ma abbastanza per farmi sentire già un po' in ritardo su tutto.</p>
+
+      <p>Alle 16 ero finalmente in palestra, e da lì non me ne sono più andato fino a sera. Niente cena, niente pausa — solo allestimento, prove e poi il saggio. Solo dopo il saggio, ho recuperato il pasto saltato. Ma questa è la fine della storia, e ci arriviamo.</p>
+
+      <h3>L'impianto audio</h3>
+      <p>Quest'anno ho voluto fare le cose un po' più sul serio lato audio rispetto alle edizioni precedenti. Oltre ai soliti microfoni per i presentatori, ho aggiunto due microfoni panoramici per catturare meglio il suono dell'ambiente, e ho collegato al mixer anche la tastiera — serviva per l'Hallelujah, il brano in cui i bambini cantavano con l'accompagnamento suonato live da Andrea. L'allestimento ha richiesto parecchio tempo, anche per colpa di un cavo XLR difettoso che non trasmetteva segnale: un po' di debugging sul momento, qualche prova, finché tutto non ha cominciato a funzionare come doveva. Non è il tipo di problema che ti fa perdere la calma, ma di sicuro non aiuta quando hai ancora mezza palestra da sistemare.</p>
+
+      <h3>Il tema: Shrek</h3>
+      <p>Il tema scelto per quest'anno era Shrek, e una delle idee più divertenti è stata quella di far travestire ogni insegnante da un personaggio del film — sia per fare la sorpresa ai bambini quando sarebbero arrivati, sia per dare allo spettacolo un sapore diverso dal solito. Nel pomeriggio, mentre io mi occupavo dell'audio, Lara e Diego allestivano la scenografia: dei grandi cartelloni a tema realizzati dalla mamma di Lara, con disegni dedicati ai personaggi, che hanno trasformato la palestra dell'oratorio in qualcosa di decisamente più shrekiano del solito.</p>
+
+      <p>La struttura del saggio seguiva quella del film: si è aperto con un bambino che leggeva dal libro la storia della principessa Fiona — la maledizione, la trasformazione notturna in orco — finché la lettura non è stata "interrotta" dall'entrata in scena di Shrek. Da lì è partito il primo brano, <em>All Star</em>, eseguito dagli Esploratori con tubi musicali e bacchette. Poi sono arrivati tre brani degli Eroi con i loro strumenti, un brano coreografico con pianoforte live suonato da Andrea, e altri brani degli Esploratori delle due scuole — tra cui <em>Best Years of Our Lives</em>, eseguito con bacchette e percussioni. A chiudere, il brano degli insegnanti tutti insieme.</p>
+
+      <p>La palestra era piena come ogni anno: circa 110 allievi, più due genitori a testa, più nonni e qualche parente. Una bella folla, insomma, e il risultato è che la temperatura della palestra è salita rapidamente a livelli da sauna. Per fortuna c'era stato un temporale che aveva rinfrescato l'aria, e una corrente discreta girava nella palestra per tutta la sera. Ho sudato, ma meno del previsto — e visto che indossavo un pigiama in pile, era una questione non secondaria.</p>
+
+      <h3>Ciuchino</h3>
+      <p>Già, il costume. Avevo scelto uno di quei pigiami interi in pile a tema asino: cappuccio con la testa di ciuchino completa di orecchie, codina sul retro, e quattro zoccoli — uno per mano, uno per piede. Una scelta che in una palestra a 28 gradi di fine maggio potrebbe sembrare discutibile, ma che sul piano estetico era impeccabile. Mi sono calato nel personaggio con grande dedizione.</p>
+
+      <h3>La gara delle scatolette</h3>
+      <p>Una delle idee più riuscite della serata è stata di Ilaria, l'insegnante di flauto: invece di raccogliere semplicemente delle offerte volontarie, abbiamo trasformato la cosa in un concorso. Ogni insegnante aveva la sua scatolina personalizzata con il disegno del personaggio che interpretava, e il pubblico poteva "votare" il travestimento preferito mettendo i soldi nella scatolina corrispondente — più si metteva, più si votava. Un modo per raccogliere qualcosa per il progetto e allo stesso tempo tenere alta l'attenzione del pubblico anche dopo la fine dello spettacolo.</p>
+
+      <p>Mi sono classificato quinto, il che considero un risultato onorevole date le circostanze. Ha vinto, meritatamente, la scatolina di Shrek e Fiona — Lores e Renato si erano travestiti da protagonisti del film, e battere i protagonisti era oggettivamente difficile. Quinto posto, comunque. Sono soddisfatto.</p>
+
+      <h3>Com'è andata</h3>
+      <p>Il saggio è andato molto bene, e ne sono contento davvero. Il brano finale degli insegnanti non è stato eseguito alla perfezione — e lo dico io che sono il primo a essere pignolo su queste cose — ma con il caldo, i travestimenti e l'energia della serata, eravamo tutti soddisfatti lo stesso. Certe sere il risultato non si misura solo con la pulizia dell'esecuzione.</p>
+
+      <p>Ho montato il video completo del saggio, se vuoi farti un'idea di com'è andata: <a href="https://youtu.be/YNwoImvcq78?si=dKgJKIV4pxD3JbVr" target="_blank" rel="noopener">puoi guardarlo qui su YouTube</a>. Nella stessa playlist trovi anche i saggi degli anni precedenti — il saggio di Natale e quello di fine anno scorso — per chi volesse fare un confronto o semplicemente rivedersi: <a href="https://youtube.com/playlist?list=PL1o1uYsfqEiNMoUeWcZdVanJ-cvprRj1a&si=ubxqBfNovMM_habf" target="_blank" rel="noopener">playlist completa</a>.</p>
+
+      <p>È un bel progetto, la <a href="scuola-che-sbanda.html">Scuola che sBanda</a>. Siamo un gruppo di insegnanti giovani, e riusciamo a prenderlo sul serio senza smettere di divertirci — che è probabilmente la combinazione giusta per farlo funzionare. Tanti bambini non continueranno con la musica, è normale e ci sta, ma se anche solo qualcuno va avanti è già un successo più che sufficiente.</p>
+
+      <p>Dopodiché, passata la mezzanotte, tutti gli insegnanti si sono ritrovati al McDonald's a recuperare la cena abbondantemente saltata. Fine della serata, decisamente meritata.</p>
+    `,
+  },
+
   { id: "concerto-anfiteatro-la-cava-2026",
     title: "Fusione all'Anfiteatro La Cava",
     date: "2026-05-25",
@@ -50,8 +98,7 @@ const POSTS = [
       <p>È il terzo anno che facciamo questo concerto all'Anfiteatro La Cava, e ogni volta la conversazione post-concerto tra i musicisti si concentra sullo stesso tema: il caldo. La location è davvero bella, ma le quattro e mezza di fine maggio è probabilmente l'orario peggiore possibile. Spero che in futuro si riesca a spostare il concerto in serata, magari dopo cena, quando la temperatura scende e anche la qualità sonora — per tutti, pubblico e musicisti — ne guadagna.</p>
       <p>La sera ero distrutto e non soddisfatto di come ho suonato — il caldo ha sicuramente fatto la sua parte.</p>
     `,
-},
-
+  },
 
   { id: "raduno-bandistico-cogliate-2026",
     title: "Raduno bandistico a Cogliate — com'è andata",
@@ -111,7 +158,11 @@ const POSTS = [
     eventDate: "2026-05-28",
     eventTime: "21:00",
     eventPlace: "Palazzolo Milanese",
-    tags: ["musica"],
+    tags: ["musica", "la scuola che sbanda"],
+    relatedPost: {
+      id: "saggio-scuola-che-sbanda-2026",
+      label: "📖 Leggi com'è andata:"
+    },
     excerpt: "Il saggio di fine anno de La Scuola che sBanda — tema: Shrek. Vieni a sentire i nostri piccoli musicisti!",
     content: `
       <p>Giovedì 28 maggio si tiene il <strong>saggio di fine anno</strong> del progetto <a href="scuola-che-sbanda.html">La Scuola che sBanda</a>, il percorso con cui la <a href="banda-palazzolo.html">Banda di Palazzolo Milanese</a> avvicina i bambini delle elementari alla musica bandistica.</p>
