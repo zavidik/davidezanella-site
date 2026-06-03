@@ -132,7 +132,7 @@ const POSTS = [
   },
 
   { id: "concerto-cusano-2-giugno-2026-bacheca",
-    title: "Concerto per la Festa della Repubblica — Banda di Cusano Milanino",
+    title: "ANNULLATO Concerto per la Festa della Repubblica — Banda di Cusano Milanino",
     date: "2026-05-16",
     cover: "",
     showInGallery: false,
@@ -146,6 +146,7 @@ const POSTS = [
       <p>C'è poco da dire, un bel concerto nel giorno in cui si festeggia la festa della Repubblica italiana.</p>
       <p>L'ingresso è libero e aperto a tutti.</p>
       <p>📅 2 Giugno 2026 · ore 16:00<br>📍 Cusano Milanino</p>
+      <p>A causa del maltempo il concerto è stato annullato e la cerimonia del 2 giungo si è svolta in sala consiliare.</p>
     `
   },
 
