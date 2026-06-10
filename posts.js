@@ -16,6 +16,128 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  { id: "esame-interconnessioni-2026",
+    title: "Introduzione alle Tecnologie di Interconnessione — superato!",
+    date: "2026-06-10",
+    cover: "img/posts/esame-interconnessioni-2026.jpg",
+    showInGallery: false,
+    pinned: false,
+    tags: ["lavoro", "università"],
+    relatedPost: {
+      id: "",
+      label: ""
+    },
+    excerpt: "Tre parziali, fibra ottica, satelliti e reti di accesso. Voto: 28 — e sono contento così.",
+    content: `
+      <p>Oggi ho chiuso uno degli esami a scelta del terzo anno: <strong>Introduzione alle Tecnologie di Interconnessione</strong>.
+        Non era strutturato come un esame unico, ma suddiviso in tre parziali distribuiti nel corso del semestre — una formula
+        che tutto sommato ho trovato sensata, perché permette di affrontare i vari blocchi di argomenti con la testa fresca.</p>
+      <p>Il <strong>primo parziale</strong>, il 18 aprile, riguardava le connessioni in fibra ottica: sia all'interno dei data center
+        che verso l'esterno, quindi tutto il tema dei collegamenti ottici su scala diversa. È andato molto bene: <strong>10 punti su 12</strong>.</p>
+      <p>Il <strong>secondo parziale</strong>, l'8 maggio, era dedicato alle connessioni satellitari — potenza di trasmissione,
+        direttività delle antenne e analisi delle interferenze, tra cui pioggia, nubi gassose e tutto ciò che si mette di mezzo
+        tra un segnale e il suo destinatario. Anche qui sono riuscito a cavarmela bene: <strong>7,04 punti su 8</strong>.</p>
+      <p>Il <strong>terzo parziale</strong>, il 5 giugno, chiudeva il cerchio con le reti di accesso — l'ultimo tratto che collega
+        la rete all'utente finale. Si parlava di reti PON, fibra ottica verso casa, ma anche delle vecchie connessioni su doppino
+        di rame, gestione del bitrate lato fornitore e una breve introduzione all'IoT.
+        Risultato: <strong>11,3 punti su 13</strong>.</p>
+      <p>Il totale è stato <strong>28,34 su 33</strong> (i professori tengono tre punti di margine per assegnare la lode).
+        Il voto finale è stato <strong>28</strong>. Sinceramente contento: l'esame non era
+        particolarmente ostico rispetto ad altri che questo corso sa tirare fuori, però l'ho preparato bene e il risultato si vede.</p>
+      <p>Devo dire che la materia mi è piaciuta. C'è qualcosa di soddisfacente nello studiare come i dati viaggiano fisicamente
+        nel mondo — dalla fibra dentro un data center fino al satellite in orbita, passando per il cavo che arriva a casa tua.
+        Per chi studia ingegneria informatica come me, è uno di quegli esami che ti ricorda che dietro ogni connessione c'è
+        della fisica vera, e non solo software.</p>
+    `,
+  },
+
+  { id: "saggio-seconda-elementare-2026",
+    title: "Viaggio nella storia della MUSICA - Saggio finale",
+    date: "2026-06-10",
+    cover: "img/posts/saggio-seconda-elementare-2026.jpg",
+    pinned: false,
+    tags: ["musica", "lavoro"],
+    relatedPost: {
+      id: "",
+      label: "📌 Questo evento era stato annunciato qui:"
+    },
+    excerpt: "Una delle mie prime esperienze come ''tecnico audio''.",
+    content: `
+    <p>Se avete letto il post sul saggio della <a href="scuola-che-sbanda.html">Scuola che sBanda</a>, sapete già che in quell'occasione ho gestito l'audio con il <em>DoReMixer</em>
+      — il nostro Behringer X Air XR18, di proprietà dei <a href="doremitici.html">DoReMitici</a>. Sto piano piano imparando a usarlo,
+      e ogni occasione in cui posso metterci le mani è preziosa.</p>
+    <p>Qualche giorno dopo mi è capitata un'altra occasione, ancora più raccolta: Lara — un'insegnante della Scuola che sBanda e che durante l'anno ha portato avanti un altro progetto
+      musicale con le classi seconde elementari — mi ha chiesto di gestire l'impianto audio per il loro saggio di fine anno.
+      Il saggio si chiama <strong>Viaggio nella storia della musica</strong>, e il nome dice già tutto: i bambini, armati di copione e di grande entusiasmo,
+      hanno guidato il pubblico attraverso i secoli, dai canti gregoriani fino alla musica contemporanea, alternando letture e momenti musicali con body percussion
+      e piccoli strumenti a percussione — triangoli, tamburelli, legnetti, maracas, tubi sonori.</p>
+    <p>Il mio compito tecnico era ridotto all'osso: gestire il microfono dei presentatori e far partire la riproduzione dei brani che facevano da sottofondo
+      mentre i bambini ci suonavano sopra. Niente di complicato, eppure — come per l'altro saggio — già che ero lì ho filmato tutto e registrato l'audio,
+      così è venuto fuori anche un video ricordo del progetto. Se siete curiosi di vedere com'è andata, l'ho caricato su YouTube: <a href="https://youtu.be/TeFNr-ODGsI" target="_blank" rel="noopener">clicca qui!</a></p>
+    <p>È anche un progetto che rientra nell'orbita della <a href="banda-palazzolo.html">Corpo Musicale "Santa Cecilia 1900" APS di Palazzolo Milanese</a>,
+      sempre nell'ottica di avvicinare i più piccoli alla musica. E devo dire che vedere bambini di seconda elementare concentratissimi sui loro tubi sonori
+      fa sempre il suo effetto.</p>
+    <p>A fine giornata Lara ha voluto darmi un compenso — che non avevo né chiesto né messo in conto. Ho provato a rifiutare, ma ha insistito, e alla fine
+      ho ceduto. È stata una cosa piccola, quasi simbolica, però mi ha fatto pensare: forse è la prima volta che vengo pagato per qualcosa legato all'audio.
+      Una "prima esperienza lavorativa" tra mille virgolette, ma pur sempre qualcosa.</p>
+    <p>E in effetti il tecnico del suono è un mestiere che non mi dispiacerebbe approfondire, perché tocca esattamente i due mondi che sento miei:
+      da un lato c'è tutta la parte ingegneristica — fisica delle onde, acustica degli ambienti, elettronica — dall'altro c'è la musica.
+      Quando si lavora sul serio, non è per nulla banale: il sound check cambia non appena entra il pubblico, ogni sala si comporta diversamente,
+      e fare in modo che il suono arrivi bene a chi ascolta è una competenza vera. Per ora sono agli inizi, ma l'idea di crescere in questa direzione
+      non mi dispiace affatto.</p>
+    `,
+  },
+
+  { id: "festival-del-pandino-2026-bacheca",
+    title: "Festival del Pandino a Pandino",
+    date: "2026-06-10",
+    cover: "img/posts/locandina-festival-del-pandino-2026.jpg",
+    showInGallery: false,
+    pinned: true,
+    eventDate: "2026-06-20",
+    eventTime: "12:30",
+    eventPlace: "Pandino",
+    tags: ["musica", "servizio"],
+    relatedPost: {
+      id: "",
+      label: "📖 Leggi com'è andata:"
+    },
+    excerpt: "Panda a Pandino",
+    content: `
+      <p>Mi è stato chiesto di partecipare al festival della panda.</p>
+      <p>Sabato 20 giugno suonerò insieme al gruppo <a href="https://www.instagram.com/bubblyandblues_official" target="_blank" rel="noopener">Bubbly & Blues</a> a questo festival in cui ci saranno centinaia di macchine Panda.</p>
+      <p>Suoneremo dalle 12:30 alle 15:30 in un grandissimo campo in cui tutti i partecipanti parcheggeranno la loro panda.</p>
+      <p>Per maggiori informazioni sul festival vi lascio il link alla pagina Instagram: <a href="https://www.instagram.com/pandaapandino" target="_blank" rel="noopener">@pandaapandino</a></p>
+      <p>Se hai una panda non puoi mancare!</p>
+      <p>📅 20 Giugno 2026 · 12:30<br>📍 Pandino</p>
+    `
+  },
+
+  { id: "concerto-vittuone-palazzolo-morricone-2026-bacheca",
+    title: "C'era una volta Ennio Morricone",
+    date: "2026-06-10",
+    cover: "img/posts/locandina-concerto-vittuone-palazzolo-morricone-2026.jpg",
+    showInGallery: false,
+    pinned: true,
+    eventDate: "2026-06-13",
+    eventTime: "21:00",
+    eventPlace: "Vittuone",
+    tags: ["musica", "banda palazzolo", "concerto"],
+    relatedPost: {
+      id: "",
+      label: "📖 Leggi com'è andata:"
+    },
+    excerpt: "Il concerto a tema Morricone: 2 bande e 1 coro!",
+    content: `
+      <p>La Banda di Palazzolo Milanese va in trasferta!</p>
+      <p>Una collaborazione con un'altra banda e un coro, per suonare un concerto intero a tema Ennio Morricone.</p>
+      <p>La collaborazione è con la banda di Vittuone e il coro di Marcallo con Casone.</p>
+      <p>Come si legge nella locandina faremo una replica dello stesso concerto qui a Paderno Dugnano, nel Parco Lago Nord, ma bisognerà aspettare la fine di settembre.</p>
+      <p>Conviene venire a sentire questa domenica a Vittuone, vi aspettiamo!</p>
+      <p>📅 13 Giugno 2026 · 21:00<br>📍 Vittuone, Parco A. Lincoln </p>
+    `
+  },
+
   { id: "saggio-scuola-che-sbanda-2026",
     title: "Saggio di fine anno – La Scuola che sBanda",
     date: "2026-05-30",
@@ -93,6 +215,7 @@ const POSTS = [
       <h2>Il video (quasi)</h2>
       <p>Avevo portato la macchina fotografica per filmare il concerto, ma durante la giornata ho scoperto che c'era già un signore — appassionato di bande, gira per diverse città a documentarle — che si era occupato lui di riprendere tutto. Così ho potuto passare la fotocamera a mio papà, che l'ha usata per il suo scopo naturale: fare foto.</p>
       <p>Il video arriverà quando il signore mi manderà il file. A quel punto monterò tutto con l'audio che ho registrato io, e spero che si senta finalmente quella differenza di qualità che cercavo.</p>
+      <h3>Aggiornamento! Il video è arrivato, lo trovi<a href="https://youtu.be/Bmlzw7CcmCQ" target="_blank" rel="noopener"> qui su YouTube</a></h3>
 
       <h2>Una riflessione sulla location</h2>
       <p>È il terzo anno che facciamo questo concerto all'Anfiteatro La Cava, e ogni volta la conversazione post-concerto tra i musicisti si concentra sullo stesso tema: il caldo. La location è davvero bella, ma le quattro e mezza di fine maggio è probabilmente l'orario peggiore possibile. Spero che in futuro si riesca a spostare il concerto in serata, magari dopo cena, quando la temperatura scende e anche la qualità sonora — per tutti, pubblico e musicisti — ne guadagna.</p>
@@ -146,7 +269,9 @@ const POSTS = [
       <p>C'è poco da dire, un bel concerto nel giorno in cui si festeggia la festa della Repubblica italiana.</p>
       <p>L'ingresso è libero e aperto a tutti.</p>
       <p>📅 2 Giugno 2026 · ore 16:00<br>📍 Cusano Milanino</p>
+      <h3>
       <p>A causa del maltempo il concerto è stato annullato e la cerimonia del 2 giungo si è svolta in sala consiliare.</p>
+      </h3>
     `
   },
 
