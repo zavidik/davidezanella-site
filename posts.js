@@ -16,6 +16,78 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  { id: "prima-messa-don-paolo-palazzolo-2026",
+    title: "La prima messa di Don Paolo",
+    date: "2026-06-14",
+    tags: ["musica"],
+    excerpt: "Stamattina ho suonato in quartetto di ottoni per la prima messa di Don Paolo, nuovo sacerdote di Palazzolo Milanese. Musica di chiesa, intonazione, accordi tenuti — un tipo di suono che amo particolarmente.",
+    content: `
+      <p>Stamattina prima messa di Don Paolo, giovane sacerdote di Palazzolo Milanese. Ieri sera aveva ricevuto l'ordinazione in Duomo a Milano e oggi la sua prima messa qui, nel paese in cui è cresciuto.</p>
+
+      <p>Ho suonato in un quartetto di ottoni insieme a Luciano al basso tuba, Fulvio e Mattia alle trombe. Abbiamo accompagnato la messa insieme al coro e all'organo, intervenendo principalmente sui ritornelli. Il programma comprendeva brani classici della liturgia: <em>Alleluia a Cristo Risorto</em>, l'<em>Amen</em>, <em>I cieli narrano</em> (Salmo 18), l'ultima parte del <em>Gloria</em>, e <em>Cristo è tutto per noi</em> — quest'ultima eseguita più volte, sia all'entrata che all'uscita. Durante la comunione abbiamo invece suonato un brano solo ottoni, <em>Hai dato un cibo</em>, senza coro né organo.</p>
+
+      <p>È il tipo di musica che mi piace particolarmente. Non perché sia più semplice — anzi — ma perché le note sono tenute, gli accordi respirano, e conta moltissimo la qualità del suono e l'intonazione. Nella musica più veloce e incalzante le note passano in fretta e certi dettagli si perdono nel flusso; qui invece ogni accordo è esposto, e si sente tutto. È un ascolto diverso, più esigente in un certo senso.</p>
+
+      <p>Don Paolo personalmente non lo conosco — sono arrivato a Palazzolo già adolescente, quindi non ho condiviso con lui gli anni di parrocchia da ragazzo. Ma è stata comunque una bella mattinata, e a quanto pare il quartetto ha fatto una buona impressione: abbiamo ricevuto commenti positivi sia dal coro che da qualcuno tra i fedeli. Chissà che non ci siano altre occasioni per ritrovarci.</p>
+
+      <p>Alla fine della messa, con il rinfresco all'esterno e la banda che suonava qualche brano per festeggiare, mi sono unito anch'io. Un modo piacevole per chiudere la mattinata.</p>
+    `
+  },
+
+  { id: "concerto-palazzolo-vittuone-morricone-2026-bacheca",
+    title: "C'era una volta Ennio Morricone - Replica a Paderno",
+    date: "2026-06-14",
+    cover: "img/posts/locandina-concerto-vittuone-palazzolo-morricone-2026.jpg",
+    showInGallery: false,
+    pinned: true,
+    eventDate: "2026-09-27",
+    eventTime: "16:30",
+    eventPlace: "Paderno Dugnano",
+    tags: ["musica", "banda palazzolo", "concerto"],
+    relatedPost: {
+      id: "",
+      label: "📖 Leggi com'è andata:",
+    },
+    excerpt: "Il concerto a tema Morricone: 2 bande e 1 coro! Nell'anfiteatro del Parco Lago Nord",
+    content: `
+      <p>Dopo la trasferta di giugno a Vittuone, ecco la replica a Paderno Dugnano.</p>
+      <p>La collaborazione con la banda di Vittuone e il coro di Marcallo con Casone continua, nel bellissimo anfiteatro del Parco Lago Nord.</p>
+      <p>Se volete sentire qualcosa in anticipo potete guardare <a href="https://youtu.be/u5Q90xXFBA4" target="_blank" rel="noopener">questo video su YouTube</a>, ma è garantito che dal vivo sarà ancora più bello. Vi aspettiamo!</p>
+      <p>📅 27 Settembre 2026 · 16:30<br>📍 Paderno Dugnano, Anfiteatro Parco Lago Nord</p>
+    `
+  },
+
+  { id: "concerto-vittuone-palazzolo-morricone-2026",
+    title: "Una serata con Morricone al Parco Lincoln",
+    date: "2026-06-14",
+    cover: "img/posts/concerto-vittuone-palazzolo-morricone-2026.jpg",
+    showInGallery: true,
+    pinned: false,
+    tags: ["musica", "banda palazzolo", "concerto"],
+    excerpt: "Concerto a tema Morricone al Parco A. Lincoln di Vittuone, insieme alla Banda di Vittuone e al Coro Vis Canti di Marcallo con Casone. Una bella serata all'aperto, pubblico numeroso e qualche emozione inaspettata.",
+    relatedPost: {
+      id: "concerto-vittuone-palazzolo-morricone-2026-bacheca",
+      label: "📌 Questo evento era stato annunciato qui:"
+    },
+    content: `
+      <p>Ieri sera concerto al Parco A. Lincoln di Vittuone, con una formazione un po' speciale: sul palco insieme a noi c'era il Corpo Musicale Giuseppe Verdi APS-ETS di Vittuone e il Coro Vis Canti APS di Marcallo con Casone. Il tema della serata era interamente dedicato a Ennio Morricone — un programma impegnativo e bellissimo, di cui avevo già scritto nell'annuncio in bacheca.</p>
+
+      <p>Siamo arrivati al parco verso le 19:45 per sistemarci e fare le prove del caso: qualche brano per tarare i volumi, testare i microfoni del coro, trovare l'equilibrio giusto tra le formazioni. Poco dopo le 21:00 si è iniziato. Il concerto è durato circa un'ora e mezza, bis compreso — non lunghissimo, ma denso e ben costruito.</p>
+
+      <p>Il programma comprendeva: <em>Giù la testa</em>, <em>Here's to You</em>, <em>La Califfa</em>, <em>Moment for Morricone</em>, <em>Per un pugno di dollari</em>, <em>Playing Love</em>, <em>Angele Dei</em> e <em>Cinema Paradiso</em>. Come bis, siamo tornati su <em>Moment for Morricone</em> — e difficilmente poteva essere altrimenti.</p>
+
+      <p>La serata era perfetta: aria fresca, niente afa, uno di quei sabati sera di inizio estate in cui stare all'aperto è un piacere. Il pubblico era numeroso e presente, si sentiva che la gente aveva voglia di esserci. Tutto sommato sono soddisfatto di come ho suonato — qualche errorino qua e là c'è sempre, la perfezione è un obiettivo mobile, però l'insieme reggeva bene e io me la sono goduta.</p>
+
+      <p>Una delle cose che mi è rimasta più impressa della serata è stato l'incontro con il maestro della Banda di Vittuone, Ivano Dell'Acqua. È una figura che va ben oltre Vittuone: ha diretto diverse bande della zona, tra cui quella di Bresso, dove mio nonno ha suonato per tanti anni. Mio papà gliel'ha detto, si è presentato come il figlio di Cesarino — e il maestro se lo ricordava. C'è stato un momento bello: mio papà gli ha detto <em>"tu hai diretto mio padre, e stasera hai diretto mio figlio — e anche mia moglie"</em>, visto che mia mamma suona il clarinetto. Ci abbiamo provato in tutti i modi a far iniziare anche mio papà con qualche strumento, ma quella è una battaglia persa in partenza.</p>
+
+      <p>Dopo il concerto rinfresco con qualcosa da mangiare e da bere, chiacchiere, e poi via verso casa. Da Vittuone a Paderno Dugnano ci vuole la sua mezz'ora buona, ma era una di quelle serate che vale il viaggio.</p>
+
+      <p>Come anticipato nel post correlato in bacheca, ci sarà una <strong>replica</strong> di questo concerto a Paderno Dugnano, nell'Anfiteatro del Parco Lago Nord, il <strong>27 settembre 2026</strong>.</p>
+
+      <p>Come faccio spesso, ho caricato il <a href="https://youtu.be/u5Q90xXFBA4" target="_blank" rel="noopener">video del concerto su YouTube</a>, questa volta però non ho registrato con microfoni e mixer, ma ho solo unito i vari video ricevuti dal pubblico.</p>
+    `
+  },
+
   { id: "esame-interconnessioni-2026",
     title: "Introduzione alle Tecnologie di Interconnessione — superato!",
     date: "2026-06-10",
@@ -125,7 +197,7 @@ const POSTS = [
     eventPlace: "Vittuone",
     tags: ["musica", "banda palazzolo", "concerto"],
     relatedPost: {
-      id: "",
+      id: "concerto-vittuone-palazzolo-morricone-2026",
       label: "📖 Leggi com'è andata:"
     },
     excerpt: "Il concerto a tema Morricone: 2 bande e 1 coro!",
@@ -1222,7 +1294,7 @@ const POSTS = [
       e guardare il paesaggio suggestivo di quel meraviglio parco</p>
       <p>Il concerto è di pomeriggio e il mio consiglio è di arrivare al parco molto in anticipo per avere anche il tempo di fare una passeggiata e goderselo tutto.</p>
       <p>Ci sarà la <strong>Junior Band</strong> ad aprire il concerto!</p>
-      <p>📅 24 Maggio 2026 · 16:30<br>📍 Paderno Dugnano, Anfiteatro Parco La Cava </p>
+      <p>📅 24 Maggio 2026 · 16:30<br>📍 Paderno Dugnano, Anfiteatro Parco Lago Nord </p>
     `
   },
 
