@@ -843,26 +843,28 @@ const POSTS = [
         <li><a href="#pg-bulbs">Lampadine Smart</a></li>
         <li><a href="#pg-switches">Interruttori Smart</a></li>
         <li><a href="#pg-shelly">Relè Smart</a></li>
+        <li><a href="#pg-table-wrap">Tabella comparativa</a></li>
+        <li><a href="#pg-conclusion">Conclusioni</a></li>
       </ol>
     </div>
 
     <!-- ── 1. Lampadine Smart ── -->
-    <div id="pg-bulbs" class="pg-card">
-      <div class="pg-card-header">
-        <div class="pg-card-icon">💡</div>
-        <div class="pg-card-header-text">
-          <h3>1. Lampadine Smart</h3>
-          <p>Philips Hue, LIFX, Tuya…</p>
+    <details id="pg-bulbs" class="pg-accordion">
+      <summary>
+        <span>💡</span>
+        <div class="pg-accordion-summary-text">
+          <span class="pg-accordion-title">1. Lampadine Smart</span>
+          <span class="pg-accordion-subtitle">Philips Hue, LIFX, Tuya…</span>
         </div>
-        <div class="pg-difficulty">
+        <div class="pg-accordion-summary-difficulty">
           <span>Difficoltà</span>
           <div class="pg-dots">
             <span class="pg-dot on"></span>
             <span class="pg-dot"></span><span class="pg-dot"></span><span class="pg-dot"></span><span class="pg-dot"></span>
           </div>
         </div>
-      </div>
-      <div class="pg-card-body">
+      </summary>
+      <div class="pg-accordion-body">
         <p>
           Le lampadine smart si sostituiscono alle lampadine tradizionali senza modificare l'impianto
           elettrico. Sono la soluzione più semplice per iniziare: plug &amp; play, supporto colore RGBW,
@@ -954,25 +956,25 @@ const POSTS = [
           Zigbee, a differenza del Wi-Fi che è già presente in ogni casa.
         </p>
       </div>
-    </div>
+    </details>
 
     <!-- ── 2. Interruttori Smart ── -->
-    <div id="pg-switches" class="pg-card">
-      <div class="pg-card-header">
-        <div class="pg-card-icon">🔲</div>
-        <div class="pg-card-header-text">
-          <h3>2. Interruttori Smart</h3>
-          <p>Sonoff TX, Tuya Wi-Fi Switch, Fibaro…</p>
+    <details id="pg-switches" class="pg-accordion">
+      <summary>
+        <span>🔲</span>
+        <div class="pg-accordion-summary-text">
+          <span class="pg-accordion-title">2. Interruttori Smart</span>
+          <span class="pg-accordion-subtitle">Sonoff TX, Tuya Wi-Fi Switch, Fibaro…</span>
         </div>
-        <div class="pg-difficulty">
+        <div class="pg-accordion-summary-difficulty">
           <span>Difficoltà</span>
           <div class="pg-dots">
             <span class="pg-dot on"></span><span class="pg-dot on"></span>
             <span class="pg-dot on"></span><span class="pg-dot"></span><span class="pg-dot"></span>
           </div>
         </div>
-      </div>
-      <div class="pg-card-body">
+      </summary>
+      <div class="pg-accordion-body">
         <p>
           Gli interruttori smart sostituiscono i normali interruttori a parete e controllano
           la linea di alimentazione verso luci tradizionali. Mantengono l'usabilità fisica
@@ -1015,25 +1017,25 @@ const POSTS = [
           proprio questo problema, permettendo di mantenere l'interruttore originale invariato.
         </p>
       </div>
-    </div>
+    </details>
 
     <!-- ── 3. Relè Smart ── -->
-    <div id="pg-shelly" class="pg-card">
-      <div class="pg-card-header">
-        <div class="pg-card-icon">⚡</div>
-        <div class="pg-card-header-text">
-          <h3>3. Relè Smart (Shelly, Sonoff Mini…)</h3>
-          <p>Installazione in scatola, estetica invariata</p>
+    <details id="pg-shelly" class="pg-accordion">
+      <summary>
+        <span>⚡</span>
+        <div class="pg-accordion-summary-text">
+          <span class="pg-accordion-title">3. Relè Smart</span>
+          <span class="pg-accordion-subtitle">Shelly, Sonoff Mini… installazione in scatola, estetica invariata</span>
         </div>
-        <div class="pg-difficulty">
+        <div class="pg-accordion-summary-difficulty">
           <span>Difficoltà</span>
           <div class="pg-dots">
             <span class="pg-dot on"></span><span class="pg-dot on"></span>
             <span class="pg-dot on"></span><span class="pg-dot on"></span><span class="pg-dot"></span>
           </div>
         </div>
-      </div>
-      <div class="pg-card-body">
+      </summary>
+      <div class="pg-accordion-body">
         <p>
           I relè smart si inseriscono dentro la scatola dell'interruttore o di derivazione,
           senza sostituirlo visivamente. L'interruttore originale rimane al suo posto e continua
@@ -1094,12 +1096,11 @@ const POSTS = [
           lampadine compatibili.
         </p>
       </div>
-    </div>
+    </details>
 
     <!-- ── Tabella comparativa ── -->
     <h2>Tabella comparativa</h2>
-
-    <div class="pg-table-wrap">
+    <div id="pg-table-wrap" class="pg-table-wrap">
       <table>
         <thead>
           <tr>
@@ -1146,7 +1147,7 @@ const POSTS = [
     <p style="font-size:.8rem; color: var(--muted); margin-top: 8px;">* Esistono modelli di relè dimmerabili, compatibili con lampadine che supportano la dimmerabilità.</p>
 
     <!-- ── Conclusione ── -->
-    <div class="pg-conclusion">
+    <div id="pg-conclusion" class="pg-conclusion">
       <h2>Quale soluzione scegliere?</h2>
       <p>
         Non esiste una risposta universale: la scelta dipende dall'impianto, dal budget,

@@ -612,6 +612,93 @@ blockquote::before {
   margin-bottom: 14px;
 }
 
+
+/* ══════════════════════════════════════════
+   Accordion (details/summary)
+   ══════════════════════════════════════════ */
+
+details.pg-accordion {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+details.pg-accordion[open] {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+details.pg-accordion > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  user-select: none;
+  background: var(--surface);
+  transition: background 0.15s;
+}
+
+details.pg-accordion > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.pg-accordion > summary::after {
+  content: "›";
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: transform 0.2s;
+  color: var(--muted);
+}
+
+details.pg-accordion[open] > summary::after {
+  transform: rotate(90deg);
+}
+
+details.pg-accordion > summary:hover {
+  background: var(--surface-hover, var(--border));
+}
+
+.pg-accordion-summary-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+}
+
+.pg-accordion-summary-text .pg-accordion-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.pg-accordion-summary-text .pg-accordion-subtitle {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.pg-accordion-summary-difficulty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-right: 0.5rem;
+}
+
+.pg-accordion-summary-difficulty .pg-dots {
+  display: flex;
+  gap: 3px;
+}
+
+details.pg-accordion .pg-accordion-body {
+  padding: 0 1.4rem 1.4rem;
+}
+
+
 /* ══════════════════════════════════════════
    LIGHTBOX
    ══════════════════════════════════════════ */
