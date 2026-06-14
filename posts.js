@@ -91,7 +91,7 @@ const POSTS = [
   { id: "festival-del-pandino-2026-bacheca",
     title: "Festival del Pandino a Pandino",
     date: "2026-06-10",
-    cover: "img/posts/locandina-festival-del-pandino-2026.jpg",
+    cover: "img/posts/logo-festival-del-pandino.jpg",
     showInGallery: false,
     pinned: true,
     eventDate: "2026-06-20",
@@ -110,6 +110,7 @@ const POSTS = [
       <p>Per maggiori informazioni sul festival vi lascio il link alla pagina Instagram: <a href="https://www.instagram.com/pandaapandino" target="_blank" rel="noopener">@pandaapandino</a></p>
       <p>Se hai una panda non puoi mancare!</p>
       <p>📅 20 Giugno 2026 · 12:30<br>📍 Pandino</p>
+      <img src="img/posts/locandina-festival-del-pandino-2026.jpg" alt="Descrizione dell'immagine">
     `
   },
 
@@ -1183,19 +1184,20 @@ const POSTS = [
   { id: "concerto-estate-cusano-2026-bacheca",
     title: "Concerto d'Estate — Banda di Cusano Milanino",
     date: "2026-03-14",
-    cover: "",
+    cover: "img/posts/locandina-concerto-estate-cusano-2026.jpg",
+    showInGallery: false,
     pinned: true,
     eventDate: "2026-06-20",
-    eventTime: "21:00",
+    eventTime: "21:15",
     eventPlace: "Cusano Milanino",
     tags: ["musica", "banda cusano", "concerto"],
-    excerpt: "Appuntamento con il Concerto d'Estate della Banda di Cusano Milanino. Una serata di musica sotto le stelle — tutti invitati!",
+    excerpt: "Appuntamento con il Concerto d'Estate della Banda di Cusano Milanino: Cartoon Symphony. Una serata di musica sotto le stelle — tutti invitati!",
     content: `
       <p>Vi aspettiamo al <strong>Concerto d'Estate</strong> della Banda di Cusano Milanino!</p>
+      <p>Il titolo di quest'anno è <strong>Cartoon Symphony</strong>.</p>
       <p>Una serata all'aperto con un programma incredibile a tema "Cartoni animati"!</p>
       <p>L'ingresso è libero e aperto a tutti.</p>
-      <p>Per il luogo ci saranno aggiornamenti su questa pagina (arriverà anche la locandina!)</p>
-      <p>📅 20 Giugno 2026 · ore 21:00<br>📍 Cusano Milanino</p>
+      <p>📅 20 Giugno 2026 · ore 21:15<br>📍 Piazza Allende, Cusano Milanino</p>
     `
   },
 
