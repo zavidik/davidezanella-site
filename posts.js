@@ -16,6 +16,30 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+
+  { id: "concerto-seveso-2026-bacheca",
+    title: "Concerto a Seveso - 50 anni dal Disastro",
+    date: "2026-06-17",
+    cover: "img/posts/locandina-concerto-seveso-2026.jpg",
+    showInGallery: false,
+    pinned: true,
+    eventDate: "2026-06-28",
+    eventTime: "21:00",
+    eventPlace: "Seveso",
+    tags: ["musica", "concerto"],
+    relatedPost: {
+      id: "",
+      label: "📖 Leggi com'è andata:",
+    },
+    excerpt: "50 anni dopo il Disastro di Seveso",
+    content: `
+      <p>Domenica 28 giugno suonerò insieme a Elisa con la banda di Seveso.</p>
+      <p>Il concerto è organizzato per ricordare il disastro avvenuto a Seveso 50 anni fa, lascio <a href="https://it.wikipedia.org/wiki/Disastro_di_Seveso" target="_blank" rel="noopener">il link a Wikipedia</a> per chi volesse approfondire.</p>
+      <p>La banda di Seveso eseguirà lo stesso concerto anche il 20 giugno, come scritto nella locandina. Io ed Elisa saremo presenti solo il 28 giugno dato che il 20 saremo impegnati con <a href="banda-cusano.html">la banda di Cusano Milanino</a> (nella bacheca potete trovare le informazioni anche per quell'evento).</p>
+      <p>📅 28 Giugno 2026 · 21:00<br>📍 Seveso, Chiesa S. Clemente</p>
+    `
+  },
+
   { id: "prima-messa-don-paolo-palazzolo-2026",
     title: "La prima messa di Don Paolo",
     date: "2026-06-14",
