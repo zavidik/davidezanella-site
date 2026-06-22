@@ -17,6 +17,60 @@
 
 const POSTS = [
 
+  { id: 'concerto-estate-cusano-2026',
+    title: 'Cartoni animati, sincronizzazione e un heigh-ho da dimenticare',
+    date: '2026-06-22',
+    tags: ['musica'],
+    excerpt: 'Il concerto d\'estate della Banda di Cusano Milanino è quello che aspetto di più ogni anno. Quest\'anno il tema erano i cartoni animati, e tra Spongebob, Goldrake e i Sette Nani ho vissuto una serata che non dimentico facilmente.',
+    cover: 'img/posts/concerto-estate-cusano-2026.jpg',
+    relatedPosts: [
+      { id: 'festival-del-pandino-2026', label: '→ Il pomeriggio prima: Festival del Pandino' },
+      { id: 'festa-san-vito-gaggiano-2026', label: '→ Domenica mattina: festa di San Vito a Gaggiano' },
+      { id: 'raduno-misinto-saronno-2026', label: '→ Domenica pomeriggio: raduno bandistico a Saronno' },
+    ],
+    content: `
+      <p>Tra tutti i concerti dell'anno, quello estivo della Banda di Cusano Milanino è quello che aspetto di più. Il maestro Stefano Bertoni ha un modo di costruire i programmi — e soprattutto gli arrangiamenti — che mi sfida ogni volta, e ogni anno torno a casa con la sensazione di aver suonato qualcosa che valeva la pena preparare. Quest'anno il tema era i cartoni animati, e già dall'annuncio sapevo che sarebbe stata una bella serata.</p>
+
+      <p>Ero arrivato al concerto dopo un pomeriggio intero al Festival del Pandino, sotto il sole e con le gambe già stanche. Il mio timore era quello di arrivare con il labbro a pezzi — il concerto di Cusano non è mai una passeggiata a livello di resistenza. Invece, forse grazie al fatto che in questo periodo sto suonando tanto e studiando regolarmente a casa, ero sorprendentemente in forma. Il vero nemico della serata era il caldo — ma essendo un concerto serale, almeno il sole non picchiava direttamente.</p>
+
+      <p>Il programma è iniziato con la sigla di Spongebob, e qui mi è toccato un piccolo ruolo da attore: fare il capitano pirata dell'intro. Chi conosce la sigla sa che c'è una voce che chiede <em>«Siete pronti, ragazzi?»</em>, e il coro risponde <em>«Sì, signor capitano!»</em> — prima piano, poi forte. Quel capitano ero io. È andato bene, per fortuna, anche se non ero sincronizzato con il video. Dopo Spongebob è arrivato Ghostbusters — un arrangiamento diverso da quello che avevo suonato poche ore prima al <a href="post.html?id=festival-del-pandino-2026">Festival del Pandino</a> — poi la musica di Cars, il tema di Hercules <em>Go the Distance</em>, e un medley da Frozen.</p>
+
+      <p>Ma il brano che aspettavo di più, e che considero il cuore del concerto, era <em>Cartoon Super Hits</em>: quasi dieci minuti di medley arrangati direttamente dal maestro Bertoni, con dentro un'intera generazione di cartoni animati. Si partiva con l'Uomo Tigre, poi Mila e Shiro, Lady Oscar, David Gnomo Amico Mio, Pokémon con <em>Gotta Catch 'Em All</em>, Jeeg Robot d'Acciaio, Heidi, Ufo Robot Goldrake, e infine l'Incorreggibile Lupin. Suonavo tanto, mi piaceva, e la difficoltà era doppia: perché alle nostre spalle una società di eventi proiettava spezzoni originali di ogni cartone sincronizzati con la musica, e bisognava seguire il maestro con una precisione particolare — rispettare le velocità, tenere le corone, cambiare carattere al momento giusto — per restare allineati con il video. Una bella sfida, e più o meno ci siamo riusciti...</p>
+
+      <p>Dopo la pausa di metà concerto è arrivato il momento che, col senno di poi, fa più ridere. Durante il brano dei Sette Nani, ero io quello che doveva lanciare il famoso <em>heigh-ho</em> — il grido del nano — e gli altri dovevano rispondere. Il problema è che la scena sul video è cambiata all'improvviso, il nano è apparso quasi in anticipo rispetto a quello che mi aspettavo, non ho fatto in tempo a prepararmi, e quello che è uscito dalla mia bocca era qualcosa di difficilmente classificabile. Non era un'ottava. Non era nemmeno una nota definita. Era un tentativo eroico andato male, e me ne sono reso conto immediatamente. Ci rido, era solo un effetto scenico — la parte musicale vera e propria non c'entrava — però è il tipo di cosa che ti rimane in testa a fine serata.</p>
+
+      <p>Il resto della seconda parte è filato liscio: <em>You'll Be in My Heart</em> da Tarzan, un medley del Libro della Giungla, la colonna sonora di Dragon Trainer, la Famiglia Addams, e come bis un medley di classici Disney con <em>In Fondo al Mar</em>, il Re Leone, la Bella e la Bestia e Aladdin. Il pubblico era numeroso come sempre — a Cusano Milanino il concerto estivo è un appuntamento sentito, e una serata di giugno con il tema cartoni animati aveva attirato anche qualche bambino in più del solito.</p>
+
+      <p>A fine serata, con Elisa e qualcun altro, ci siamo fermati al McDonald's. Ho preso un gelato. Era la conclusione giusta per una giornata in cui avevo suonato praticamente senza sosta dal primo pomeriggio. Il giorno dopo avevo già altri due impegni musicali ad aspettarmi: una <a href="post.html?id=festa-san-vito-gaggiano-2026">processione al mattino</a> e un <a href="post.html?id=raduno-misinto-saronno-2026">raduno bandistico al pomeriggio</a>.</p>
+    `
+  },
+
+  { id: 'festival-del-pandino-2026',
+    title: 'Una street band tra le Panda: il Festival del Pandino',
+    date: '2026-06-22',
+    tags: ['musica'],
+    excerpt: 'Un sabato pomeriggio sotto il sole cocente del Cremasco, a suonare tra centinaia di Fiat Panda per il festival più particolare a cui abbia mai partecipato.',
+    cover: 'img/posts/festival-del-pandino-2026.jpg',
+    relatedPosts: [
+      { id: 'concerto-estate-cusano-2026', label: '→ La stessa sera: concerto d\'estate a Cusano' },
+      { id: 'festa-san-vito-gaggiano-2026', label: '→ Domenica mattina: festa di San Vito a Gaggiano' },
+      { id: 'raduno-misinto-saronno-2026', label: '→ Domenica pomeriggio: raduno bandistico a Saronno' },
+      { id: 'festival-del-pandino-2026-bacheca', label: '📌 Questo evento era stato annunciato qui:' },
+    ],
+    content: `
+      <p>Esiste un festival dedicato interamente alla Fiat Panda. Si tiene a Pandino, in provincia di Cremona — e sì, il nome non è una coincidenza. Io lo sapevo vagamente, ma non avevo idea di quanto fosse grande finché non ci sono andato a suonare con i <a href="https://www.instagram.com/bubblyandblues_official" target="_blank" rel="noopener">Bubbly & Blues</a>.</p>
+
+      <p>L'evento dura tre giorni, da venerdì a domenica. Io sono arrivato sabato 20 giugno verso mezzogiorno. La location originale del festival era il castello di Pandino, ma negli anni l'evento è cresciuto talmente tanto — in termini di macchine partecipanti — che il castello non bastava più. Un privato ha messo a disposizione un grande terreno vicino alla frazione di San Rocco, e lì si è spostata la parte principale: centinaia di Panda parcheggiate, cibo, birra, e gente felice di condividere la passione per un'utilitaria che non tramonta mai.</p>
+
+      <p>Il nostro ruolo era quello di intrattenere: eravamo in otto musicisti (più Flavio con il megafono), una piccola street band itinerante, e ci muovevamo tra la gente suonando. Ghostbusters, Smoke on the Water, Funky Town, Uptown Funk, Eye of the Tiger, Havana, I Feel Good, Thriller, Coco dei Lucky Chops — il repertorio era quello da piazza, immediato, pensato per far alzare la testa a chi stava mangiando un panino o sorseggiando una birra. Dato che ci spostavamo continuamente, i brani li abbiamo rifatti più volte in punti diversi del campo, così nessuno si perdeva niente.</p>
+      <img src="img/posts/festival-del-pandino-2026-2.jpg" alt="Festival del Pandino 2026">
+      <p>Il caldo era quello che era: trentacinque gradi, sole pieno, niente ombra. Per fortuna avevamo i cappellini dei <a href="https://www.instagram.com/bubblyandblues_official" target="_blank" rel="noopener">Bubbly & Blues</a>. Verso le quattordici ci hanno offerto una pausa — panino e birra — e poi si è ripreso. Alle 15:00 circa ci siamo spostati al castello di Pandino, dove c'era un'altra area del festival con tavoli, macchine esposte e gli organizzatori dell'evento, che erano quelli che avevano chiamato il gruppo. Abbiamo suonato anche lì, un'ultima tornata per salutarli come si deve, poi un'altra birra offerta e verso le sedici eravamo già in macchina verso casa.</p>
+
+      <p>È stata una di quelle giornate un po' fuori dall'ordinario. Non un concerto vero e proprio, niente palco né spartiti sul leggio — solo musica ambulante tra gente che ama una macchina. Mi è piaciuto. E sapevo già che la serata non era finita: avevo il <a href="post.html?id=concerto-estate-cusano-2026">concerto di Cusano</a> ad aspettarmi.</p>
+      <img src="img/posts/festival-del-pandino-2026-3.jpg" alt="Festival del Pandino 2026">
+    `
+  },
+
   { id: "concerto-seveso-2026-bacheca",
     title: "Concerto a Seveso - 50 anni dal Disastro",
     date: "2026-06-17",
@@ -193,9 +247,9 @@ const POSTS = [
     eventDate: "2026-06-20",
     eventTime: "12:30",
     eventPlace: "Pandino",
-    tags: ["musica", "servizio"],
+    tags: ["musica"],
     relatedPost: {
-      id: "",
+      id: "festival-del-pandino-2026",
       label: "📖 Leggi com'è andata:"
     },
     excerpt: "Panda a Pandino",
@@ -206,7 +260,7 @@ const POSTS = [
       <p>Per maggiori informazioni sul festival vi lascio il link alla pagina Instagram: <a href="https://www.instagram.com/pandaapandino" target="_blank" rel="noopener">@pandaapandino</a></p>
       <p>Se hai una panda non puoi mancare!</p>
       <p>📅 20 Giugno 2026 · 12:30<br>📍 Pandino</p>
-      <img src="img/posts/locandina-festival-del-pandino-2026.jpg" alt="Descrizione dell'immagine">
+      <img src="img/posts/locandina-festival-del-pandino-2026.jpg" alt="Locandina Festival del Pandino 2026">
     `
   },
 
@@ -1288,6 +1342,10 @@ const POSTS = [
     eventTime: "21:15",
     eventPlace: "Cusano Milanino",
     tags: ["musica", "banda cusano", "concerto"],
+    relatedPost: {
+      id: "concerto-estate-cusano-2026",
+      label: "📖 Leggi com'è andata:"
+    },
     excerpt: "Appuntamento con il Concerto d'Estate della Banda di Cusano Milanino: Cartoon Symphony. Una serata di musica sotto le stelle — tutti invitati!",
     content: `
       <p>Vi aspettiamo al <strong>Concerto d'Estate</strong> della Banda di Cusano Milanino!</p>

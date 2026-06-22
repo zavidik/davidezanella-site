@@ -104,16 +104,23 @@
           <div class="related-card-date">${formatDate(r.date)}</div>
         </a>`).join('')}</div>` : '';
 
-    const linkedPost = post.relatedPost ? POSTS.find(p => p.id === post.relatedPost.id) : null;
-    const linkedPostHtml = linkedPost ? `
+    // Supporta sia relatedPost (singolo, legacy) che relatedPosts (array, nuovo)
+    const relatedRefs = post.relatedPosts
+      ? post.relatedPosts
+      : post.relatedPost
+        ? [post.relatedPost]
+        : [];
+    const linkedPostsResolved = relatedRefs
+      .map(ref => ({ ref, found: POSTS.find(p => p.id === ref.id) }))
+      .filter(({ found }) => !!found);
+    const linkedPostHtml = linkedPostsResolved.length ? `
       <div class="post-divider"></div>
-      <div class="related-title">Post correlato</div>
-      <div class="related-grid">
-        <a class="related-card" href="post.html?id=${linkedPost.id}">
-          <div class="related-card-title">${post.relatedPost.label}</div>
-          <div class="related-card-date">${linkedPost.title}</div>
-        </a>
-      </div>` : '';
+      <div class="related-title">Post correlati</div>
+      <div class="related-grid">${linkedPostsResolved.map(({ ref, found }) => `
+        <a class="related-card" href="post.html?id=${found.id}">
+          <div class="related-card-title">${ref.label}</div>
+          <div class="related-card-date">${found.title}</div>
+        </a>`).join('')}</div>` : '';
 
     container.innerHTML = `
       <div class="post-tags">${tags}</div>
