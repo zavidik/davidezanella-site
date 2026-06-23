@@ -6,27 +6,77 @@
 //
 //  CAMPI OPZIONALI:
 //    cover      → percorso immagine (es. "img/posts/cover.jpg")
+//    showInGallery → default False
 //    pinned     → true = appare in Bacheca
 //    eventDate  → "YYYY-MM-DD"  (solo per eventi)
 //    eventTime  → "HH:MM"       (solo per eventi)
 //    eventPlace → "Luogo"       (solo per eventi)
-//
+//    relatedPosts: [
+//      { id: 'id-post', label: 'description' },
+//      .....
+//    ],
 //  TAG DI CATEGORIA (almeno uno per post):
 //    music · study · content · tech · sport
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  { id: 'raduno-misinto-saronno-2026',
+    title: 'Raduno bandistico a Saronno: l\'Inno alla Gioia e qualche sorpresa',
+    date: '2026-06-23',
+    tags: ['musica', 'servizio'],
+    excerpt: 'Un pomeriggio a suonare per le vie di Saronno con la Banda di Misinto, tra quattro corpi musicali riuniti per la Festa Europea della Musica. Bello, caldo, e con qualche sorpresa organizzativa.',
+    cover: 'img/posts/raduno-misinto-saronno-2026.jpg',
+    relatedPosts: [
+      { id: 'festival-del-pandino-2026', label: '→ Sabato pomeriggio: Festival del Pandino' },
+      { id: 'concerto-estate-cusano-2026', label: '→ Sabato sera: concerto d\'estate a Cusano' },
+      { id: 'festa-san-vito-gaggiano-2026', label: '→ Domenica mattina: festa di San Vito a Gaggiano' },
+    ],
+    content: `
+      <p>L'ultimo impegno del weekend era il pomeriggio di domenica con la Banda di Misinto a Saronno. Non era la prima volta che venivo chiamato a suonare con loro, quindi qualche faccia già la conoscevo. Il maestro mi aveva contattato chiedendomi disponibilità per un servizio domenica 21 giugno alle sedici e trenta — fin qui tutto chiaro. Poi, qualche giorno prima, è arrivato un aggiornamento: ritrovo alle quindici nella sede della banda a Misinto per una prova, visto che non avevo mai sfilato con loro. Orario anticipato di un'ora e mezza, ma comprensibile.</p>
+
+      <p>Arrivato poco dopo le quindici, abbiamo fatto giusto un paio di marcette per rodare insieme, poi ci siamo spostati a Saronno. Lì, nella sede del Corpo Musicale di Saronno, ho scoperto che si trattava di un raduno bandistico — informazione che fino a quel momento non avevo. In occasione della Festa Europea della Musica, quattro corpi musicali si erano riuniti: Saronno, Misinto, Uboldo e la Banda Larga di Mozzate. Il programma prevedeva di sfilare per le vie della città fino a Piazza Libertà, eseguire tutti insieme l'Inno alla Gioia, poi proseguire fino al Parco del Seminario per un altro momento musicale e infine un rinfresco.</p>
+
+      <p>Detto così sembra lineare. In pratica, ho aspettato quasi un'ora prima di partire — anche perché per via del caldo, trentacinque gradi, l'uscita è stata posticipata di dieci minuti. Siamo partiti poco dopo le diciassette. La sfilata in sé è stata piacevole: marciare per la città, suonare un brano per volta a rotazione tra le bande per evitare sovrapposizioni, arrivare in piazza per l'Inno alla Gioia tutti insieme. Da lì al Parco del Seminario, ancora in marcia, ancora musica, e poi un altro Inno alla Gioia finale. Eravamo quasi alle diciannove quando abbiamo finito.</p>
+
+      <p>Il rinfresco c'era, le pizze anche — nessuna pretesa di abbondanza, per carità. La nota dolente erano le bibite: tutte a temperatura ambiente, dopo ore sotto il sole. Per fortuna qualcuno della Banda di Misinto si è prodigato ad andare a recuperare delle bottigliette d'acqua fresca, e la situazione si è risolta. Poi ci siamo incamminati verso la sede di Saronno dove avevamo le macchine, altri venti minuti a piedi. Con il senno di poi, sapere in anticipo il percorso avrebbe permesso di organizzarsi meglio — magari lasciare la macchina a metà strada o direttamente al parco. Ma non sapevo niente di come era strutturata la giornata, e l'ho scoperto tutto sul posto.</p>
+
+      <p>Sono rientrato a casa quasi alle venti, fuori dalle quindici. Suonare mi piace sempre, e in queste occasioni con bande diverse si fanno repertori nuovi, si conoscono musicisti, è stimolante. Però ammetto che arrivare a quel punto del weekend — dopo il <a href="post.html?id=festival-del-pandino-2026">Festival del Pandino</a>, il <a href="post.html?id=concerto-estate-cusano-2026">concerto di Cusano</a> e la <a href="post.html?id=festa-san-vito-gaggiano-2026">processione a Gaggiano</a> — qualche chilometro in più sotto il sole lo sentivo eccome.</p>
+    `
+  },
+
+  { id: 'festa-san-vito-gaggiano-2026',
+    title: 'Domenica mattina a San Vito: processione e rinfreschino',
+    date: '2026-06-23',
+    tags: ['musica', 'servizio'],
+    excerpt: 'Una domenica mattina tranquilla a Gaggiano per la festa di San Vito: processione, messa, inno di Mameli e aperitivo. Il tutto prima di un altro pomeriggio di musica.',
+    cover: 'img/posts/festa-san-vito-gaggiano-2026.jpg',
+    relatedPosts: [
+      { id: 'festival-del-pandino-2026', label: '→ Sabato pomeriggio: Festival del Pandino' },
+      { id: 'concerto-estate-cusano-2026', label: '→ Sabato sera: concerto d\'estate a Cusano' },
+      { id: 'raduno-misinto-saronno-2026', label: '→ Domenica pomeriggio: raduno bandistico a Saronno' },
+    ],
+    content: `
+      <p>Domenica mattina, partenza alle otto con Luciano — bassotubista e compagno di trasferte gaggianesi — direzione Gaggiano per la festa di San Vito. Siamo arrivati poco dopo le otto e mezza, con qualche minuto di anticipo sul ritrovo delle otto e quarantacinque. Anticipo del tutto inutile, perché come spesso capita in questi servizi, la puntualità non era esattamente la priorità del momento. Tempo quindi di fare un salto al bar con Luciano e Carmelo, sassofonista, per il caffè della domenica mattina.</p>
+
+      <p>Tornati in piazza Daccò — dove ha sede la Banda di Gaggiano e dove facciamo le prove — abbiamo aspettato su una panchina che la situazione si animasse. Verso le nove hanno iniziato ad arrivare gli altri, si sono preparati i libretti e le percussioni, e poi ci siamo spostati tutti in macchina fino al cimitero di San Vito, una piccola frazione di Gaggiano, da dove partiva la processione.</p>
+
+      <p>La processione in sé è breve: dal cimitero alla chiesa lì vicina, il tempo di accompagnare due o tre canti religiosi e si è già arrivati. Ho seguito la messa, poi all'uscita abbiamo suonato ancora qualche marcia e chiuso — come vuole la tradizione del maestro di questa banda — con l'Inno di Mameli. Che c'entri o meno con la festa di San Vito, siamo in Italia e l'inno si fa. Giusto lì accanto alla chiesa c'era un piccolo rinfresco: qualcosa da mangiare, un aperitivo, due chiacchiere, e poi via verso casa. Ero di ritorno poco prima di mezzogiorno.</p>
+
+      <p>Meno di quattro ore in tutto, niente di impegnativo — e per fortuna, visto che il giorno prima avevo accumulato il <a href="post.html?id=festival-del-pandino-2026">Festival del Pandino</a> e il <a href="post.html?id=concerto-estate-cusano-2026">concerto di Cusano</a>, e nel pomeriggio avevo ancora il <a href="post.html?id=raduno-misinto-saronno-2026">raduno con la Banda di Misinto</a> a Saronno. La banda di Gaggiano ormai la conosco bene, mi trovo bene con il maestro e con i musicisti, e queste domeniche mattina hanno sempre un loro ritmo tranquillo che non dispiace affatto.</p>
+    `
+  },
 
   { id: 'concerto-estate-cusano-2026',
     title: 'Cartoni animati, sincronizzazione e un heigh-ho da dimenticare',
     date: '2026-06-22',
-    tags: ['musica'],
+    tags: ["musica", "banda cusano", "concerto"],
     excerpt: 'Il concerto d\'estate della Banda di Cusano Milanino è quello che aspetto di più ogni anno. Quest\'anno il tema erano i cartoni animati, e tra Spongebob, Goldrake e i Sette Nani ho vissuto una serata che non dimentico facilmente.',
     cover: 'img/posts/concerto-estate-cusano-2026.jpg',
     relatedPosts: [
       { id: 'festival-del-pandino-2026', label: '→ Il pomeriggio prima: Festival del Pandino' },
       { id: 'festa-san-vito-gaggiano-2026', label: '→ Domenica mattina: festa di San Vito a Gaggiano' },
       { id: 'raduno-misinto-saronno-2026', label: '→ Domenica pomeriggio: raduno bandistico a Saronno' },
+      { id: 'concerto-estate-cusano-2026-bacheca', label: '📌 Questo evento era stato annunciato qui:' },
     ],
     content: `
       <p>Tra tutti i concerti dell'anno, quello estivo della Banda di Cusano Milanino è quello che aspetto di più. Il maestro Stefano Bertoni ha un modo di costruire i programmi — e soprattutto gli arrangiamenti — che mi sfida ogni volta, e ogni anno torno a casa con la sensazione di aver suonato qualcosa che valeva la pena preparare. Quest'anno il tema era i cartoni animati, e già dall'annuncio sapevo che sarebbe stata una bella serata.</p>
