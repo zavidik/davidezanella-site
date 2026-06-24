@@ -17,19 +17,63 @@
 //      .....
 //    ],
 //    photos: [
-//    {
-//    src: 'img/path/nome.jpg',
-//      caption: 'Description',
-//      date: 'YYYY-MM-DD',    // opzionale: se omessa usa photoDate ?? date del post
-//      // tags: omessi → eredita dal post
-//      // postId: omesso → link al post padre
-//    },
-//  ],
+//      {
+//        src: 'img/path/nome.jpg',
+//        caption: 'Description',
+//        date: 'YYYY-MM-DD',    // opzionale: se omessa usa photoDate ?? date del post
+//        // tags: omessi → eredita dal post
+//        // postId: omesso → link al post padre
+//      },
+//    ],
+//
 //  TAG DI CATEGORIA (almeno uno per post):
-//    music · study · content · tech · sport
+//    musica · lavoro · media · tech · sport
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  { id: "reti-logiche-giugno-2025",
+    title: "Reti Logiche: terza volta è quella buona",
+    date: "2026-06-24",
+    tags: ["lavoro", "univeristà"],
+    relatedPosts: [
+      { id: 'esame-interconnessioni-2026', label: 'Esame precedente:' },
+    ],
+    excerpt: "Dopo due tentativi andati male in inverno, a giugno ho finalmente superato Reti Logiche con 25. Nel mezzo, anche una scena che non dimenticherò tanto presto.",
+    cover: "img/posts/esame-reti-logiche-2026.jpg",
+    showInGallery: false,
+    content: `
+      <p>L'11 giugno ho dato Reti Logiche. Era la terza volta: avevo già affrontato entrambi gli appelli della sessione invernale, a gennaio e febbraio, uscendone con risultati che preferisco non ricordare. Stavolta, con altri quattro mesi di preparazione sulle spalle, mi sentivo decisamente più pronto.</p>
+
+      <h2>L'arrivo in aula</h2>
+      <p>L'esame era in tarda mattinata, alle 11:30. Come faccio ormai da tempo, sono andato in università in moto. Sono arrivato poco prima dell'orario senza troppo anticipo — non sopporto stare lì ad aspettare: più l'inizio si avvicina, più l'ansia sale, e preferisco rompere il ghiaccio il prima possibile piuttosto che continuare a rimuginarci.</p>
+
+      <p>L'aula era nell'edificio Trifoglio, in Città Studi. Per chi non la conoscesse: non è un'aula piatta, ma in stile anfiteatro, con i posti che si alzano mano a mano che ci si allontana dalla cattedra. Il prof ha fatto l'appello all'ingresso, e ciascuno di noi lasciava lo zaino vicino alla porta e prendeva posto per colonne — il primo davanti, il secondo dietro, e così via fino in fondo, poi si ricominciava sulla colonna successiva. Io sono finito più o meno al centro dell'aula.</p>
+
+      <h2>Le regole del gioco</h2>
+      <p>L'appello è durato parecchio, tant'è che l'esame è iniziato con circa un quarto d'ora di ritardo. Il professore che lo gestiva — non era il mio, agli esami capita spesso di trovare il docente di un altro scaglione — sembrava già un po' innervosito fin dall'inizio. Prima di distribuire i fogli ha ribadito con fermezza che era vietato usare qualsiasi dispositivo elettronico, calcolatrice inclusa (per Reti Logiche non è indispensabile), e che chiunque fosse stato sorpreso con il telefono in mano avrebbe dovuto ritirarsi senza discutere.</p>
+
+      <p>Io avevo al polso l'Apple Watch e l'iPhone in tasca. Ho spento entrambi e li ho infilati nel giubbotto della moto, appoggiato sulla sedia accanto. Durante gli esami guardo spesso l'orario per gestire il tempo, e rinunciare all'orologio mi pesava un po' — ma il tono del professore non lasciava margini di interpretazione.</p>
+
+      <p>L'esame era composto da cinque esercizi. Per superarlo servivano almeno 18 punti totali, ma con delle soglie interne: gli esercizi 1 e 2 dovevano valere almeno 7 punti insieme, così come gli esercizi 4 e 5. L'esercizio 3 era più teorico: l'ho letto, valutato, e saltato. Del primo esercizio ho omesso deliberatamente un punto che avrebbe richiesto troppo tempo rispetto al suo peso. Il resto l'ho fatto tutto.</p>
+
+      <h2>Una scena che non dimentico</h2>
+      <p>Quando era passata poco più di un'ora dall'inizio — su un'ora e quarantacinque totali — è successa la scena più memorabile dell'esame. Il mio professore, che nel frattempo era arrivato in aula per la sorveglianza, ha beccato uno studente nelle ultime file che stava usando il telefono. Ha avvertito l'altro prof, quello che aveva fatto l'appello, e a quel punto il ragazzo è stato invitato ad alzarsi.</p>
+
+      <p>Contrariamente a quanto detto all'inizio, però, il ragazzo ha iniziato a parlare. Sottovoce, con la voce di chi si vergogna davanti a tutta l'aula, diceva cose come «volevo solo chiedere scusa» e cercava in qualche modo di giustificarsi. Il professore, che già non era di umore particolarmente accogliente, ha risposto secco: «Non mi devi dire niente. Non mi devi dire niente.» E ha aggiunto che avrebbero cercato di rintracciare anche l'altro con cui stava comunicando, perché entrambi avrebbero dovuto rispondere davanti alla commissione disciplinare — con una possibile sospensione da sei mesi a un anno.</p>
+
+      <h2>Il verdetto</h2>
+      <p>A quel punto è intervenuto anche il mio prof, con una precisazione che ha chiuso definitivamente ogni possibilità di giustificazione: il ragazzo aveva una chiamata attiva da un'ora e dieci minuti. Praticamente dal momento in cui era entrato in aula. Non stava cercando un aiuto dell'ultimo momento — era entrato con il piano già pronto.</p>
+
+      <p>La scena è durata un po'. Io, nel frattempo, continuavo a scrivere cercando di non distrarmi troppo, ma devo ammettere che una parte di me si dispiaceva per lui. Non giustifico quello che ha fatto — è sbagliato, e soprattutto è sbagliato nei confronti di chi studia e si presenta all'esame in modo onesto. Però capisco che, sapendo quanto fatica e tempo richiede ogni esame, la tentazione di tagliare la strada possa venire, specialmente nei momenti in cui si è a pezzi. Quasi sicuramente, chi lo fa non pensa davvero a cosa succede se viene scoperto. Anni fa, durante Analisi 1, avevo visto un caso simile risolto con la semplice annullazione dell'esame. Questa volta i professori sono stati — giustamente — più severi.</p>
+
+      <p>In ogni caso: sono uscito dall'aula con la sensazione di aver fatto un buon esame. Calcolando i punti degli esercizi che avevo completato, stimavo di poter arrivare intorno al 25. Ed è esattamente il voto che ho preso.</p>
+
+      <p>Dopo due sessioni invernali andate storte, superare Reti Logiche con 25 è una soddisfazione doppia. Sono fuori corso, e ci convivo — ma preferisco essere fuori corso avendo superato gli esami per davvero, piuttosto che averli "risolti" in altro modo. Quando arriverà il momento di mettermi la corona d'alloro, voglio sapere che me la sono guadagnata esercizio per esercizio.</p>
+
+      <p>Per adesso, si va avanti: ho ancora un bel po' di lavoro da fare.</p>
+    `
+  },
+
   { id: 'raduno-misinto-saronno-2026',
     title: 'Raduno bandistico a Saronno: l\'Inno alla Gioia e qualche sorpresa',
     date: '2026-06-23',
@@ -121,6 +165,23 @@ const POSTS = [
     tags: ['musica'],
     excerpt: 'Un sabato pomeriggio sotto il sole cocente del Cremasco, a suonare tra centinaia di Fiat Panda per il festival più particolare a cui abbia mai partecipato.',
     cover: 'img/posts/festival-del-pandino-2026.jpg',
+    photoDate: '2026-06-20',
+    photos: [
+      {
+        src: 'img/posts/festival-del-pandino-2026-2.jpg',
+        caption: 'Festival del Pandino 2026',
+        date: '2026-06-20',    // opzionale: se omessa usa photoDate ?? date del post
+        // tags: omessi → eredita dal post
+        // postId: omesso → link al post padre
+      },
+      {
+        src: 'img/posts/festival-del-pandino-2026-3.jpg',
+        caption: 'Festival del Pandino 2026',
+        date: '2026-06-20',    // opzionale: se omessa usa photoDate ?? date del post
+        // tags: omessi → eredita dal post
+        // postId: omesso → link al post padre
+      },
+    ],
     relatedPosts: [
       { id: 'concerto-estate-cusano-2026', label: '→ La stessa sera: concerto d\'estate a Cusano' },
       { id: 'festa-san-vito-gaggiano-2026', label: '→ Domenica mattina: festa di San Vito a Gaggiano' },
