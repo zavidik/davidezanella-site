@@ -143,13 +143,24 @@ const postPhotos = POSTS
   .map(p => ({
     src:     p.cover,
     caption: p.title,
-    date:    p.date,
+    date:    p.photoDate ?? p.date,
     tags:    p.tags,
     postId:  p.id,
   }));
 
-// 2. Unisce con le foto extra, ordina per data decrescente
-const ALL_PHOTOS = [...postPhotos, ...EXTRA_PHOTOS]
+// 2. Foto extra dichiarate nel campo photos:[...] di ogni post
+const postInlinePhotos = POSTS.flatMap(p =>
+  (p.photos || []).map(ph => ({
+    src:     ph.src,
+    caption: ph.caption || p.title,
+    date:    ph.date || p.photoDate || p.date,
+    tags:    ph.tags || p.tags,
+    postId:  ph.postId !== undefined ? ph.postId : p.id,
+  }))
+);
+
+// 3. Unisce tutto, ordina per data decrescente
+const ALL_PHOTOS = [...postInlinePhotos, ...postPhotos, ...EXTRA_PHOTOS]
   .sort((a, b) => b.date.localeCompare(a.date));
 
 // ── helpers ──

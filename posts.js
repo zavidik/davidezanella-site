@@ -6,7 +6,8 @@
 //
 //  CAMPI OPZIONALI:
 //    cover      → percorso immagine (es. "img/posts/cover.jpg")
-//    showInGallery → default False
+//    photoDate  → data della cover
+//    showInGallery → false = escludi dalla galleria (default: inclusa se c'è cover)
 //    pinned     → true = appare in Bacheca
 //    eventDate  → "YYYY-MM-DD"  (solo per eventi)
 //    eventTime  → "HH:MM"       (solo per eventi)
@@ -15,6 +16,15 @@
 //      { id: 'id-post', label: 'description' },
 //      .....
 //    ],
+//    photos: [
+//    {
+//    src: 'img/path/nome.jpg',
+//      caption: 'Description',
+//      date: 'YYYY-MM-DD',    // opzionale: se omessa usa photoDate ?? date del post
+//      // tags: omessi → eredita dal post
+//      // postId: omesso → link al post padre
+//    },
+//  ],
 //  TAG DI CATEGORIA (almeno uno per post):
 //    music · study · content · tech · sport
 // ══════════════════════════════════════════════════════
@@ -72,6 +82,16 @@ const POSTS = [
     tags: ["musica", "banda cusano", "concerto"],
     excerpt: 'Il concerto d\'estate della Banda di Cusano Milanino è quello che aspetto di più ogni anno. Quest\'anno il tema erano i cartoni animati, e tra Spongebob, Goldrake e i Sette Nani ho vissuto una serata che non dimentico facilmente.',
     cover: 'img/posts/concerto-estate-cusano-2026.jpg',
+    photoDate: '2026-06-20',
+    photos: [
+      {
+        src: 'img/posts/concerto-estate-cusano-2026-2.jpg',
+        caption: 'Corpo Musicale Santa Cecilia di Cusano Milanino',
+        date: '2026-06-20',    // opzionale: se omessa usa photoDate ?? date del post
+        // tags: omessi → eredita dal post
+        // postId: omesso → link al post padre
+      },
+    ],
     relatedPosts: [
       { id: 'festival-del-pandino-2026', label: '→ Il pomeriggio prima: Festival del Pandino' },
       { id: 'festa-san-vito-gaggiano-2026', label: '→ Domenica mattina: festa di San Vito a Gaggiano' },
@@ -88,7 +108,7 @@ const POSTS = [
       <p>Ma il brano che aspettavo di più, e che considero il cuore del concerto, era <em>Cartoon Super Hits</em>: quasi dieci minuti di medley arrangati direttamente dal maestro Bertoni, con dentro un'intera generazione di cartoni animati. Si partiva con l'Uomo Tigre, poi Mila e Shiro, Lady Oscar, David Gnomo Amico Mio, Pokémon con <em>Gotta Catch 'Em All</em>, Jeeg Robot d'Acciaio, Heidi, Ufo Robot Goldrake, e infine l'Incorreggibile Lupin. Suonavo tanto, mi piaceva, e la difficoltà era doppia: perché alle nostre spalle una società di eventi proiettava spezzoni originali di ogni cartone sincronizzati con la musica, e bisognava seguire il maestro con una precisione particolare — rispettare le velocità, tenere le corone, cambiare carattere al momento giusto — per restare allineati con il video. Una bella sfida, e più o meno ci siamo riusciti...</p>
 
       <p>Dopo la pausa di metà concerto è arrivato il momento che, col senno di poi, fa più ridere. Durante il brano dei Sette Nani, ero io quello che doveva lanciare il famoso <em>heigh-ho</em> — il grido del nano — e gli altri dovevano rispondere. Il problema è che la scena sul video è cambiata all'improvviso, il nano è apparso quasi in anticipo rispetto a quello che mi aspettavo, non ho fatto in tempo a prepararmi, e quello che è uscito dalla mia bocca era qualcosa di difficilmente classificabile. Non era un'ottava. Non era nemmeno una nota definita. Era un tentativo eroico andato male, e me ne sono reso conto immediatamente. Ci rido, era solo un effetto scenico — la parte musicale vera e propria non c'entrava — però è il tipo di cosa che ti rimane in testa a fine serata.</p>
-
+      <img src="img/posts/concerto-estate-cusano-2026-2.jpg" alt="Corpo Musicale Santa Cecilia di Cusano Milanino - 20 giugno 2026">
       <p>Il resto della seconda parte è filato liscio: <em>You'll Be in My Heart</em> da Tarzan, un medley del Libro della Giungla, la colonna sonora di Dragon Trainer, la Famiglia Addams, e come bis un medley di classici Disney con <em>In Fondo al Mar</em>, il Re Leone, la Bella e la Bestia e Aladdin. Il pubblico era numeroso come sempre — a Cusano Milanino il concerto estivo è un appuntamento sentito, e una serata di giugno con il tema cartoni animati aveva attirato anche qualche bambino in più del solito.</p>
 
       <p>A fine serata, con Elisa e qualcun altro, ci siamo fermati al McDonald's. Ho preso un gelato. Era la conclusione giusta per una giornata in cui avevo suonato praticamente senza sosta dal primo pomeriggio. Il giorno dopo avevo già altri due impegni musicali ad aspettarmi: una <a href="post.html?id=festa-san-vito-gaggiano-2026">processione al mattino</a> e un <a href="post.html?id=raduno-misinto-saronno-2026">raduno bandistico al pomeriggio</a>.</p>
