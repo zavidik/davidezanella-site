@@ -15,6 +15,7 @@
   --accent-content: #c4752a;
   --accent-tech:    #2e7d5e;
   --accent-sport:   #4a7c3f;
+  --accent-vita:   #7c5cbf;
   --shadow: 0 2px 12px rgba(0,0,0,.07);
   --radius: 16px;
   --nav-h: 56px;
@@ -133,11 +134,13 @@ a { color: inherit; }
 .tag[data-cat=media] { border-color: var(--accent-content); color: var(--accent-content); }
 .tag[data-cat=tech]    { border-color: var(--accent-tech);    color: var(--accent-tech); }
 .tag[data-cat=sport]   { border-color: var(--accent-sport);   color: var(--accent-sport); }
+.tag[data-cat=vita]   { border-color: var(--accent-vita);   color: var(--accent-vita); }
 .tag[data-cat=musica].active   { background: var(--accent-music);   color: #fff; border-color: var(--accent-music); }
 .tag[data-cat=lavoro].active   { background: var(--accent-study);   color: #fff; border-color: var(--accent-study); }
 .tag[data-cat=media].active { background: var(--accent-content); color: #fff; border-color: var(--accent-content); }
 .tag[data-cat=tech].active    { background: var(--accent-tech);    color: #fff; border-color: var(--accent-tech); }
 .tag[data-cat=sport].active   { background: var(--accent-sport);   color: #fff; border-color: var(--accent-sport); }
+.tag[data-cat=vita].active   { background: var(--accent-vita);   color: #fff; border-color: var(--accent-vita); }
 
 /* ── BLOG / PINNED CARDS ── */
 .blog-grid {

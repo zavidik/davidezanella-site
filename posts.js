@@ -31,6 +31,35 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  { id: "concerto-seveso-2026",
+    title: "Un concerto a Baruccana, tra vento e coulisse volanti",
+    date: "2026-06-30",
+    tags: ["musica", "concerto"],
+    excerpt: "Domenica scorsa ho suonato con la Banda di Seveso nella frazione di Baruccana: caldo, vento che si porta via gli spartiti e un piccolo incidente di percorso per il primo trombone.",
+    cover: "img/posts/concerto-seveso-2026.jpg",
+    photoDate: '2026-06-28',
+    showInGallery: true,
+    relatedPosts: [
+      { id: 'concerto-seveso-2026-bacheca', label: '📌 Questo evento era stato annunciato qui:' },
+    ],
+    content: `
+      <h2>Una serata calda (ma ventilata)</h2>
+      <p>Domenica sera sono andato a suonare un concerto con la Banda di Seveso, nella frazione di Baruccana. Il 28 giugno faceva davvero caldo, ma per fortuna c'era vento: l'aria non era proprio fresca, ma quel movimento aiutava a percepire una temperatura un po' più sopportabile. Peccato che, per una volta che non avevo messo gli spartiti sull'iPad, il vento si era rivelato un problema dal punto di vista pratico: ogni paio di minuti bisognava rincorrere i fogli con mollette e calamite per tenerli fermi sul leggio. Una scena classica che capita a tutte le bande, niente di drammatico, ma comunque un po' buffa da vivere dal vivo.</p>
+
+      <h2>Il programma e il pubblico</h2>
+      <p>Abbiamo suonato brani come Arsenal e Choreography, oltre a un medley di Santana e a Uptown Girl. Il pubblico non era numerosissimo, complice probabilmente la fine di giugno con queste temperature: c'è chi è già in vacanza e chi non ha troppa voglia di restare fuori al caldo. Il posto in sé non è enorme, quindi non mi aspettavo una folla. Detto questo, è stata una serata molto piacevole, e nonostante i numeri contenuti il pubblico ci ha applauditi con grande calore.</p>
+
+      <h2>Riccardo, sua figlia e una voce bellissima</h2>
+      <p>Siamo stati chiamati a suonare dal presidente della banda, Riccardo, che è trombonista come me: lui ha fatto il primo trombone, io il secondo ed Elisa il terzo. A presentare la serata c'era sua figlia, che ha una voce bellissima e un'ottima dizione, anche in inglese: abbiamo scoperto che è bilingue, perché la mamma è inglese. Ha studiato anche teatro, e si sentiva tutto: davvero brava.</p>
+
+      <h2>L'aneddoto della serata: la coulisse volante</h2>
+      <p>L'unico momento davvero divertente è arrivato durante il medley di Santana, che è composto da tre pagine, quindi a un certo punto bisogna girare. Con tutte le mollette a tenere ferme le parti, l'operazione richiede un attimo di tempo: io ho saltato giusto qualche battuta della pagina nuova, ma Riccardo ci ha messo davvero un casino e ha avuto più di un problema. Con la coda dell'occhio lo vedevo ancora fermo quando io ero già a metà della seconda pagina. Quando finalmente ha ripreso in mano il trombone, aveva lasciato la coulisse aperta: si è staccata, la parte esterna è caduta a terra, e il piccolo disastro ha fatto ridere parecchio anche Elisa. Per fortuna la coulisse non si è fatta niente, quindi resta solo un bell'aneddoto. Anche Riccardo l'ha presa con filosofia: a fine concerto, quando il pubblico ha scelto come bis proprio quel medley di Santana, ha commentato al microfono che finalmente aveva l'occasione di suonarlo bene, dato che prima gli era pure caduta la coulisse.</p>
+
+      <h2>Cosa mi aspetta</h2>
+      <p>Pensavo che questa sarebbe stata l'ultima uscita musicale dell'estate, visto che mi sto concentrando sull'università, ma si è aggiunto un altro impegno: il 5 luglio tornerò a suonare a Gaggiano. Magari ne racconterò qualcosa se ci sarà materiale interessante. Dopodiché, come succede di solito, luglio e agosto saranno mesi di pausa per le bande (salvo eccezioni), quindi immagino che mi fermerò anch'io. La musica, ovviamente, continuerà comunque tra le mura di casa, perché mi piace e basta. Magari racconterò anche qualcosa delle mie vacanze, che quest'anno si riducono a una settimana in campeggio con Elisa.</p>
+    `
+  },
+
   { id: "reti-logiche-giugno-2025",
     title: "Reti Logiche: terza volta è quella buona",
     date: "2026-06-24",
@@ -80,6 +109,7 @@ const POSTS = [
     tags: ['musica', 'servizio'],
     excerpt: 'Un pomeriggio a suonare per le vie di Saronno con la Banda di Misinto, tra quattro corpi musicali riuniti per la Festa Europea della Musica. Bello, caldo, e con qualche sorpresa organizzativa.',
     cover: 'img/posts/raduno-misinto-saronno-2026.jpg',
+    photoDate: '2026-06-21',
     relatedPosts: [
       { id: 'festival-del-pandino-2026', label: '→ Sabato pomeriggio: Festival del Pandino' },
       { id: 'concerto-estate-cusano-2026', label: '→ Sabato sera: concerto d\'estate a Cusano' },
@@ -104,6 +134,7 @@ const POSTS = [
     tags: ['musica', 'servizio'],
     excerpt: 'Una domenica mattina tranquilla a Gaggiano per la festa di San Vito: processione, messa, inno di Mameli e aperitivo. Il tutto prima di un altro pomeriggio di musica.',
     cover: 'img/posts/festa-san-vito-gaggiano-2026.jpg',
+    photoDate: '2026-06-21',
     relatedPosts: [
       { id: 'festival-del-pandino-2026', label: '→ Sabato pomeriggio: Festival del Pandino' },
       { id: 'concerto-estate-cusano-2026', label: '→ Sabato sera: concerto d\'estate a Cusano' },
@@ -212,10 +243,9 @@ const POSTS = [
     eventTime: "21:00",
     eventPlace: "Seveso",
     tags: ["musica", "concerto"],
-    relatedPost: {
-      id: "",
-      label: "📖 Leggi com'è andata:",
-    },
+    relatedPosts: [
+      { id: 'concerto-seveso-2026', label: "📖 Leggi com'è andata:" },
+    ],
     excerpt: "50 anni dopo il Disastro di Seveso",
     content: `
       <p>Domenica 28 giugno suonerò insieme a Elisa con la banda di Seveso.</p>
@@ -253,10 +283,10 @@ const POSTS = [
     eventTime: "16:30",
     eventPlace: "Paderno Dugnano",
     tags: ["musica", "banda palazzolo", "concerto"],
-    relatedPost: {
-      id: "",
-      label: "📖 Leggi com'è andata:",
-    },
+    relatedPosts: [
+      { id: 'concerto-palazzolo-vittuone-morricone-2026', label: "📖 Leggi com'è andata:" },
+      { id: 'concerto-vittuone-palazzolo-morricone-2026', label: "La prima esecuzione a Vittuone:" },
+    ],
     excerpt: "Il concerto a tema Morricone: 2 bande e 1 coro! Nell'anfiteatro del Parco Lago Nord",
     content: `
       <p>Dopo la trasferta di giugno a Vittuone, ecco la replica a Paderno Dugnano.</p>
@@ -270,14 +300,15 @@ const POSTS = [
     title: "Una serata con Morricone al Parco Lincoln",
     date: "2026-06-14",
     cover: "img/posts/concerto-vittuone-palazzolo-morricone-2026.jpg",
+    photoDate: '2026-06-13',
     showInGallery: true,
     pinned: false,
     tags: ["musica", "banda palazzolo", "concerto"],
     excerpt: "Concerto a tema Morricone al Parco A. Lincoln di Vittuone, insieme alla Banda di Vittuone e al Coro Vis Canti di Marcallo con Casone. Una bella serata all'aperto, pubblico numeroso e qualche emozione inaspettata.",
-    relatedPost: {
-      id: "concerto-vittuone-palazzolo-morricone-2026-bacheca",
-      label: "📌 Questo evento era stato annunciato qui:"
-    },
+    relatedPosts: [
+      { id: 'concerto-vittuone-palazzolo-morricone-2026-bacheca', label: "📌 Questo evento era stato annunciato qui:" },
+      { id: 'concerto-palazzolo-vittuone-morricone-2026', label: "La replica a Paderno:" },
+    ],
     content: `
       <p>Ieri sera concerto al Parco A. Lincoln di Vittuone, con una formazione un po' speciale: sul palco insieme a noi c'era il Corpo Musicale Giuseppe Verdi APS-ETS di Vittuone e il Coro Vis Canti APS di Marcallo con Casone. Il tema della serata era interamente dedicato a Ennio Morricone — un programma impegnativo e bellissimo, di cui avevo già scritto nell'annuncio in bacheca.</p>
 
@@ -336,6 +367,7 @@ const POSTS = [
     title: "Viaggio nella storia della MUSICA - Saggio finale",
     date: "2026-06-10",
     cover: "img/posts/saggio-seconda-elementare-2026.jpg",
+    photoDate: '2026-06-04',
     pinned: false,
     tags: ["musica", "lavoro"],
     relatedPost: {
@@ -405,10 +437,10 @@ const POSTS = [
     eventTime: "21:00",
     eventPlace: "Vittuone",
     tags: ["musica", "banda palazzolo", "concerto"],
-    relatedPost: {
-      id: "concerto-vittuone-palazzolo-morricone-2026",
-      label: "📖 Leggi com'è andata:"
-    },
+    relatedPosts: [
+      { id: 'concerto-vittuone-palazzolo-morricone-2026', label: "📖 Leggi com'è andata:" },
+      { id: 'concerto-palazzolo-vittuone-morricone-2026', label: "La replica a Paderno:" },
+    ],
     excerpt: "Il concerto a tema Morricone: 2 bande e 1 coro!",
     content: `
       <p>La Banda di Palazzolo Milanese va in trasferta!</p>
@@ -424,6 +456,7 @@ const POSTS = [
     title: "Saggio di fine anno – La Scuola che sBanda",
     date: "2026-05-30",
     cover: "img/posts/saggio-scuola-che-sbanda-2026.jpg",
+    photoDate: '2026-05-28',
     pinned: false,
     tags: ["musica", "la scuola che sbanda"],
     relatedPost: {
@@ -472,6 +505,7 @@ const POSTS = [
     title: "Fusione all'Anfiteatro La Cava",
     date: "2026-05-25",
     cover: "img/posts/concerto-palazzolo-cava-2026.jpg",
+    photoDate: '2026-05-24',
     pinned: false,
     tags: ["musica", "banda palazzolo", "concerto"],
     relatedPost: {
@@ -509,6 +543,7 @@ const POSTS = [
     title: "Raduno bandistico a Cogliate — com'è andata",
     date: "2026-05-19",
     cover: "img/posts/raduno-bandistico-cogliate-2026.jpg",
+    photoDate: '2026-05-17',
     tags: ["musica", "banda palazzolo", "servizio"],
     relatedPost: {
       id: "raduno-bandistico-cogliate-2026-bacheca",
@@ -618,6 +653,7 @@ const POSTS = [
     title: "Prima volta con l'euphonium — Junior Band a Paderno Dugnano",
     date: "2026-05-16",
     cover: "img/posts/junior-band-palazzolo-civil-week-2026.jpg",
+    photoDate: '2026-05-09',
     tags: ["musica", "banda palazzolo", "junior band", "concerto"],
     excerpt: "Per la Civil Week di Paderno Dugnano ho suonato con la Junior Band della Banda di Palazzolo — e per la prima volta in concerto ho imbracciato l'euphonium.",
     content: `
@@ -642,6 +678,7 @@ const POSTS = [
     title: "Concerto per la Festa della Mamma 2026 — com'è andata",
     date: "2026-05-16",
     cover: "img/posts/concerto-mamma-cusano-2026.jpg",
+    photoDate: '2026-05-10',
     showInGallery: true,
     tags: ["musica", "banda cusano", "concerto"],
     relatedPost: {
@@ -669,6 +706,7 @@ const POSTS = [
     title: "Secondo incontro alla scuola primaria Fisogni",
     date: "2026-04-21",
     cover: "img/posts/doremitici-secondo-incontro-scuola-fisogni.jpg",
+    photoDate: '2026-04-20',
     pinned: false,
     eventDate: "2026-04-20",
     eventTime: "14:30",
@@ -762,6 +800,7 @@ const POSTS = [
     title: "Gita della banda a Pergine Valsugana",
     date: "2026-04-03",
     cover: "img/posts/gita-banda-palazzolo-pergine-2026.jpg",
+    photoDate: '2026-03-29',
     pinned: false,
     tags: ["musica", "banda palazzolo", "concerto", "gita"],
     relatedPost: {
@@ -916,6 +955,7 @@ const POSTS = [
     title: "Referendum 2026: affluenza record nel mio seggio",
     date: "2026-03-24",
     cover: "img/posts/referendum-2026-record-affluenza.jpg",
+    photoDate: '2026-03-23',
     pinned: false,
     tags: ["lavoro", "seggio", "referendum"],
     relatedPost: {
@@ -1444,6 +1484,7 @@ const POSTS = [
     title: "In memoria delle vittime del COVID-19",
     date: "2026-03-18",
     cover: "img/posts/ricordo-vittime-covid-2026.jpg",
+    photoDate: '2026-03-18',
     pinned: false,
     eventDate: "2026-03-18",
     eventTime: "11:00",
@@ -1534,6 +1575,7 @@ const POSTS = [
     title: "Carnevale 2026",
     date: "2026-02-21",
     cover: "img/posts/doremitici-carnevale-2026.jpg",
+    photoDate: '2026-02-21',
     pinned: false,
     eventDate: "2026-02-21",
     eventTime: "16:00",
@@ -1559,6 +1601,7 @@ const POSTS = [
     title: "Serata Gruppo Missionario ''Io sono l'altro''",
     date: "2026-02-20",
     cover: "img/posts/doremitici-serata-gruppo-missionario.jpg",
+    photoDate: '2026-02-18',
     pinned: false,
     eventDate: "2026-02-18",
     eventTime: "20:45",
