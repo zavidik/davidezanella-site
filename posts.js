@@ -31,6 +31,413 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  { id: "domotica-luci-soluzione-ibrida",
+    title: "La mia soluzione ibrida: lampadina smart + relè smart",
+    date: "2026-06-30",
+    cover: "img/posts/domotica-luci-soluzione-ibrida.jpg",
+    showInGallery: false,
+    pinned: false,
+    tags: ["tech"],
+    excerpt: "Come ho combinato lampadine smart e relè smart per avere il meglio di entrambe le soluzioni: interruttore a muro funzionante e controllo completo di colori e luminosità.",
+    relatedPosts: [
+      { id: "domotica-luci-home-assistant", label: 'Tutte le soluzioni per luci smart:' }
+    ],
+    content: `
+      <div class="post-guida-v1">
+
+      <p class="pg-intro">
+        Qualche mese fa avevo fatto una panoramica delle principali soluzioni per domotizzare
+        l'illuminazione di casa con Home Assistant: lampadine smart, interruttori smart e relè smart,
+        ognuna con i propri pregi e difetti. Avevo anche accennato al fatto che in alcune stanze di
+        casa mia uso una soluzione ibrida, che unisce due di queste tecnologie sullo stesso punto luce.
+        Eccomi quindi a raccontarvela nel dettaglio, come promesso.
+      </p>
+      <p class="pg-intro">
+        Se non avete letto l'articolo precedente vi consiglio di darci un'occhiata prima di
+        proseguire: <a href="post.html?id=domotica-luci-home-assistant">Domotizzare le luci con
+        Home Assistant: tutte le soluzioni</a>. Qui invece riassumo brevemente pregi e difetti delle
+        due soluzioni singole, per poi concentrarmi sulla loro combinazione.
+      </p>
+
+      <div class="pg-toc">
+        <div class="pg-toc-label">Indice</div>
+        <ol>
+          <li><a href="#pg-recap">Le due soluzioni singole, in breve</a></li>
+          <li><a href="#pg-funzionamento">Come funziona la coppia lampadina-relè</a></li>
+          <li><a href="#pg-automazioni">Le automazioni in Home Assistant</a></li>
+          <li><a href="#pg-collegamenti">I collegamenti elettrici</a></li>
+          <li><a href="#pg-procon-ibrida">Vantaggi e svantaggi della soluzione ibrida</a></li>
+          <li><a href="#pg-conclusion">Conclusioni</a></li>
+        </ol>
+      </div>
+
+      <!-- ── Recap ── -->
+      <h2 id="pg-recap">Le due soluzioni singole, in breve</h2>
+      <div class="pg-procon">
+        <div class="pg-pros">
+          <div class="pg-procon-label">💡 Lampadina smart</div>
+          <ul>
+            <li>✓ Dimmerabile, con controllo colori e temperatura colore</li>
+            <li>✓ Installazione rapida, nessun lavoro elettrico</li>
+            <li>✗ Non si può più usare l'interruttore a muro: togliendo corrente la lampadina va offline</li>
+            <li>✗ Deve restare sempre connessa per essere comandata da app o assistente vocale, qualsiasi sia il protocollo (Wi-Fi, Zigbee, Bluetooth…)</li>
+          </ul>
+        </div>
+        <div class="pg-pros">
+          <div class="pg-procon-label">🔲 Interruttore/relè smart</div>
+          <ul>
+            <li>✓ Punto luce domotizzato, interruttore fisico ancora funzionante</li>
+            <li>✗ Nessun controllo di colori o luminosità</li>
+            <li>✗ Richiede un intervento sull'impianto elettrico, con difficoltà variabile in base al modello e all'impianto esistente</li>
+          </ul>
+        </div>
+      </div>
+      <p>
+        Messe così, sembrano due soluzioni che si escludono a vicenda: o tieni l'interruttore, o
+        tieni il colore e la dimmerazione. In realtà si possono usare insieme, sullo stesso punto
+        luce, ottenendo entrambe le cose. Vediamo come.
+      </p>
+
+      <!-- ── Funzionamento ── -->
+      <details id="pg-funzionamento" class="pg-accordion">
+        <summary>
+          <span>🔗</span>
+          <div class="pg-accordion-summary-text">
+            <span class="pg-accordion-title">Come funziona la coppia lampadina-relè</span>
+            <span class="pg-accordion-subtitle">Il relè non comanda direttamente la lampadina, ma "osserva"</span>
+          </div>
+        </summary>
+        <div class="pg-accordion-body">
+          <p>
+            L'idea di base è semplice: il relè non è collegato fisicamente alla lampadina, ma solo
+            all'interruttore. Possiamo immaginarlo come un signore che se ne sta vicino all'interruttore
+            e ogni volta che qualcuno lo preme se ne accorge, senza però toccare il circuito della luce.
+            La lampadina, dal canto suo, fa semplicemente il suo lavoro di lampadina smart: gestisce
+            luminosità, eventualmente colori, bianco caldo-freddo e tutte le altre funzioni, a seconda
+            del modello.
+          </p>
+          <p>
+            La lampadina è sempre alimentata, indipendentemente dalla posizione dell'interruttore,
+            perché non è collegata fisicamente ad esso. Questo significa che quando l'interruttore
+            viene commutato, la lampadina avrà sempre corrente e non si spegnerà mai a livello elettrico.
+          </p>
+          <p>
+            Per capire come si accende e si spegne la luce, bisogna distinguere due livelli dentro
+            la lampadina smart: il livello dell'alimentazione e il livello della luce vera e propria.
+            È un po' come uno smartphone, che può essere acceso ma con lo schermo spento: la nostra
+            lampadina può, anzi <em>deve</em>, restare sempre alimentata, ma può avere la luce
+            disattivata. L'alimentazione quindi non va mai staccata, così che la lampadina rimanga
+            sempre connessa alla rete domotica; la luce invece segue i comandi inviati dal relè,
+            dallo smartphone o dall'assistente vocale.
+          </p>
+          <p>
+            Essendo entrambi dispositivi smart, sia la lampadina sia il relè comunicano il proprio
+            stato a un "cervello" centrale: nel mio caso Home Assistant. Io uso dispositivi Wi-Fi e
+            Zigbee insieme: il relè è uno Zigbee di marca Sonoff (modelli diversi a seconda del punto
+            luce, ma tutti simili tra loro), mentre le lampadine sono in parte Zigbee e in parte Wi-Fi.
+            Tutto confluisce in Home Assistant, che si occupa di tenere sincronizzati i due dispositivi.
+          </p>
+        </div>
+      </details>
+
+      <!-- ── Automazioni ── -->
+      <details id="pg-automazioni" class="pg-accordion">
+        <summary>
+          <span>⚙️</span>
+          <div class="pg-accordion-summary-text">
+            <span class="pg-accordion-title">Le automazioni in Home Assistant</span>
+            <span class="pg-accordion-subtitle">4 automazioni per tenere sincronizzati relè e luce</span>
+          </div>
+        </summary>
+        <div class="pg-accordion-body">
+          <p>
+            Dentro l'hub domotico va inserita la logica che permette di accendere e spegnere la
+            luce in base allo stato del relè. La logica di base è questa: se l'interruttore si accende
+            (rilevato dal relè), allora si accende la luce; se l'interruttore si spegne, si spegne la luce.
+          </p>
+          <p>
+            C'è però un dettaglio da non trascurare: trattandosi di una lampadina smart, questa può
+            essere accesa anche direttamente da smartphone o tramite comando vocale a Google, Siri,
+            Alexa e simili, senza passare dall'interruttore fisico. Per mantenere coerenza serve quindi
+            anche la logica inversa: se la luce si spegne e il relè risulta acceso, spegni il relè;
+            se la luce si accende e il relè risulta spento, accendi il relè.
+          </p>
+          <p>
+            In totale servono quindi 4 automazioni. Sono semplici da ricreare anche dall'interfaccia
+            grafica di Home Assistant, ma per chi preferisce lo YAML lascio qui la configurazione
+            completa.
+          </p>
+          
+          <p><strong>1. Luce OFF → relè OFF</strong></p>
+<pre><code>alias: "luce OFF -> relè OFF"
+description: ""
+triggers:
+  - entity_id:
+      - light.lampadina_smart
+    to: "off"
+    trigger: state
+conditions:
+  - condition: state
+    entity_id: switch.rele
+    state:
+      - "on"
+actions:
+  - action: switch.turn_off
+    metadata: {}
+    target:
+      entity_id: switch.rele
+    data: {}
+mode: single</code></pre>
+
+<hr style="margin: 24px 0; border: none; border-top: 1px solid var(--muted);">
+
+<p><strong>2. Luce ON → relè ON</strong></p>
+<pre><code>alias: "luce ON -> relè ON"
+description: ""
+triggers:
+  - entity_id:
+      - light.lampadina_smart
+    to: "on"
+    trigger: state
+conditions:
+  - condition: state
+    entity_id: switch.rele
+    state:
+      - "off"
+actions:
+  - action: switch.turn_on
+    metadata: {}
+    target:
+      entity_id: switch.rele
+    data: {}
+mode: single</code></pre>
+
+<hr style="margin: 24px 0; border: none; border-top: 1px solid var(--muted);">
+
+<p><strong>3. Relè OFF → luce OFF</strong></p>
+<pre><code>alias: "relè OFF -> luce OFF"
+description: ""
+triggers:
+  - trigger: state
+    entity_id:
+      - switch.rele
+    to:
+      - "off"
+conditions: []
+actions:
+  - action: light.turn_off
+    metadata: {}
+    target:
+      entity_id: light.lampadina_smart
+    data: {}
+mode: single</code></pre>
+
+<hr style="margin: 24px 0; border: none; border-top: 1px solid var(--muted);">
+
+<p><strong>4. Relè ON → luce ON</strong></p>
+<pre><code>alias: "relè ON -> luce ON"
+description: ""
+triggers:
+  - trigger: state
+    entity_id:
+      - switch.rele
+    to:
+      - "on"
+conditions: []
+actions:
+  - action: light.turn_on
+    metadata: {}
+    target:
+      entity_id: light.lampadina_smart
+    data: {}
+mode: single</code></pre>
+
+<hr style="margin: 24px 0; border: none; border-top: 1px solid var(--muted);">
+
+          <p>
+            Con questa logica, stato del relè e stato della luce restano sempre sincronizzati. In
+            realtà non sarebbe strettamente necessario: il relè potrebbe rimanere acceso anche a luce
+            spenta, e basterebbe un'unica automazione del tipo "se il relè commuta, la luce deve
+            commutare". Preferisco però le 4 automazioni separate perché rendono la logica più
+            robusta e mantengono coerenza piena tra i due stati in ogni situazione.
+          </p>
+        </div>
+      </details>
+
+      <!-- ── Collegamenti ── -->
+      <details id="pg-collegamenti" class="pg-accordion">
+        <summary>
+          <span>🔌</span>
+          <div class="pg-accordion-summary-text">
+            <span class="pg-accordion-title">I collegamenti elettrici</span>
+            <span class="pg-accordion-subtitle">Cosa cambia rispetto a un'installazione classica</span>
+          </div>
+        </summary>
+        <div class="pg-accordion-body">
+          <img src="img/posts/domotica-luci-soluzione-ibrida-schema.jpg" alt="Schema dei collegamenti tra interruttore, relè smart e lampadina smart" style="max-width:100%; border-radius:8px; margin-bottom:16px;">
+          <p>
+            Come accennato, il relè non è collegato fisicamente alla lampadina: come si vede nella
+            foto, in uscita dal relè non serve collegare nulla se non l'interruttore; gli altri
+            morsetti restano liberi. La lampadina va invece collegata direttamente alla fase
+            (il neutro, naturalmente, deve già essere correttamente cablato al punto luce).
+          </p>
+        </div>
+      </details>
+
+      <!-- ── Pro e contro soluzione ibrida ── -->
+      <h2 id="pg-procon-ibrida">Vantaggi e svantaggi della soluzione ibrida</h2>
+      <div class="pg-procon">
+        <div class="pg-pros">
+          <div class="pg-procon-label">Vantaggi</div>
+          <ul>
+            <li>L'interruttore a muro continua a funzionare normalmente</li>
+            <li>Punto luce completamente domotizzato: dimmerazione, colori, automazioni</li>
+            <li>Si sommano i vantaggi delle due soluzioni singole</li>
+          </ul>
+        </div>
+        <div class="pg-cons">
+          <div class="pg-procon-label">Svantaggi</div>
+          <ul>
+            <li>Se la lampadina smette di rispondere ai comandi, l'unico modo per spegnerla è staccare la corrente dal quadro elettrico o svitarla fisicamente</li>
+            <li>Il power on behavior non sempre è configurabile: con un blackout notturno la luce può accendersi da sola, restando accesa finché il "cervello" domotico non si riavvia</li>
+            <li>Piccolo delay tra la pressione dell'interruttore e l'accensione della luce</li>
+            <li>Resta comunque necessario un intervento sull'impianto elettrico, per installare il relè</li>
+          </ul>
+        </div>
+      </div>
+      <p>
+        Sul power on behavior vale la pena di soffermarsi: mi è capitato più volte che, in piena
+        notte, saltasse la corrente per un temporale o un guasto alla rete elettrica, e che al suo
+        ritorno la luce si accendesse da sola. Per spegnerla bisognava aspettare che anche l'hub
+        domotico si riavviasse, dato che il blackout aveva spento pure lui. Per questo motivo
+        consiglio sempre un UPS dedicato al "cervello" della casa: pochi minuti di autonomia in più
+        bastano a evitare situazioni del genere.
+      </p>
+      <p>
+        Il delay invece è dovuto alla catena di comunicazione che si attiva a ogni pressione
+        dell'interruttore: il relè deve notificare il cambio di stato, l'hub deve elaborarlo ed
+        eseguire l'automazione, infine va inviato il comando alla lampadina. Si tratta di un istante,
+        ma percepibile rispetto a un interruttore tradizionale. Dipende molto dalla stabilità della
+        connessione di relè e lampadina e dalla potenza dell'hub; per lampadine smart, che scambiano
+        dati piuttosto "leggeri", il collo di bottiglia è quasi sempre la stabilità del segnale,
+        più che il protocollo usato.
+      </p>
+
+      <!-- ── Conclusione ── -->
+      <div id="pg-conclusion" class="pg-conclusion">
+        <h2>Conclusioni</h2>
+        <p>
+          Questa soluzione ibrida non è perfetta: unisce vantaggi e svantaggi delle due soluzioni
+          singole, con il beneficio principale di poter continuare a usare l'interruttore a muro
+          insieme al controllo completo della lampadina smart.
+        </p>
+        <p>
+          Non l'ho adottata in tutta la casa, ma solo in alcune stanze, come la camera da letto e
+          la taverna, dove è piacevole poter regolare colori e luminosità della luce. In ambienti
+          come bagni, cucina, corridoio e cantina ho invece installato semplicemente il relè smart,
+          per un controllo ON-OFF, senza dimmerazione o cambio colore: in quelle stanze non lo
+          ritenevo necessario.
+        </p>
+        <p>
+          Come sempre, la scelta dipende da cosa si vuole ottenere in ogni singolo punto luce. Se
+          conoscete metodi ancora migliori di questo, scrivetemi pure: non avendo una sezione
+          commenti sul sito, potete farlo direttamente a
+          <a href="mailto:davide.zanella02@gmail.com?subject=Domotica%20luci%20-%20soluzione%20ibrida&body=Ciao%20Davide%2C%0A%0Aho%20letto%20il%20tuo%20articolo%20sulla%20soluzione%20ibrida%20lampadina%2Brel%C3%A8%20e%20volevo%20dirti...">davide.zanella02@gmail.com</a>.
+        </p>
+        <p>
+          Grazie per la lettura, e spero come sempre di avervi aiutato in qualche modo.
+        </p>
+      </div>
+      <!-- ── FAQ ── -->
+        <h2 id="pg-faq">Domande frequenti</h2>
+
+        <details class="pg-accordion">
+          <summary>
+            <span>❓</span>
+            <div class="pg-accordion-summary-text">
+              <span class="pg-accordion-title">La lampadina consuma corrente anche quando è spenta?</span>
+            </div>
+          </summary>
+          <div class="pg-accordion-body">
+            <p>
+              Sì. La lampadina rimane sempre alimentata per poter restare connessa alla rete domotica e
+              ricevere comandi da Home Assistant, dallo smartphone o dall'assistente vocale. Quando è
+              "spenta", in realtà è semplicemente la luce a essere disattivata, mentre l'elettronica interna
+              continua a funzionare. Il consumo in standby è comunque molto basso.
+            </p>
+          </div>
+        </details>
+
+        <details class="pg-accordion">
+          <summary>
+            <span>❓</span>
+            <div class="pg-accordion-summary-text">
+              <span class="pg-accordion-title">Funziona anche senza Home Assistant?</span>
+            </div>
+          </summary>
+          <div class="pg-accordion-body">
+            <p>
+              No, almeno non nel modo descritto in questo articolo. È Home Assistant che riceve gli eventi
+              del relè e invia i comandi alla lampadina, mantenendo sincronizzati i due dispositivi tramite
+              le automazioni. Senza un hub che svolga questo ruolo il sistema non può funzionare.
+            </p>
+          </div>
+        </details>
+
+        <details class="pg-accordion">
+          <summary>
+            <span>❓</span>
+            <div class="pg-accordion-summary-text">
+              <span class="pg-accordion-title">Posso usare dispositivi Wi-Fi e Zigbee insieme?</span>
+            </div>
+          </summary>
+          <div class="pg-accordion-body">
+            <p>
+              Certamente. Nel mio impianto, ad esempio, i relè sono Zigbee mentre le lampadine sono sia
+              Zigbee sia Wi-Fi. Home Assistant gestisce entrambi i protocolli senza problemi e le
+              automazioni funzionano allo stesso modo indipendentemente dalla tecnologia utilizzata.
+            </p>
+          </div>
+        </details>
+
+        <details class="pg-accordion">
+          <summary>
+            <span>❓</span>
+            <div class="pg-accordion-summary-text">
+              <span class="pg-accordion-title">Cosa succede se Home Assistant si spegne?</span>
+            </div>
+          </summary>
+          <div class="pg-accordion-body">
+            <p>
+              La lampadina continuerà a essere alimentata, ma l'interruttore non riuscirà più ad accenderla
+              o spegnerla perché le automazioni non saranno in esecuzione. Anche il controllo da smartphone
+              potrebbe non essere disponibile, a seconda della configurazione della rete domotica. Quando
+              Home Assistant tornerà operativo, tutto riprenderà a funzionare normalmente.
+            </p>
+          </div>
+        </details>
+
+      <details class="pg-accordion">
+        <summary>
+          <span>❓</span>
+          <div class="pg-accordion-summary-text">
+            <span class="pg-accordion-title">Perché usare un relè invece di un semplice pulsante Zigbee?</span>
+          </div>
+        </summary>
+        <div class="pg-accordion-body">
+          <p>
+            È una valida alternativa, soprattutto se si sta progettando un impianto completamente
+            domotico. Io ho preferito utilizzare un relè perché rimane nascosto nella scatola da incasso,
+            permette di continuare a usare un normale interruttore a muro e non richiede batterie o altri
+            dispositivi visibili. In questo modo l'impianto mantiene un aspetto tradizionale pur offrendo
+            tutte le funzionalità della domotica.
+          </p>
+        </div>
+      </details>
+    </div>
+      `
+  },
+
   { id: "concerto-seveso-2026",
     title: "Un concerto a Baruccana, tra vento e coulisse volanti",
     date: "2026-06-30",
@@ -1064,368 +1471,368 @@ const POSTS = [
     tags: ["tech"],
     excerpt: "Lampadine smart, relè, Zigbee, dimmer, strisce LED: analisi completa di tutte le soluzioni per automatizzare l'illuminazione con Home Assistant, con vantaggi e svantaggi di ognuna.",
     content: `
-  <div class="post-guida-v1">
+      <div class="post-guida-v1">
 
-    <p class="pg-intro">
-      L'illuminazione è uno dei primi e più visibili ambiti della domotica domestica.
-      Automatizzare le luci significa risparmio energetico, comodità quotidiana,
-      simulazione di presenza e integrazione con sensori, scene e assistenti vocali.
-      In questa guida analizziamo le tre principali soluzioni compatibili con Home Assistant.
-    </p>
-    <p class="pg-intro">
-      Anche se si tratta "solo" di lampadine, le opzioni per renderle intelligenti sono molteplici.
-      In questo post vediamo i metodi standard; in un post successivo analizzerò invece le soluzioni
-      ibride, ossia quelle che combinano almeno due di queste tecnologie contemporaneamente.
-    </p>
+      <p class="pg-intro">
+        L'illuminazione è uno dei primi e più visibili ambiti della domotica domestica.
+        Automatizzare le luci significa risparmio energetico, comodità quotidiana,
+        simulazione di presenza e integrazione con sensori, scene e assistenti vocali.
+        In questa guida analizziamo le tre principali soluzioni compatibili con Home Assistant.
+      </p>
+      <p class="pg-intro">
+        Anche se si tratta "solo" di lampadine, le opzioni per renderle intelligenti sono molteplici.
+        In questo post vediamo i metodi standard; in un post successivo analizzerò invece le soluzioni
+        ibride, ossia quelle che combinano almeno due di queste tecnologie contemporaneamente.
+      </p>
 
-    <div class="pg-tip">
-      <span class="pg-tip-icon">ℹ️</span>
-      <span>
-        Ogni soluzione è compatibile con Home Assistant, ma alcune richiedono hub aggiuntivi,
-        integrazioni cloud o hardware dedicato. Valuta la tua infrastruttura prima di acquistare.
-      </span>
-    </div>
+      <div class="pg-tip">
+        <span class="pg-tip-icon">ℹ️</span>
+        <span>
+          Ogni soluzione è compatibile con Home Assistant, ma alcune richiedono hub aggiuntivi,
+          integrazioni cloud o hardware dedicato. Valuta la tua infrastruttura prima di acquistare.
+        </span>
+      </div>
 
-    <div class="pg-toc">
-      <div class="pg-toc-label">Indice</div>
-      <ol>
-        <li><a href="#pg-bulbs">Lampadine Smart</a></li>
-        <li><a href="#pg-switches">Interruttori Smart</a></li>
-        <li><a href="#pg-shelly">Relè Smart</a></li>
-        <li><a href="#pg-table-wrap">Tabella comparativa</a></li>
-        <li><a href="#pg-conclusion">Conclusioni</a></li>
-      </ol>
-    </div>
+      <div class="pg-toc">
+        <div class="pg-toc-label">Indice</div>
+        <ol>
+          <li><a href="#pg-bulbs">Lampadine Smart</a></li>
+          <li><a href="#pg-switches">Interruttori Smart</a></li>
+          <li><a href="#pg-shelly">Relè Smart</a></li>
+          <li><a href="#pg-table-wrap">Tabella comparativa</a></li>
+          <li><a href="#pg-conclusion">Conclusioni</a></li>
+        </ol>
+      </div>
 
-    <!-- ── 1. Lampadine Smart ── -->
-    <details id="pg-bulbs" class="pg-accordion">
-      <summary>
-        <span>💡</span>
-        <div class="pg-accordion-summary-text">
-          <span class="pg-accordion-title">1. Lampadine Smart</span>
-          <span class="pg-accordion-subtitle">Philips Hue, LIFX, Tuya…</span>
-        </div>
-        <div class="pg-accordion-summary-difficulty">
-          <span>Difficoltà</span>
-          <div class="pg-dots">
-            <span class="pg-dot on"></span>
-            <span class="pg-dot"></span><span class="pg-dot"></span><span class="pg-dot"></span><span class="pg-dot"></span>
+      <!-- ── 1. Lampadine Smart ── -->
+      <details id="pg-bulbs" class="pg-accordion">
+        <summary>
+          <span>💡</span>
+          <div class="pg-accordion-summary-text">
+            <span class="pg-accordion-title">1. Lampadine Smart</span>
+            <span class="pg-accordion-subtitle">Philips Hue, LIFX, Tuya…</span>
           </div>
-        </div>
-      </summary>
-      <div class="pg-accordion-body">
-        <p>
-          Le lampadine smart si sostituiscono alle lampadine tradizionali senza modificare l'impianto
-          elettrico. Sono la soluzione più semplice per iniziare: plug &amp; play, supporto colore RGBW,
-          dimmerabilità e integrazione immediata con Home Assistant tramite integrazioni native o Zigbee2MQTT.
-        </p>
-        <p>
-          <strong>Attenzione:</strong> l'interruttore fisico deve restare <em>sempre acceso</em>. Se qualcuno
-          lo spegne, la lampadina non è più alimentata e perde la connessione. Questo si mitiga con interruttori
-          smart abbinati o impostando il <em>power on behavior</em>, funzione però non sempre disponibile.
-        </p>
-        <div class="pg-procon">
-          <div class="pg-pros">
-            <div class="pg-procon-label">Vantaggi</div>
-            <ul>
-              <li>Installazione semplicissima, nessun elettricista</li>
-              <li>Supporto colore e temperatura colore</li>
-              <li>Dimmerabilità integrata</li>
-              <li>Aggiornamenti firmware facili</li>
-              <li>Ampia scelta di brand e prezzi</li>
-              <li>Disponibili con vari protocolli: Wi-Fi, Zigbee…</li>
-            </ul>
+          <div class="pg-accordion-summary-difficulty">
+            <span>Difficoltà</span>
+            <div class="pg-dots">
+              <span class="pg-dot on"></span>
+              <span class="pg-dot"></span><span class="pg-dot"></span><span class="pg-dot"></span><span class="pg-dot"></span>
+            </div>
           </div>
-          <div class="pg-cons">
-            <div class="pg-procon-label">Svantaggi</div>
-            <ul>
-              <li>Interruttore fisico deve restare sempre acceso</li>
-              <li>Costo per lampada alto rispetto alle tradizionali</li>
-              <li>Alcuni modelli richiedono hub proprietario</li>
-              <li>Wi-Fi può saturare la rete domestica</li>
-              <li>Dipendenza da cloud per alcune marche</li>
-              <li>Power on behavior non sempre configurabile</li>
-            </ul>
+        </summary>
+        <div class="pg-accordion-body">
+          <p>
+            Le lampadine smart si sostituiscono alle lampadine tradizionali senza modificare l'impianto
+            elettrico. Sono la soluzione più semplice per iniziare: plug &amp; play, supporto colore RGBW,
+            dimmerabilità e integrazione immediata con Home Assistant tramite integrazioni native o Zigbee2MQTT.
+          </p>
+          <p>
+            <strong>Attenzione:</strong> l'interruttore fisico deve restare <em>sempre acceso</em>. Se qualcuno
+            lo spegne, la lampadina non è più alimentata e perde la connessione. Questo si mitiga con interruttori
+            smart abbinati o impostando il <em>power on behavior</em>, funzione però non sempre disponibile.
+          </p>
+          <div class="pg-procon">
+            <div class="pg-pros">
+              <div class="pg-procon-label">Vantaggi</div>
+              <ul>
+                <li>Installazione semplicissima, nessun elettricista</li>
+                <li>Supporto colore e temperatura colore</li>
+                <li>Dimmerabilità integrata</li>
+                <li>Aggiornamenti firmware facili</li>
+                <li>Ampia scelta di brand e prezzi</li>
+                <li>Disponibili con vari protocolli: Wi-Fi, Zigbee…</li>
+              </ul>
+            </div>
+            <div class="pg-cons">
+              <div class="pg-procon-label">Svantaggi</div>
+              <ul>
+                <li>Interruttore fisico deve restare sempre acceso</li>
+                <li>Costo per lampada alto rispetto alle tradizionali</li>
+                <li>Alcuni modelli richiedono hub proprietario</li>
+                <li>Wi-Fi può saturare la rete domestica</li>
+                <li>Dipendenza da cloud per alcune marche</li>
+                <li>Power on behavior non sempre configurabile</li>
+              </ul>
+            </div>
           </div>
+          <div class="pg-tags">
+            <span class="pg-tag">💰 €10–50 / lampadina</span>
+            <span class="pg-tag hl">⚡ Nessun lavoro elettrico</span>
+            <span class="pg-tag">📡 Wi-Fi o Zigbee</span>
+            <span class="pg-tag">🎨 RGBW disponibile</span>
+          </div>
+
+          <h4>La mia esperienza</h4>
+          <p>
+            Ho provato diverse lampadine smart nel corso del tempo, sia Wi-Fi che Zigbee, e le
+            differenze tra i due protocolli sono notevoli.
+          </p>
+
+          <h4>Lampadine Wi-Fi (Tuya, LIFX, Xiaomi)</h4>
+          <p>
+            Di lampadine Wi-Fi Tuya ne ho molte. Sono abbastanza economiche (tra i 10€ e i 15€),
+            però non le consiglio: sono dipendenti dal cloud. Ho provato a usare la custom integration
+            LocalTuya su Home Assistant e a bloccare il loro IP verso internet dal router, ma smettono
+            comunque di funzionare perché hanno sempre bisogno di comunicare con il server della casa madre.
+          </p>
+          <p>
+            Avere molte lampadine Wi-Fi richiede inoltre un buon router, che si trova a gestire un numero
+            elevato di dispositivi oltre a quelli di base (smartphone, computer, smart TV, smart speaker,
+            videocamere…). Il protocollo Wi-Fi per delle lampadine è sostanzialmente sprecato: consuma molto
+            e permette di trasferire dati velocemente, caratteristica del tutto inutile per dispositivi IoT
+            di questo tipo.
+          </p>
+          <p>
+            Un altro svantaggio significativo è la mancanza del power on behavior su alcuni modelli.
+            Immaginate di avere queste lampadine in camera da letto e che durante la notte la corrente
+            salti e ritorni più volte per problemi esterni. La lampadina si accende ogni volta che viene
+            rialimentata e non c'è nulla da configurare per evitarlo. Per di più, anche il router si è
+            spento, e al ritorno della corrente ha bisogno di un certo tempo per avviarsi e ristabilire
+            la connessione: in quel lasso di tempo le lampadine non sono controllabili da remoto.
+            Questi difetti valgono sia per le lampadine Tuya, sia per LIFX e Xiaomi, di cui possiedo
+            una lampadina ciascuna.
+          </p>
+
+          <h4>Lampadine Zigbee (Philips Hue)</h4>
+          <p>
+            Proprio per risolvere i problemi delle lampadine Wi-Fi, ho provato le lampadine Zigbee,
+            nel mio caso Philips Hue. Sono decisamente più costose rispetto alle Tuya, ma molto più
+            affidabili. Stando anche a quanto si legge in giro nella community, sono tra i dispositivi
+            Zigbee più stabili e longevi nel tempo.
+          </p>
+          <p>
+            I vantaggi del protocollo Zigbee sono: controllo locale, basso consumo energetico e
+            comunicazione rapida. Per le lampadine smart, Zigbee (e protocolli simili) è a mio avviso
+            la scelta corretta. Con le Philips Hue si risolvono entrambi i problemi principali: il
+            power on behavior è configurabile e, trattandosi di controllo locale, non è necessaria
+            la connessione a internet.
+          </p>
+          <p>
+            L'unico aspetto da considerare è che occorre acquistare un coordinator per creare la rete
+            Zigbee, a differenza del Wi-Fi che è già presente in ogni casa.
+          </p>
         </div>
-        <div class="pg-tags">
-          <span class="pg-tag">💰 €10–50 / lampadina</span>
-          <span class="pg-tag hl">⚡ Nessun lavoro elettrico</span>
-          <span class="pg-tag">📡 Wi-Fi o Zigbee</span>
-          <span class="pg-tag">🎨 RGBW disponibile</span>
+      </details>
+
+      <!-- ── 2. Interruttori Smart ── -->
+      <details id="pg-switches" class="pg-accordion">
+        <summary>
+          <span>🔲</span>
+          <div class="pg-accordion-summary-text">
+            <span class="pg-accordion-title">2. Interruttori Smart</span>
+            <span class="pg-accordion-subtitle">Sonoff TX, Tuya Wi-Fi Switch, Fibaro…</span>
+          </div>
+          <div class="pg-accordion-summary-difficulty">
+            <span>Difficoltà</span>
+            <div class="pg-dots">
+              <span class="pg-dot on"></span><span class="pg-dot on"></span>
+              <span class="pg-dot on"></span><span class="pg-dot"></span><span class="pg-dot"></span>
+            </div>
+          </div>
+        </summary>
+        <div class="pg-accordion-body">
+          <p>
+            Gli interruttori smart sostituiscono i normali interruttori a parete e controllano
+            la linea di alimentazione verso luci tradizionali. Mantengono l'usabilità fisica
+            e aggiungono controllo remoto e automazioni. Richiedono un minimo di lavoro elettrico.
+          </p>
+          <p>
+            Molti modelli supportano il cablaggio senza neutro (solo fase e carico), aspetto
+            fondamentale negli impianti italiani più vecchi. Vale la pena verificare sempre
+            la compatibilità prima dell'acquisto.
+          </p>
+          <div class="pg-procon">
+            <div class="pg-pros">
+              <div class="pg-procon-label">Vantaggi</div>
+              <ul>
+                <li>Funziona con qualsiasi lampadina tradizionale</li>
+                <li>Interruttore fisico sempre funzionante</li>
+                <li>Aspetto estetico personalizzabile</li>
+                <li>Modelli senza neutro disponibili</li>
+              </ul>
+            </div>
+            <div class="pg-cons">
+              <div class="pg-procon-label">Svantaggi</div>
+              <ul>
+                <li>Richiede lavoro elettrico</li>
+                <li>Non gestisce dimmer o colori</li>
+                <li>Dimensioni possono non entrare in scatole piccole</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pg-tags">
+            <span class="pg-tag">💰 €15–60 / interruttore</span>
+            <span class="pg-tag hl">🏠 Compatibile impianti esistenti</span>
+            <span class="pg-tag">📡 Wi-Fi o Zigbee</span>
+          </div>
+
+          <h4>La mia esperienza</h4>
+          <p>
+            Non ho mai acquistato interruttori smart, principalmente per non alterare l'estetica
+            degli interruttori già presenti in casa. La soluzione successiva — i relè smart — risolve
+            proprio questo problema, permettendo di mantenere l'interruttore originale invariato.
+          </p>
         </div>
+      </details>
 
-        <h4>La mia esperienza</h4>
-        <p>
-          Ho provato diverse lampadine smart nel corso del tempo, sia Wi-Fi che Zigbee, e le
-          differenze tra i due protocolli sono notevoli.
-        </p>
+      <!-- ── 3. Relè Smart ── -->
+      <details id="pg-shelly" class="pg-accordion">
+        <summary>
+          <span>⚡</span>
+          <div class="pg-accordion-summary-text">
+            <span class="pg-accordion-title">3. Relè Smart</span>
+            <span class="pg-accordion-subtitle">Shelly, Sonoff Mini… installazione in scatola, estetica invariata</span>
+          </div>
+          <div class="pg-accordion-summary-difficulty">
+            <span>Difficoltà</span>
+            <div class="pg-dots">
+              <span class="pg-dot on"></span><span class="pg-dot on"></span>
+              <span class="pg-dot on"></span><span class="pg-dot on"></span><span class="pg-dot"></span>
+            </div>
+          </div>
+        </summary>
+        <div class="pg-accordion-body">
+          <p>
+            I relè smart si inseriscono dentro la scatola dell'interruttore o di derivazione,
+            senza sostituirlo visivamente. L'interruttore originale rimane al suo posto e continua
+            a funzionare normalmente, mentre il relè aggiunge la gestione intelligente sul circuito.
+          </p>
+          <p>
+            Shelly è amatissima dalla community Home Assistant per l'integrazione locale nativa
+            (nessun cloud), supporto MQTT, prezzi competitivi e dimensioni contenute.
+          </p>
+          <div class="pg-procon">
+            <div class="pg-pros">
+              <div class="pg-procon-label">Vantaggi</div>
+              <ul>
+                <li>Interruttori originali esteticamente invariati</li>
+                <li>Funzionamento completamente locale (nessun cloud)</li>
+                <li>Compatibile con qualsiasi lampadina</li>
+                <li>Prezzi molto competitivi (da ~€8)</li>
+                <li>Supporto MQTT + HA nativo eccellente</li>
+              </ul>
+            </div>
+            <div class="pg-cons">
+              <div class="pg-procon-label">Svantaggi</div>
+              <ul>
+                <li>Richiede conoscenze elettriche più avanzate</li>
+                <li>Spazio nella scatola non sempre disponibile</li>
+                <li>Nessuna gestione del colore (nei modelli base)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pg-tags">
+            <span class="pg-tag">💰 €8–20 / relè</span>
+            <span class="pg-tag hl">🔌 100% locale</span>
+            <span class="pg-tag">🏠 Estetica invariata</span>
+          </div>
 
-        <h4>Lampadine Wi-Fi (Tuya, LIFX, Xiaomi)</h4>
-        <p>
-          Di lampadine Wi-Fi Tuya ne ho molte. Sono abbastanza economiche (tra i 10€ e i 15€),
-          però non le consiglio: sono dipendenti dal cloud. Ho provato a usare la custom integration
-          LocalTuya su Home Assistant e a bloccare il loro IP verso internet dal router, ma smettono
-          comunque di funzionare perché hanno sempre bisogno di comunicare con il server della casa madre.
-        </p>
-        <p>
-          Avere molte lampadine Wi-Fi richiede inoltre un buon router, che si trova a gestire un numero
-          elevato di dispositivi oltre a quelli di base (smartphone, computer, smart TV, smart speaker,
-          videocamere…). Il protocollo Wi-Fi per delle lampadine è sostanzialmente sprecato: consuma molto
-          e permette di trasferire dati velocemente, caratteristica del tutto inutile per dispositivi IoT
-          di questo tipo.
-        </p>
-        <p>
-          Un altro svantaggio significativo è la mancanza del power on behavior su alcuni modelli.
-          Immaginate di avere queste lampadine in camera da letto e che durante la notte la corrente
-          salti e ritorni più volte per problemi esterni. La lampadina si accende ogni volta che viene
-          rialimentata e non c'è nulla da configurare per evitarlo. Per di più, anche il router si è
-          spento, e al ritorno della corrente ha bisogno di un certo tempo per avviarsi e ristabilire
-          la connessione: in quel lasso di tempo le lampadine non sono controllabili da remoto.
-          Questi difetti valgono sia per le lampadine Tuya, sia per LIFX e Xiaomi, di cui possiedo
-          una lampadina ciascuna.
-        </p>
+          <h4>La mia esperienza</h4>
+          <p>
+            Questa è la soluzione che ho adottato per tutte le luci di casa. Non ho usato Shelly,
+            bensì i relè Sonoff Zigbee, che si installano nella scatola dell'interruttore e
+            comunicano tramite rete Zigbee anziché Wi-Fi.
+          </p>
+          <p>
+            Esistono modelli che richiedono il cavo del neutro e modelli senza. Questi ultimi sono
+            più immediati da installare, ma funzionano come <em>end-device</em> nella rete Zigbee.
+            I modelli con neutro invece fungono da <em>router Zigbee</em>, ovvero amplificano e
+            estendono la rete mesh. Questa distinzione è importante: più router Zigbee si hanno
+            in casa, più la rete è stabile e capillare, con una copertura migliore su tutta la superficie.
+          </p>
+          <p>
+            Essendo collegati fisicamente tra interruttore e lampadina, questi dispositivi mantengono
+            invariato il comportamento classico: l'interruttore fisico funziona come sempre, e in
+            più si aggiunge la possibilità di comandare la luce da remoto. Il power on behavior
+            è configurabile.
+          </p>
+          <p>
+            L'unico limite rispetto alle lampadine smart è la perdita della dimmerabilità e del
+            controllo del colore — anche se esistono relè dimmerabili, da usare ovviamente con
+            lampadine compatibili.
+          </p>
+        </div>
+      </details>
 
-        <h4>Lampadine Zigbee (Philips Hue)</h4>
+      <!-- ── Tabella comparativa ── -->
+      <h2>Tabella comparativa</h2>
+      <div id="pg-table-wrap" class="pg-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Soluzione</th>
+              <th>Difficoltà</th>
+              <th>Costo medio</th>
+              <th>Colori</th>
+              <th>Dimmer</th>
+              <th>Locale</th>
+              <th>Impianto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>💡 Lampadine Smart</td>
+              <td>Bassa</td>
+              <td>€10–50 / lamp.</td>
+              <td><span class="pg-ok">✓</span></td>
+              <td><span class="pg-ok">✓</span></td>
+              <td><span class="pg-warn">Parziale</span></td>
+              <td><span class="pg-ok">No</span></td>
+            </tr>
+            <tr>
+              <td>🔲 Interruttori Smart</td>
+              <td>Media</td>
+              <td>€15–60 / pz</td>
+              <td><span class="pg-no">✗</span></td>
+              <td><span class="pg-no">✗</span></td>
+              <td><span class="pg-warn">Parziale</span></td>
+              <td><span class="pg-warn">Minimo</span></td>
+            </tr>
+            <tr>
+              <td>⚡ Relè Smart</td>
+              <td>Media-Alta</td>
+              <td>€8–20 / pz</td>
+              <td><span class="pg-no">✗</span></td>
+              <td><span class="pg-no">✗ *</span></td>
+              <td><span class="pg-ok">✓</span></td>
+              <td><span class="pg-warn">Medio</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.8rem; color: var(--muted); margin-top: 8px;">* Esistono modelli di relè dimmerabili, compatibili con lampadine che supportano la dimmerabilità.</p>
+
+      <!-- ── Conclusione ── -->
+      <div id="pg-conclusion" class="pg-conclusion">
+        <h2>Quale soluzione scegliere?</h2>
         <p>
-          Proprio per risolvere i problemi delle lampadine Wi-Fi, ho provato le lampadine Zigbee,
-          nel mio caso Philips Hue. Sono decisamente più costose rispetto alle Tuya, ma molto più
-          affidabili. Stando anche a quanto si legge in giro nella community, sono tra i dispositivi
-          Zigbee più stabili e longevi nel tempo.
+          Non esiste una risposta universale: la scelta dipende dall'impianto, dal budget,
+          dalla voglia di mettere le mani nell'elettrico e dal livello di automazione desiderato.
         </p>
         <p>
-          I vantaggi del protocollo Zigbee sono: controllo locale, basso consumo energetico e
-          comunicazione rapida. Per le lampadine smart, Zigbee (e protocolli simili) è a mio avviso
-          la scelta corretta. Con le Philips Hue si risolvono entrambi i problemi principali: il
-          power on behavior è configurabile e, trattandosi di controllo locale, non è necessaria
-          la connessione a internet.
+          Se vuoi <strong>iniziare subito</strong> senza toccare l'impianto, le lampadine smart
+          sono la strada più diretta — preferibilmente Zigbee per evitare i problemi del Wi-Fi.
+          Se vuoi <strong>mantenere gli interruttori esistenti</strong> e un funzionamento completamente
+          locale, i relè smart sono la scelta più solida. Gli interruttori smart rappresentano una
+          via di mezzo, utile quando si vuole sostituire completamente la placca ma senza intervenire
+          sul circuito della lampadina.
         </p>
         <p>
-          L'unico aspetto da considerare è che occorre acquistare un coordinator per creare la rete
-          Zigbee, a differenza del Wi-Fi che è già presente in ogni casa.
+          In molte case la soluzione ideale è un <strong>mix di queste tecnologie</strong>:
+          lampadine Zigbee dove serve il colore, relè smart ovunque si voglia semplicità e
+          affidabilità. Home Assistant le gestisce tutte in modo unificato, con automazioni
+          che coinvolgono qualsiasi dispositivo indipendentemente dal protocollo.
+        </p>
+        <p>
+          Come accennato all'inizio, esistono anche soluzioni ibride che combinano più di questi
+          approcci. Ce n'è una in particolare che utilizzo attualmente, unendo relè smart e
+          lampadina smart sullo stesso punto luce. Ha i suoi vantaggi e svantaggi, e ne parlerò
+          in un prossimo post.
         </p>
       </div>
-    </details>
 
-    <!-- ── 2. Interruttori Smart ── -->
-    <details id="pg-switches" class="pg-accordion">
-      <summary>
-        <span>🔲</span>
-        <div class="pg-accordion-summary-text">
-          <span class="pg-accordion-title">2. Interruttori Smart</span>
-          <span class="pg-accordion-subtitle">Sonoff TX, Tuya Wi-Fi Switch, Fibaro…</span>
-        </div>
-        <div class="pg-accordion-summary-difficulty">
-          <span>Difficoltà</span>
-          <div class="pg-dots">
-            <span class="pg-dot on"></span><span class="pg-dot on"></span>
-            <span class="pg-dot on"></span><span class="pg-dot"></span><span class="pg-dot"></span>
-          </div>
-        </div>
-      </summary>
-      <div class="pg-accordion-body">
-        <p>
-          Gli interruttori smart sostituiscono i normali interruttori a parete e controllano
-          la linea di alimentazione verso luci tradizionali. Mantengono l'usabilità fisica
-          e aggiungono controllo remoto e automazioni. Richiedono un minimo di lavoro elettrico.
-        </p>
-        <p>
-          Molti modelli supportano il cablaggio senza neutro (solo fase e carico), aspetto
-          fondamentale negli impianti italiani più vecchi. Vale la pena verificare sempre
-          la compatibilità prima dell'acquisto.
-        </p>
-        <div class="pg-procon">
-          <div class="pg-pros">
-            <div class="pg-procon-label">Vantaggi</div>
-            <ul>
-              <li>Funziona con qualsiasi lampadina tradizionale</li>
-              <li>Interruttore fisico sempre funzionante</li>
-              <li>Aspetto estetico personalizzabile</li>
-              <li>Modelli senza neutro disponibili</li>
-            </ul>
-          </div>
-          <div class="pg-cons">
-            <div class="pg-procon-label">Svantaggi</div>
-            <ul>
-              <li>Richiede lavoro elettrico</li>
-              <li>Non gestisce dimmer o colori</li>
-              <li>Dimensioni possono non entrare in scatole piccole</li>
-            </ul>
-          </div>
-        </div>
-        <div class="pg-tags">
-          <span class="pg-tag">💰 €15–60 / interruttore</span>
-          <span class="pg-tag hl">🏠 Compatibile impianti esistenti</span>
-          <span class="pg-tag">📡 Wi-Fi o Zigbee</span>
-        </div>
-
-        <h4>La mia esperienza</h4>
-        <p>
-          Non ho mai acquistato interruttori smart, principalmente per non alterare l'estetica
-          degli interruttori già presenti in casa. La soluzione successiva — i relè smart — risolve
-          proprio questo problema, permettendo di mantenere l'interruttore originale invariato.
-        </p>
-      </div>
-    </details>
-
-    <!-- ── 3. Relè Smart ── -->
-    <details id="pg-shelly" class="pg-accordion">
-      <summary>
-        <span>⚡</span>
-        <div class="pg-accordion-summary-text">
-          <span class="pg-accordion-title">3. Relè Smart</span>
-          <span class="pg-accordion-subtitle">Shelly, Sonoff Mini… installazione in scatola, estetica invariata</span>
-        </div>
-        <div class="pg-accordion-summary-difficulty">
-          <span>Difficoltà</span>
-          <div class="pg-dots">
-            <span class="pg-dot on"></span><span class="pg-dot on"></span>
-            <span class="pg-dot on"></span><span class="pg-dot on"></span><span class="pg-dot"></span>
-          </div>
-        </div>
-      </summary>
-      <div class="pg-accordion-body">
-        <p>
-          I relè smart si inseriscono dentro la scatola dell'interruttore o di derivazione,
-          senza sostituirlo visivamente. L'interruttore originale rimane al suo posto e continua
-          a funzionare normalmente, mentre il relè aggiunge la gestione intelligente sul circuito.
-        </p>
-        <p>
-          Shelly è amatissima dalla community Home Assistant per l'integrazione locale nativa
-          (nessun cloud), supporto MQTT, prezzi competitivi e dimensioni contenute.
-        </p>
-        <div class="pg-procon">
-          <div class="pg-pros">
-            <div class="pg-procon-label">Vantaggi</div>
-            <ul>
-              <li>Interruttori originali esteticamente invariati</li>
-              <li>Funzionamento completamente locale (nessun cloud)</li>
-              <li>Compatibile con qualsiasi lampadina</li>
-              <li>Prezzi molto competitivi (da ~€8)</li>
-              <li>Supporto MQTT + HA nativo eccellente</li>
-            </ul>
-          </div>
-          <div class="pg-cons">
-            <div class="pg-procon-label">Svantaggi</div>
-            <ul>
-              <li>Richiede conoscenze elettriche più avanzate</li>
-              <li>Spazio nella scatola non sempre disponibile</li>
-              <li>Nessuna gestione del colore (nei modelli base)</li>
-            </ul>
-          </div>
-        </div>
-        <div class="pg-tags">
-          <span class="pg-tag">💰 €8–20 / relè</span>
-          <span class="pg-tag hl">🔌 100% locale</span>
-          <span class="pg-tag">🏠 Estetica invariata</span>
-        </div>
-
-        <h4>La mia esperienza</h4>
-        <p>
-          Questa è la soluzione che ho adottato per tutte le luci di casa. Non ho usato Shelly,
-          bensì i relè Sonoff Zigbee, che si installano nella scatola dell'interruttore e
-          comunicano tramite rete Zigbee anziché Wi-Fi.
-        </p>
-        <p>
-          Esistono modelli che richiedono il cavo del neutro e modelli senza. Questi ultimi sono
-          più immediati da installare, ma funzionano come <em>end-device</em> nella rete Zigbee.
-          I modelli con neutro invece fungono da <em>router Zigbee</em>, ovvero amplificano e
-          estendono la rete mesh. Questa distinzione è importante: più router Zigbee si hanno
-          in casa, più la rete è stabile e capillare, con una copertura migliore su tutta la superficie.
-        </p>
-        <p>
-          Essendo collegati fisicamente tra interruttore e lampadina, questi dispositivi mantengono
-          invariato il comportamento classico: l'interruttore fisico funziona come sempre, e in
-          più si aggiunge la possibilità di comandare la luce da remoto. Il power on behavior
-          è configurabile.
-        </p>
-        <p>
-          L'unico limite rispetto alle lampadine smart è la perdita della dimmerabilità e del
-          controllo del colore — anche se esistono relè dimmerabili, da usare ovviamente con
-          lampadine compatibili.
-        </p>
-      </div>
-    </details>
-
-    <!-- ── Tabella comparativa ── -->
-    <h2>Tabella comparativa</h2>
-    <div id="pg-table-wrap" class="pg-table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Soluzione</th>
-            <th>Difficoltà</th>
-            <th>Costo medio</th>
-            <th>Colori</th>
-            <th>Dimmer</th>
-            <th>Locale</th>
-            <th>Impianto</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>💡 Lampadine Smart</td>
-            <td>Bassa</td>
-            <td>€10–50 / lamp.</td>
-            <td><span class="pg-ok">✓</span></td>
-            <td><span class="pg-ok">✓</span></td>
-            <td><span class="pg-warn">Parziale</span></td>
-            <td><span class="pg-ok">No</span></td>
-          </tr>
-          <tr>
-            <td>🔲 Interruttori Smart</td>
-            <td>Media</td>
-            <td>€15–60 / pz</td>
-            <td><span class="pg-no">✗</span></td>
-            <td><span class="pg-no">✗</span></td>
-            <td><span class="pg-warn">Parziale</span></td>
-            <td><span class="pg-warn">Minimo</span></td>
-          </tr>
-          <tr>
-            <td>⚡ Relè Smart</td>
-            <td>Media-Alta</td>
-            <td>€8–20 / pz</td>
-            <td><span class="pg-no">✗</span></td>
-            <td><span class="pg-no">✗ *</span></td>
-            <td><span class="pg-ok">✓</span></td>
-            <td><span class="pg-warn">Medio</span></td>
-          </tr>
-        </tbody>
-      </table>
     </div>
-    <p style="font-size:.8rem; color: var(--muted); margin-top: 8px;">* Esistono modelli di relè dimmerabili, compatibili con lampadine che supportano la dimmerabilità.</p>
-
-    <!-- ── Conclusione ── -->
-    <div id="pg-conclusion" class="pg-conclusion">
-      <h2>Quale soluzione scegliere?</h2>
-      <p>
-        Non esiste una risposta universale: la scelta dipende dall'impianto, dal budget,
-        dalla voglia di mettere le mani nell'elettrico e dal livello di automazione desiderato.
-      </p>
-      <p>
-        Se vuoi <strong>iniziare subito</strong> senza toccare l'impianto, le lampadine smart
-        sono la strada più diretta — preferibilmente Zigbee per evitare i problemi del Wi-Fi.
-        Se vuoi <strong>mantenere gli interruttori esistenti</strong> e un funzionamento completamente
-        locale, i relè smart sono la scelta più solida. Gli interruttori smart rappresentano una
-        via di mezzo, utile quando si vuole sostituire completamente la placca ma senza intervenire
-        sul circuito della lampadina.
-      </p>
-      <p>
-        In molte case la soluzione ideale è un <strong>mix di queste tecnologie</strong>:
-        lampadine Zigbee dove serve il colore, relè smart ovunque si voglia semplicità e
-        affidabilità. Home Assistant le gestisce tutte in modo unificato, con automazioni
-        che coinvolgono qualsiasi dispositivo indipendentemente dal protocollo.
-      </p>
-      <p>
-        Come accennato all'inizio, esistono anche soluzioni ibride che combinano più di questi
-        approcci. Ce n'è una in particolare che utilizzo attualmente, unendo relè smart e
-        lampadina smart sullo stesso punto luce. Ha i suoi vantaggi e svantaggi, e ne parlerò
-        in un prossimo post.
-      </p>
-    </div>
-
-  </div>
-    `
+      `
   },
 
   { id: "gita-banda-palazzolo-2026-bacheca",
