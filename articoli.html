@@ -47,7 +47,7 @@
       });
   })();
   </script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.0.0/fuse.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -58,6 +58,11 @@
   </nav>
   <h1 class="page-title">📝 Articoli</h1>
   <p class="page-sub" id="post-count"></p>
+  <div class="search-bar">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search-input" placeholder="Cerca articoli..." autocomplete="off">
+    <span class="search-clear" id="search-clear">✕</span>
+  </div>
   <div class="filter-bar" id="filter-bar"></div>
   <div class="blog-grid" id="blog-grid"></div>
   <footer><p>&copy; 2026 Davide Zanella</p></footer>
@@ -71,6 +76,17 @@
 
   const ARTICLES = getArticles();
   let activeFilter = null;
+  let searchQuery = '';
+
+  const fuse = new Fuse(ARTICLES, {
+    keys: [
+      { name: 'title', weight: 0.5 },
+      { name: 'excerpt', weight: 0.3 },
+      { name: 'tags', weight: 0.2 }
+    ],
+    threshold: 0.35,
+    ignoreLocation: true
+  });
 
   const allCats = [...new Set(ARTICLES.flatMap(p => p.tags.filter(t => CATS[t])))];
   const filterBar = document.getElementById('filter-bar');
@@ -83,11 +99,29 @@
     renderGrid();
   }));
 
+  const searchInput = document.getElementById('search-input');
+  const searchClear = document.getElementById('search-clear');
+  searchInput.addEventListener('input', () => {
+    searchQuery = searchInput.value.trim();
+    searchClear.classList.toggle('visible', searchQuery.length > 0);
+    renderGrid();
+  });
+  searchClear.addEventListener('click', () => {
+    searchInput.value = '';
+    searchQuery = '';
+    searchClear.classList.remove('visible');
+    renderGrid();
+  });
+
   function renderGrid() {
-    const filtered = activeFilter ? ARTICLES.filter(p => p.tags.includes(activeFilter)) : ARTICLES;
-    document.getElementById('post-count').textContent = filtered.length + ' articol' + (filtered.length === 1 ? 'o' : 'i');
-    document.getElementById('blog-grid').innerHTML = filtered.length
-      ? filtered.map(buildArticleCard).join('')
+    let result = searchQuery
+      ? fuse.search(searchQuery).map(r => r.item)
+      : ARTICLES;
+    if (activeFilter) result = result.filter(p => p.tags.includes(activeFilter));
+
+    document.getElementById('post-count').textContent = result.length + ' articol' + (result.length === 1 ? 'o' : 'i');
+    document.getElementById('blog-grid').innerHTML = result.length
+      ? result.map(buildArticleCard).join('')
       : '<p class="empty-state">Nessun articolo trovato.</p>';
   }
   renderGrid();

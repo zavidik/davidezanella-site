@@ -37,7 +37,7 @@ const POSTS = [
     cover: "img/posts/domotica-luci-soluzione-ibrida.jpg",
     showInGallery: false,
     pinned: false,
-    tags: ["tech"],
+    tags: ["tech", "smart home"],
     excerpt: "Come ho combinato lampadine smart e relè smart per avere il meglio di entrambe le soluzioni: interruttore a muro funzionante e controllo completo di colori e luminosità.",
     relatedPosts: [
       { id: "domotica-luci-home-assistant", label: 'Tutte le soluzioni per luci smart:' }
@@ -1468,7 +1468,7 @@ mode: single</code></pre>
     cover: "img/posts/domotica-luci-home-assistant.jpg",
     showInGallery: false,
     pinned: false,
-    tags: ["tech"],
+    tags: ["tech", "smart home"],
     excerpt: "Lampadine smart, relè, Zigbee, dimmer, strisce LED: analisi completa di tutte le soluzioni per automatizzare l'illuminazione con Home Assistant, con vantaggi e svantaggi di ognuna.",
     content: `
       <div class="post-guida-v1">

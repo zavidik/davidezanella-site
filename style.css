@@ -749,3 +749,26 @@ details.pg-accordion .pg-accordion-body {
 .lightbox-next { right: -60px; }
 @media(max-width:600px) { .lightbox-prev { left: 8px; } .lightbox-next { right: 8px; } }
 .empty-state { color: var(--muted); text-align: center; padding: 60px 0; font-size: .9rem; }
+
+/* ══════════════════════════════════════════
+   Search bar
+   ══════════════════════════════════════════ */
+.search-bar {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 10px 16px;
+  margin-bottom: 14px; box-shadow: var(--shadow);
+}
+.search-icon { font-size: .95rem; color: var(--muted); flex-shrink: 0; }
+.search-bar input {
+  flex: 1; border: none; background: transparent; outline: none;
+  font-family: inherit; font-size: .95rem; color: var(--text);
+}
+.search-bar input::placeholder { color: var(--muted); }
+.search-clear {
+  cursor: pointer; color: var(--muted); font-size: .85rem;
+  opacity: 0; pointer-events: none; transition: opacity .15s;
+  flex-shrink: 0; padding: 2px 4px;
+}
+.search-clear.visible { opacity: 1; pointer-events: auto; }
+.search-clear:hover { color: var(--text); }
