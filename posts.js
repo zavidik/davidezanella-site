@@ -637,6 +637,9 @@ mode: single</code></pre>
 
       <p>È stata una di quelle giornate un po' fuori dall'ordinario. Non un concerto vero e proprio, niente palco né spartiti sul leggio — solo musica ambulante tra gente che ama una macchina. Mi è piaciuto. E sapevo già che la serata non era finita: avevo il <a href="post.html?id=concerto-estate-cusano-2026">concerto di Cusano</a> ad aspettarmi.</p>
       <img src="img/posts/festival-del-pandino-2026-3.jpg" alt="Festival del Pandino 2026">
+
+      <h2>Aggiornamento</h2>
+      <p>Sono passati un po' di giorni, oggi è il 4 luglio e aggiorno il post solamente perché è uscito un <a href="https://ilnuovotorrazzo.it/2026/07/04/bubbly-blues-entusiasmo-e-divertimento-per-lo-spettacolo-itinerante-a-pandino" target="_blank" rel="noopener">breve articolo su questo evento e i Bubbly&Blues</a>!</p>
     `
   },
 
