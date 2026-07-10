@@ -38,6 +38,9 @@ const POSTS = [
     cover: "img/posts/2026/esame-ingegneria-del-software-2026.jpg",
     pinned: false,
     tags: ["lavoro", "università"],
+    relatedPosts: [
+      { id: 'esame-reti-logiche-giugno-2026', label: 'Esame precedente:' },
+    ],
     showInGallery: false,
     photos: [],
     excerpt: "Il 29 giugno ho affrontato per la terza volta l'esame di Ingegneria del Software, dopo due tentativi andati storti nella sessione invernale. Stavolta è andata: voto non altissimo, ma un altro passo verso la fine di questo percorso.",
