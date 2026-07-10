@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archivio — Davide Zanella</title>
+  <meta name="description" content="Tutti gli articoli e i post di bacheca, raggruppati per anno e mese">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪊</text></svg>">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn, ecc.) -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="Davide Zanella">
+  <meta property="og:title"       content="Archivio — Davide Zanella">
+  <meta property="og:description" content="Tutti gli articoli e i post di bacheca, raggruppati per anno e mese">
+  <meta property="og:url"         content="https://davidezanella.com/archivio.html">
+  <meta property="og:image"       content="https://davidezanella.com/img/profilo.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"      content="it_IT">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Archivio — Davide Zanella">
+  <meta name="twitter:description" content="Tutti gli articoli e i post di bacheca, raggruppati per anno e mese">
+  <meta name="twitter:image"       content="https://davidezanella.com/img/profilo.jpg">
+
+  <!-- Canonical URL (evita duplicati per Google) -->
+  <link rel="canonical" href="https://davidezanella.com/archivio.html">
+
+  <!-- Tema colore browser mobile -->
+  <meta name="theme-color" content="#f7f5f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+
+  <!-- Autore -->
+  <meta name="author" content="Davide Zanella">
+
+  <script>
+  (function(){
+    var v="?v="+Date.now();
+    document.querySelectorAll('script[src],link[rel="stylesheet"]')
+      .forEach(function(e){
+        var a=e.tagName==="LINK"?"href":"src";
+        var u=e.getAttribute(a);
+        if(u&&u.indexOf("?")===-1&&!u.startsWith("http")&&!u.startsWith("//"))
+          e.setAttribute(a,u+v);
+      });
+  })();
+  </script>
+
+  <style>
+    /* ══════════════════════════════════════════
+       ARCHIVIO — accordion dedicato a due livelli
+       Stile "ad albero": indentazione leggera invece
+       di box annidati, per lasciare spazio alle card
+       ══════════════════════════════════════════ */
+
+    .archive-section { margin-bottom: 44px; }
+    .archive-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; margin-bottom: 8px;
+    }
+
+    /* ── Livello anno ── */
+    .archive-year {
+      border-bottom: 1px solid var(--border);
+      animation: fadeUp .5s ease both;
+    }
+    .archive-year:last-child { border-bottom: none; }
+
+    .archive-year > summary {
+      list-style: none;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 16px 2px;
+      transition: opacity .15s;
+    }
+    .archive-year > summary::-webkit-details-marker { display: none; }
+    .archive-year > summary:hover { opacity: .7; }
+
+    .archive-caret {
+      font-size: 1.2rem;
+      color: var(--muted);
+      transition: transform .2s;
+      flex-shrink: 0;
+      width: 14px;
+    }
+    .archive-year[open] > summary .archive-caret { transform: rotate(90deg); }
+
+    .archive-year-label {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .archive-year-count { font-size: .8rem; color: var(--muted); font-weight: 400; }
+
+    .archive-year-body {
+      padding: 0 0 14px 22px;
+      border-left: 2px solid var(--border);
+      margin-left: 7px;
+    }
+
+    /* ── Livello mese ── */
+    .archive-month + .archive-month { border-top: 1px solid var(--border); }
+
+    .archive-month > summary {
+      list-style: none;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 10px 2px;
+      transition: opacity .15s;
+    }
+    .archive-month > summary::-webkit-details-marker { display: none; }
+    .archive-month > summary:hover { opacity: .7; }
+    .archive-month[open] > summary .archive-caret { transform: rotate(90deg); }
+
+    .archive-month-label {
+      font-size: .78rem; font-weight: 600; letter-spacing: .05em;
+      text-transform: uppercase; color: var(--text);
+    }
+    .archive-month-count { font-size: .75rem; color: var(--muted); }
+
+    .archive-month-body { padding: 4px 0 18px; }
+
+    /* ── Mobile: meno indentazione, più spazio alle card ── */
+    @media (max-width: 500px) {
+      .archive-year-body { padding-left: 12px; margin-left: 4px; }
+      .archive-caret { width: 12px; font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">Archivio</span>
+  </nav>
+  <h1 class="page-title">🗂️ Archivio</h1>
+  <p class="page-sub" id="post-count"></p>
+
+  <div class="archive-section">
+    <div class="archive-section-title">📝 Articoli</div>
+    <div id="archive-articles"></div>
+  </div>
+
+  <div class="archive-section">
+    <div class="archive-section-title">📌 Bacheca</div>
+    <div id="archive-bacheca"></div>
+  </div>
+
+  <footer><p>&copy; 2026 Davide Zanella</p></footer>
+</div>
+
+<script src="posts.js"></script>
+<script src="blog-utils.js"></script>
+<script src="nav.js"></script>
+<script>
+  initNav('archivio.html');
+
+  function getMonthLabel(dateStr) {
+    const [y, m] = dateStr.split('-');
+    const M = ['','Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno',
+               'Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+    return M[parseInt(m)] + ' ' + y;
+  }
+
+  // Raggruppa un elenco di post per anno e poi per mese, entrambi decrescenti
+  function groupByYearMonth(posts) {
+    const byYear = {};
+    posts.forEach(p => {
+      const year = p.date.substring(0, 4);
+      (byYear[year] = byYear[year] || []).push(p);
+    });
+    return Object.keys(byYear)
+      .sort((a, b) => b.localeCompare(a))
+      .map(year => {
+        const yearPosts = byYear[year].sort((a, b) => b.date.localeCompare(a.date));
+        const byMonth = {};
+        yearPosts.forEach(p => {
+          const key = p.date.substring(0, 7);
+          (byMonth[key] = byMonth[key] || []).push(p);
+        });
+        const months = Object.keys(byMonth)
+          .sort((a, b) => b.localeCompare(a))
+          .map(key => ({ key, label: getMonthLabel(byMonth[key][0].date), posts: byMonth[key] }));
+        return { year, count: yearPosts.length, months };
+      });
+  }
+
+  function renderArchiveGroup(containerId, posts, cardFn) {
+    const container = document.getElementById(containerId);
+    if (!posts.length) {
+      container.innerHTML = '<p class="empty-state">Ancora niente qui.</p>';
+      return;
+    }
+    const years = groupByYearMonth(posts);
+    container.innerHTML = years.map(y => `
+      <details class="archive-year">
+        <summary>
+          <span class="archive-caret">›</span>
+          <span class="archive-year-label">${y.year}</span>
+          <span class="archive-year-count">${y.count} post</span>
+        </summary>
+        <div class="archive-year-body">
+          ${y.months.map(m => `
+            <details class="archive-month">
+              <summary>
+                <span class="archive-caret">›</span>
+                <span class="archive-month-label">${m.label}</span>
+                <span class="archive-month-count">${m.posts.length} post</span>
+              </summary>
+              <div class="archive-month-body">
+                <div class="blog-grid">${m.posts.map(cardFn).join('')}</div>
+              </div>
+            </details>
+          `).join('')}
+        </div>
+      </details>
+    `).join('');
+  }
+
+  const ARTICLES = getArticles();
+  const BACHECA = POSTS.filter(p => p.pinned);
+
+  document.getElementById('post-count').textContent =
+    (ARTICLES.length + BACHECA.length) + ' post in totale · ' + ARTICLES.length + ' articoli · ' + BACHECA.length + ' in bacheca';
+
+  renderArchiveGroup('archive-articles', ARTICLES, buildArticleCard);
+  renderArchiveGroup('archive-bacheca', BACHECA, buildPinnedCard);
+</script>
+</body>
+</html>

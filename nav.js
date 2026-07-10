@@ -16,6 +16,7 @@ const NAV_ITEMS = [
       { href: 'about.html',    emoji: '👤', label: 'Chi sono' },
       { href: 'cv.html',       emoji: '📄', label: 'Curriculum' },
       { href: 'contatti.html', emoji: '✉️', label: 'Contatti' },
+      { href: 'archivio.html', emoji: '🗂️', label: 'Archivio' },
     ]
   },
 ];

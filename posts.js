@@ -31,10 +31,34 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+
+  { id: "esame-ingegneria-del-software-2026",
+    title: "Ingegneria del Software: al terzo tentativo, ce l'ho fatta",
+    date: "2026-07-10",
+    cover: "img/posts/2026/esame-ingegneria-del-software-2026.jpg",
+    pinned: false,
+    tags: ["lavoro", "università"],
+    showInGallery: false,
+    photos: [],
+    excerpt: "Il 29 giugno ho affrontato per la terza volta l'esame di Ingegneria del Software, dopo due tentativi andati storti nella sessione invernale. Stavolta è andata: voto non altissimo, ma un altro passo verso la fine di questo percorso.",
+    content: `
+      <h2>Il terzo tentativo</h2>
+      <p>Il 29 giugno ho sostenuto l'esame di Ingegneria del Software, da 7 CFU, e qualche giorno fa è finalmente arrivato l'esito. Non era la prima volta che ci provavo: come già successo con Reti Logiche, anche questo era uno dei due esami che avevo tentato nella sessione invernale senza riuscire a superarlo, e quindi il 29 giugno segnava il mio terzo tentativo. L'esame è durato due ore, e stavolta è andata bene: ho preso 21. Non è un voto altissimo, ma essendo in ritardo con gli studi ho imparato a non guardare troppo al numero sul libretto e a concentrarmi piuttosto sul fatto che ogni esame superato è un passo in più verso la fine di questo percorso.</p>
+      <h2>Tra JML e sincronizzazione</h2>
+      <p>La prova era divisa in diverse parti, e la prima riguardava la specifica JML: veniva fornita una classe Java con vari metodi, e per ciascuno bisognava scrivere la relativa specifica formale. Parlando con altri ragazzi dopo l'esame, ho scoperto di non essere l'unico ad aver trovato questa la parte più ostica dell'intera prova: sono riuscito a completarla, anche se con qualche errore qua e là. C'era poi, come quasi sempre in questo tipo di esami, una domanda teorica sul principio di sostituzione di Liskov. Il secondo esercizio, invece, verteva sulla sincronizzazione dei metodi tra classi diverse, ed è la parte che mi ha messo più in difficoltà: l'ho saltata quasi per intero, non essendo riuscito a impostarla come avrei voluto.</p>
+      <h2>Compilazione, output e casi di test</h2>
+      <p>Sono andato molto meglio con gli esercizi tre e quattro, che ho risolto entrambi correttamente: si trattava di analizzare l'esecuzione di un programma, individuando eventuali errori di compilazione o di runtime e descrivendo l'output prodotto da alcune porzioni di codice. L'ultima parte, infine, riguardava la progettazione dei casi di test: partendo da un frammento di codice, bisognava stabilire quanti test case fossero necessari per garantire diversi livelli di copertura, dalla statement coverage alla line coverage, fino alla branch and condition coverage, cioè quei casi pensati per coprire non solo tutte le righe del programma ma anche ogni singola condizione logica al suo interno.</p>
+      <h2>Un passo verso la prova finale</h2>
+      <p>Vale la pena spendere due parole anche sulla prova finale, visto che questo esame ci è direttamente collegato: nel mio corso di laurea in Ingegneria Informatica non è prevista una tesi vera e propria, ma appunto una prova finale da 5 CFU complessivi, articolata in più progetti. Tre di questi crediti li avevo già conquistati l'anno scorso con un progetto legato proprio a Ingegneria del Software, quindi con questo esame quella parte è definitivamente chiusa. Restano da affrontare gli altri due CFU della prova finale, che corrispondono ad altri due progetti ancora da fare.</p>
+
+      <p>Un voto non altissimo, quindi, ma un esame in più tolto di mezzo, e soprattutto la conferma che, un passo alla volta, questo percorso si avvicina davvero alla fine.</p>
+    `
+  },
+
   { id: "domotica-luci-soluzione-ibrida",
     title: "La mia soluzione ibrida: lampadina smart + relè smart",
     date: "2026-06-30",
-    cover: "img/posts/domotica-luci-soluzione-ibrida.jpg",
+    cover: "img/posts/2026/domotica-luci-soluzione-ibrida.jpg",
     showInGallery: false,
     pinned: false,
     tags: ["tech", "smart home"],
@@ -274,7 +298,7 @@ mode: single</code></pre>
           </div>
         </summary>
         <div class="pg-accordion-body">
-          <img src="img/posts/domotica-luci-soluzione-ibrida-schema.jpg" alt="Schema dei collegamenti tra interruttore, relè smart e lampadina smart" style="max-width:100%; border-radius:8px; margin-bottom:16px;">
+          <img src="img/posts/2026/domotica-luci-soluzione-ibrida-schema.jpg" alt="Schema dei collegamenti tra interruttore, relè smart e lampadina smart" style="max-width:100%; border-radius:8px; margin-bottom:16px;">
           <p>
             Come accennato, il relè non è collegato fisicamente alla lampadina: come si vede nella
             foto, in uscita dal relè non serve collegare nulla se non l'interruttore; gli altri
@@ -443,7 +467,7 @@ mode: single</code></pre>
     date: "2026-06-30",
     tags: ["musica", "concerto"],
     excerpt: "Domenica scorsa ho suonato con la Banda di Seveso nella frazione di Baruccana: caldo, vento che si porta via gli spartiti e un piccolo incidente di percorso per il primo trombone.",
-    cover: "img/posts/concerto-seveso-2026.jpg",
+    cover: "img/posts/2026/concerto-seveso-2026.jpg",
     photoDate: '2026-06-28',
     showInGallery: true,
     relatedPosts: [
@@ -467,7 +491,7 @@ mode: single</code></pre>
     `
   },
 
-  { id: "reti-logiche-giugno-2025",
+  { id: "esame-reti-logiche-giugno-2026",
     title: "Reti Logiche: terza volta è quella buona",
     date: "2026-06-24",
     tags: ["lavoro", "univeristà"],
@@ -475,7 +499,7 @@ mode: single</code></pre>
       { id: 'esame-interconnessioni-2026', label: 'Esame precedente:' },
     ],
     excerpt: "Dopo due tentativi andati male in inverno, a giugno ho finalmente superato Reti Logiche con 25. Nel mezzo, anche una scena che non dimenticherò tanto presto.",
-    cover: "img/posts/esame-reti-logiche-2026.jpg",
+    cover: "img/posts/2026/esame-reti-logiche-2026.jpg",
     showInGallery: false,
     content: `
       <p>L'11 giugno ho dato Reti Logiche. Era la terza volta: avevo già affrontato entrambi gli appelli della sessione invernale, a gennaio e febbraio, uscendone con risultati che preferisco non ricordare. Stavolta, con altri quattro mesi di preparazione sulle spalle, mi sentivo decisamente più pronto.</p>
@@ -515,7 +539,7 @@ mode: single</code></pre>
     date: '2026-06-23',
     tags: ['musica', 'servizio'],
     excerpt: 'Un pomeriggio a suonare per le vie di Saronno con la Banda di Misinto, tra quattro corpi musicali riuniti per la Festa Europea della Musica. Bello, caldo, e con qualche sorpresa organizzativa.',
-    cover: 'img/posts/raduno-misinto-saronno-2026.jpg',
+    cover: 'img/posts/2026/raduno-misinto-saronno-2026.jpg',
     photoDate: '2026-06-21',
     relatedPosts: [
       { id: 'festival-del-pandino-2026', label: '→ Sabato pomeriggio: Festival del Pandino' },
@@ -540,7 +564,7 @@ mode: single</code></pre>
     date: '2026-06-23',
     tags: ['musica', 'servizio'],
     excerpt: 'Una domenica mattina tranquilla a Gaggiano per la festa di San Vito: processione, messa, inno di Mameli e aperitivo. Il tutto prima di un altro pomeriggio di musica.',
-    cover: 'img/posts/festa-san-vito-gaggiano-2026.jpg',
+    cover: 'img/posts/2026/festa-san-vito-gaggiano-2026.jpg',
     photoDate: '2026-06-21',
     relatedPosts: [
       { id: 'festival-del-pandino-2026', label: '→ Sabato pomeriggio: Festival del Pandino' },
@@ -563,11 +587,11 @@ mode: single</code></pre>
     date: '2026-06-22',
     tags: ["musica", "banda cusano", "concerto"],
     excerpt: 'Il concerto d\'estate della Banda di Cusano Milanino è quello che aspetto di più ogni anno. Quest\'anno il tema erano i cartoni animati, e tra Spongebob, Goldrake e i Sette Nani ho vissuto una serata che non dimentico facilmente.',
-    cover: 'img/posts/concerto-estate-cusano-2026.jpg',
+    cover: 'img/posts/2026/concerto-estate-cusano-2026.jpg',
     photoDate: '2026-06-20',
     photos: [
       {
-        src: 'img/posts/concerto-estate-cusano-2026-2.jpg',
+        src: 'img/posts/2026/concerto-estate-cusano-2026-2.jpg',
         caption: 'Corpo Musicale Santa Cecilia di Cusano Milanino',
         date: '2026-06-20',    // opzionale: se omessa usa photoDate ?? date del post
         // tags: omessi → eredita dal post
@@ -590,7 +614,7 @@ mode: single</code></pre>
       <p>Ma il brano che aspettavo di più, e che considero il cuore del concerto, era <em>Cartoon Super Hits</em>: quasi dieci minuti di medley arrangati direttamente dal maestro Bertoni, con dentro un'intera generazione di cartoni animati. Si partiva con l'Uomo Tigre, poi Mila e Shiro, Lady Oscar, David Gnomo Amico Mio, Pokémon con <em>Gotta Catch 'Em All</em>, Jeeg Robot d'Acciaio, Heidi, Ufo Robot Goldrake, e infine l'Incorreggibile Lupin. Suonavo tanto, mi piaceva, e la difficoltà era doppia: perché alle nostre spalle una società di eventi proiettava spezzoni originali di ogni cartone sincronizzati con la musica, e bisognava seguire il maestro con una precisione particolare — rispettare le velocità, tenere le corone, cambiare carattere al momento giusto — per restare allineati con il video. Una bella sfida, e più o meno ci siamo riusciti...</p>
 
       <p>Dopo la pausa di metà concerto è arrivato il momento che, col senno di poi, fa più ridere. Durante il brano dei Sette Nani, ero io quello che doveva lanciare il famoso <em>heigh-ho</em> — il grido del nano — e gli altri dovevano rispondere. Il problema è che la scena sul video è cambiata all'improvviso, il nano è apparso quasi in anticipo rispetto a quello che mi aspettavo, non ho fatto in tempo a prepararmi, e quello che è uscito dalla mia bocca era qualcosa di difficilmente classificabile. Non era un'ottava. Non era nemmeno una nota definita. Era un tentativo eroico andato male, e me ne sono reso conto immediatamente. Ci rido, era solo un effetto scenico — la parte musicale vera e propria non c'entrava — però è il tipo di cosa che ti rimane in testa a fine serata.</p>
-      <img src="img/posts/concerto-estate-cusano-2026-2.jpg" alt="Corpo Musicale Santa Cecilia di Cusano Milanino - 20 giugno 2026">
+      <img src="img/posts/2026/concerto-estate-cusano-2026-2.jpg" alt="Corpo Musicale Santa Cecilia di Cusano Milanino - 20 giugno 2026">
       <p>Il resto della seconda parte è filato liscio: <em>You'll Be in My Heart</em> da Tarzan, un medley del Libro della Giungla, la colonna sonora di Dragon Trainer, la Famiglia Addams, e come bis un medley di classici Disney con <em>In Fondo al Mar</em>, il Re Leone, la Bella e la Bestia e Aladdin. Il pubblico era numeroso come sempre — a Cusano Milanino il concerto estivo è un appuntamento sentito, e una serata di giugno con il tema cartoni animati aveva attirato anche qualche bambino in più del solito.</p>
 
       <p>A fine serata, con Elisa e qualcun altro, ci siamo fermati al McDonald's. Ho preso un gelato. Era la conclusione giusta per una giornata in cui avevo suonato praticamente senza sosta dal primo pomeriggio. Il giorno dopo avevo già altri due impegni musicali ad aspettarmi: una <a href="post.html?id=festa-san-vito-gaggiano-2026">processione al mattino</a> e un <a href="post.html?id=raduno-misinto-saronno-2026">raduno bandistico al pomeriggio</a>.</p>
@@ -602,18 +626,18 @@ mode: single</code></pre>
     date: '2026-06-22',
     tags: ['musica'],
     excerpt: 'Un sabato pomeriggio sotto il sole cocente del Cremasco, a suonare tra centinaia di Fiat Panda per il festival più particolare a cui abbia mai partecipato.',
-    cover: 'img/posts/festival-del-pandino-2026.jpg',
+    cover: 'img/posts/2026/festival-del-pandino-2026.jpg',
     photoDate: '2026-06-20',
     photos: [
       {
-        src: 'img/posts/festival-del-pandino-2026-2.jpg',
+        src: 'img/posts/2026/festival-del-pandino-2026-2.jpg',
         caption: 'Festival del Pandino 2026',
         date: '2026-06-20',    // opzionale: se omessa usa photoDate ?? date del post
         // tags: omessi → eredita dal post
         // postId: omesso → link al post padre
       },
       {
-        src: 'img/posts/festival-del-pandino-2026-3.jpg',
+        src: 'img/posts/2026/festival-del-pandino-2026-3.jpg',
         caption: 'Festival del Pandino 2026',
         date: '2026-06-20',    // opzionale: se omessa usa photoDate ?? date del post
         // tags: omessi → eredita dal post
@@ -632,11 +656,11 @@ mode: single</code></pre>
       <p>L'evento dura tre giorni, da venerdì a domenica. Io sono arrivato sabato 20 giugno verso mezzogiorno. La location originale del festival era il castello di Pandino, ma negli anni l'evento è cresciuto talmente tanto — in termini di macchine partecipanti — che il castello non bastava più. Un privato ha messo a disposizione un grande terreno vicino alla frazione di San Rocco, e lì si è spostata la parte principale: centinaia di Panda parcheggiate, cibo, birra, e gente felice di condividere la passione per un'utilitaria che non tramonta mai.</p>
 
       <p>Il nostro ruolo era quello di intrattenere: eravamo in otto musicisti (più Flavio con il megafono), una piccola street band itinerante, e ci muovevamo tra la gente suonando. Ghostbusters, Smoke on the Water, Funky Town, Uptown Funk, Eye of the Tiger, Havana, I Feel Good, Thriller, Coco dei Lucky Chops — il repertorio era quello da piazza, immediato, pensato per far alzare la testa a chi stava mangiando un panino o sorseggiando una birra. Dato che ci spostavamo continuamente, i brani li abbiamo rifatti più volte in punti diversi del campo, così nessuno si perdeva niente.</p>
-      <img src="img/posts/festival-del-pandino-2026-2.jpg" alt="Festival del Pandino 2026">
+      <img src="img/posts/2026/festival-del-pandino-2026-2.jpg" alt="Festival del Pandino 2026">
       <p>Il caldo era quello che era: trentacinque gradi, sole pieno, niente ombra. Per fortuna avevamo i cappellini dei <a href="https://www.instagram.com/bubblyandblues_official" target="_blank" rel="noopener">Bubbly & Blues</a>. Verso le quattordici ci hanno offerto una pausa — panino e birra — e poi si è ripreso. Alle 15:00 circa ci siamo spostati al castello di Pandino, dove c'era un'altra area del festival con tavoli, macchine esposte e gli organizzatori dell'evento, che erano quelli che avevano chiamato il gruppo. Abbiamo suonato anche lì, un'ultima tornata per salutarli come si deve, poi un'altra birra offerta e verso le sedici eravamo già in macchina verso casa.</p>
 
       <p>È stata una di quelle giornate un po' fuori dall'ordinario. Non un concerto vero e proprio, niente palco né spartiti sul leggio — solo musica ambulante tra gente che ama una macchina. Mi è piaciuto. E sapevo già che la serata non era finita: avevo il <a href="post.html?id=concerto-estate-cusano-2026">concerto di Cusano</a> ad aspettarmi.</p>
-      <img src="img/posts/festival-del-pandino-2026-3.jpg" alt="Festival del Pandino 2026">
+      <img src="img/posts/2026/festival-del-pandino-2026-3.jpg" alt="Festival del Pandino 2026">
 
       <h2>Aggiornamento</h2>
       <p>Sono passati un po' di giorni, oggi è il 4 luglio e aggiorno il post solamente perché è uscito un <a href="https://ilnuovotorrazzo.it/2026/07/04/bubbly-blues-entusiasmo-e-divertimento-per-lo-spettacolo-itinerante-a-pandino" target="_blank" rel="noopener">breve articolo su questo evento e i Bubbly&Blues</a>!</p>
@@ -646,7 +670,7 @@ mode: single</code></pre>
   { id: "concerto-seveso-2026-bacheca",
     title: "Concerto a Seveso - 50 anni dal Disastro",
     date: "2026-06-17",
-    cover: "img/posts/locandina-concerto-seveso-2026.jpg",
+    cover: "img/posts/2026/locandina-concerto-seveso-2026.jpg",
     showInGallery: false,
     pinned: true,
     eventDate: "2026-06-28",
@@ -686,7 +710,7 @@ mode: single</code></pre>
   { id: "concerto-palazzolo-vittuone-morricone-2026-bacheca",
     title: "C'era una volta Ennio Morricone - Replica a Paderno",
     date: "2026-06-14",
-    cover: "img/posts/locandina-concerto-vittuone-palazzolo-morricone-2026.jpg",
+    cover: "img/posts/2026/locandina-concerto-vittuone-palazzolo-morricone-2026.jpg",
     showInGallery: false,
     pinned: true,
     eventDate: "2026-09-27",
@@ -709,7 +733,7 @@ mode: single</code></pre>
   { id: "concerto-vittuone-palazzolo-morricone-2026",
     title: "Una serata con Morricone al Parco Lincoln",
     date: "2026-06-14",
-    cover: "img/posts/concerto-vittuone-palazzolo-morricone-2026.jpg",
+    cover: "img/posts/2026/concerto-vittuone-palazzolo-morricone-2026.jpg",
     photoDate: '2026-06-13',
     showInGallery: true,
     pinned: false,
@@ -741,7 +765,7 @@ mode: single</code></pre>
   { id: "esame-interconnessioni-2026",
     title: "Introduzione alle Tecnologie di Interconnessione — superato!",
     date: "2026-06-10",
-    cover: "img/posts/esame-interconnessioni-2026.jpg",
+    cover: "img/posts/2026/esame-interconnessioni-2026.jpg",
     showInGallery: false,
     pinned: false,
     tags: ["lavoro", "università"],
@@ -776,7 +800,7 @@ mode: single</code></pre>
   { id: "saggio-seconda-elementare-2026",
     title: "Viaggio nella storia della MUSICA - Saggio finale",
     date: "2026-06-10",
-    cover: "img/posts/saggio-seconda-elementare-2026.jpg",
+    cover: "img/posts/2026/saggio-seconda-elementare-2026.jpg",
     photoDate: '2026-06-04',
     pinned: false,
     tags: ["musica", "lavoro"],
@@ -814,7 +838,7 @@ mode: single</code></pre>
   { id: "festival-del-pandino-2026-bacheca",
     title: "Festival del Pandino a Pandino",
     date: "2026-06-10",
-    cover: "img/posts/logo-festival-del-pandino.jpg",
+    cover: "img/posts/2026/logo-festival-del-pandino.jpg",
     showInGallery: false,
     pinned: true,
     eventDate: "2026-06-20",
@@ -840,7 +864,7 @@ mode: single</code></pre>
   { id: "concerto-vittuone-palazzolo-morricone-2026-bacheca",
     title: "C'era una volta Ennio Morricone",
     date: "2026-06-10",
-    cover: "img/posts/locandina-concerto-vittuone-palazzolo-morricone-2026.jpg",
+    cover: "img/posts/2026/locandina-concerto-vittuone-palazzolo-morricone-2026.jpg",
     showInGallery: false,
     pinned: true,
     eventDate: "2026-06-13",
@@ -865,7 +889,7 @@ mode: single</code></pre>
   { id: "saggio-scuola-che-sbanda-2026",
     title: "Saggio di fine anno – La Scuola che sBanda",
     date: "2026-05-30",
-    cover: "img/posts/saggio-scuola-che-sbanda-2026.jpg",
+    cover: "img/posts/2026/saggio-scuola-che-sbanda-2026.jpg",
     photoDate: '2026-05-28',
     pinned: false,
     tags: ["musica", "la scuola che sbanda"],
@@ -914,7 +938,7 @@ mode: single</code></pre>
   { id: "concerto-anfiteatro-la-cava-2026",
     title: "Fusione all'Anfiteatro La Cava",
     date: "2026-05-25",
-    cover: "img/posts/concerto-palazzolo-cava-2026.jpg",
+    cover: "img/posts/2026/concerto-palazzolo-cava-2026.jpg",
     photoDate: '2026-05-24',
     pinned: false,
     tags: ["musica", "banda palazzolo", "concerto"],
@@ -952,7 +976,7 @@ mode: single</code></pre>
   { id: "raduno-bandistico-cogliate-2026",
     title: "Raduno bandistico a Cogliate — com'è andata",
     date: "2026-05-19",
-    cover: "img/posts/raduno-bandistico-cogliate-2026.jpg",
+    cover: "img/posts/2026/raduno-bandistico-cogliate-2026.jpg",
     photoDate: '2026-05-17',
     tags: ["musica", "banda palazzolo", "servizio"],
     relatedPost: {
@@ -1005,7 +1029,7 @@ mode: single</code></pre>
   { id: "saggio-scuola-che-sbanda-2026-bacheca",
     title: "Saggio di fine anno — La Scuola che sBanda",
     date: "2026-05-16",
-    cover: "img/posts/locandina-saggio-scuola-che-sbanda-2026.jpg",
+    cover: "img/posts/2026/locandina-saggio-scuola-che-sbanda-2026.jpg",
     showInGallery: false,
     pinned: true,
     eventDate: "2026-05-28",
@@ -1062,7 +1086,7 @@ mode: single</code></pre>
   { id: "junior-band-palazzolo-civil-week-2026",
     title: "Prima volta con l'euphonium — Junior Band a Paderno Dugnano",
     date: "2026-05-16",
-    cover: "img/posts/junior-band-palazzolo-civil-week-2026.jpg",
+    cover: "img/posts/2026/junior-band-palazzolo-civil-week-2026.jpg",
     photoDate: '2026-05-09',
     tags: ["musica", "banda palazzolo", "junior band", "concerto"],
     excerpt: "Per la Civil Week di Paderno Dugnano ho suonato con la Junior Band della Banda di Palazzolo — e per la prima volta in concerto ho imbracciato l'euphonium.",
@@ -1087,7 +1111,7 @@ mode: single</code></pre>
   { id: "concerto-mamma-cusano-2026",
     title: "Concerto per la Festa della Mamma 2026 — com'è andata",
     date: "2026-05-16",
-    cover: "img/posts/concerto-mamma-cusano-2026.jpg",
+    cover: "img/posts/2026/concerto-mamma-cusano-2026.jpg",
     photoDate: '2026-05-10',
     showInGallery: true,
     tags: ["musica", "banda cusano", "concerto"],
@@ -1115,7 +1139,7 @@ mode: single</code></pre>
   { id: "doremitici-secondo-incontro-scuola-fisogni",
     title: "Secondo incontro alla scuola primaria Fisogni",
     date: "2026-04-21",
-    cover: "img/posts/doremitici-secondo-incontro-scuola-fisogni.jpg",
+    cover: "img/posts/2026/doremitici-secondo-incontro-scuola-fisogni.jpg",
     photoDate: '2026-04-20',
     pinned: false,
     eventDate: "2026-04-20",
@@ -1186,7 +1210,7 @@ mode: single</code></pre>
   { id: "concerto-mamma-cusano-2026-bacheca",
     title: "Concerto per la Festa della Mamma — Banda di Cusano Milanino",
     date: "2026-04-16",
-    cover: "img/posts/locandina-concerto-mamma-cusano-2026.jpg",
+    cover: "img/posts/2026/locandina-concerto-mamma-cusano-2026.jpg",
     showInGallery: false,
     pinned: true,
     eventDate: "2026-05-10",
@@ -1209,7 +1233,7 @@ mode: single</code></pre>
   { id: "gita-banda-palazzolo-pergine-2026",
     title: "Gita della banda a Pergine Valsugana",
     date: "2026-04-03",
-    cover: "img/posts/gita-banda-palazzolo-pergine-2026.jpg",
+    cover: "img/posts/2026/gita-banda-palazzolo-pergine-2026.jpg",
     photoDate: '2026-03-29',
     pinned: false,
     tags: ["musica", "banda palazzolo", "concerto", "gita"],
@@ -1364,7 +1388,7 @@ mode: single</code></pre>
   { id: "referendum-2026-record-affluenza",
     title: "Referendum 2026: affluenza record nel mio seggio",
     date: "2026-03-24",
-    cover: "img/posts/referendum-2026-record-affluenza.jpg",
+    cover: "img/posts/2026/referendum-2026-record-affluenza.jpg",
     photoDate: '2026-03-23',
     pinned: false,
     tags: ["lavoro", "seggio", "referendum"],
@@ -1468,7 +1492,7 @@ mode: single</code></pre>
   { id: "domotica-luci-home-assistant",
     title: "Domotizzare le luci con Home Assistant: tutte le soluzioni",
     date: "2026-03-20",
-    cover: "img/posts/domotica-luci-home-assistant.jpg",
+    cover: "img/posts/2026/domotica-luci-home-assistant.jpg",
     showInGallery: false,
     pinned: false,
     tags: ["tech", "smart home"],
@@ -1893,7 +1917,7 @@ mode: single</code></pre>
   { id: "ricordo-vittime-covid-2026",
     title: "In memoria delle vittime del COVID-19",
     date: "2026-03-18",
-    cover: "img/posts/ricordo-vittime-covid-2026.jpg",
+    cover: "img/posts/2026/ricordo-vittime-covid-2026.jpg",
     photoDate: '2026-03-18',
     pinned: false,
     eventDate: "2026-03-18",
@@ -1917,7 +1941,7 @@ mode: single</code></pre>
   { id: "concerto-estate-cusano-2026-bacheca",
     title: "Concerto d'Estate — Banda di Cusano Milanino",
     date: "2026-03-14",
-    cover: "img/posts/locandina-concerto-estate-cusano-2026.jpg",
+    cover: "img/posts/2026/locandina-concerto-estate-cusano-2026.jpg",
     showInGallery: false,
     pinned: true,
     eventDate: "2026-06-20",
@@ -1941,7 +1965,7 @@ mode: single</code></pre>
   { id: "concerto-palazzolo-cava-2026-bacheca",
     title: "Concerto nell'anfiteatro — Banda di Palazzolo Milanese",
     date: "2026-03-16",
-    cover: "img/posts/locandina-concerto-palazzolo-cava-2026.jpg",
+    cover: "img/posts/2026/locandina-concerto-palazzolo-cava-2026.jpg",
     showInGallery: false,
     pinned: true,
     eventDate: "2026-05-24",
@@ -1984,7 +2008,7 @@ mode: single</code></pre>
   { id: "doremitici-carnevale-2026",
     title: "Carnevale 2026",
     date: "2026-02-21",
-    cover: "img/posts/doremitici-carnevale-2026.jpg",
+    cover: "img/posts/2026/doremitici-carnevale-2026.jpg",
     photoDate: '2026-02-21',
     pinned: false,
     eventDate: "2026-02-21",
@@ -2010,7 +2034,7 @@ mode: single</code></pre>
   { id: "doremitici-serata-gruppo-missionario",
     title: "Serata Gruppo Missionario ''Io sono l'altro''",
     date: "2026-02-20",
-    cover: "img/posts/doremitici-serata-gruppo-missionario.jpg",
+    cover: "img/posts/2026/doremitici-serata-gruppo-missionario.jpg",
     photoDate: '2026-02-18',
     pinned: false,
     eventDate: "2026-02-18",

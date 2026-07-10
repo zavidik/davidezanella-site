@@ -27,6 +27,12 @@ function formatDateLong(d) {
   return `${parseInt(day)} ${M[parseInt(m)]} ${y}`;
 }
 
+function estimateReadingTime(html) {
+  const text = html.replace(/<[^>]*>/g, ' ').replace(/&[a-z]+;/gi, ' ');
+  const words = text.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
+}
+
 function buildEventMeta(p) {
   if (!p.eventDate) return '';
   const parts = [formatDate(p.eventDate)];
@@ -51,7 +57,7 @@ function buildArticleCard(p) {
       <div class="blog-card-title">${p.title}</div>
       <div class="blog-card-excerpt">${p.excerpt}</div>
       <div class="blog-card-footer">
-        <span>${formatDate(p.date)}</span>
+        <span>${formatDate(p.date)} · ${estimateReadingTime(p.content)} min</span>
         <span class="blog-card-arrow">&#8594;</span>
       </div>
     </div>
@@ -69,7 +75,7 @@ function buildPinnedCard(p) {
       ${buildEventMeta(p)}
       <div class="pinned-card-excerpt">${p.excerpt}</div>
       <div class="blog-card-footer">
-        <span>Pubblicato il ${formatDate(p.date)}</span>
+        <span>Pubblicato il ${formatDate(p.date)} · ${estimateReadingTime(p.content)} min</span>
         <span class="blog-card-arrow">&#8594;</span>
       </div>
     </div>
