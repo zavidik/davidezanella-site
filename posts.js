@@ -31,6 +31,68 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  { id: "campeggio-massa-2026",
+    title: "Sette giorni in campeggio a Marina di Massa",
+    date: "2026-08-09",
+    tags: ["vita", "tech"],
+    excerpt: "Sette giorni di campeggio in Toscana con Elisa, tra un frigo nuovo comprato all'ultimo momento, un festival sulla spiaggia, una cena a Lerici, il barbecue e un libro su Faggin, e un caldo sempre più difficile da gestire sotto la tenda.",
+    cover: "img/posts/2026/campeggio-massa-2026.jpg",
+    photoDate: '2026-08-01',
+    photos: [
+      /*{
+        src: 'img/posts/2026/campeggio-massa-2026-2.jpg',
+        caption: 'I due eroi di questa calda vacanza in campeggio: ventilatore e frigorifero',
+        date: '2026-07-31',    // opzionale: se omessa usa photoDate ?? date del post
+        // tags: omessi → eredita dal post
+        // postId: omesso → link al post padre
+      },*/
+      {
+        src: 'img/posts/2026/campeggio-massa-2026-4.jpg',
+        caption: 'La nostra piazzola al Camping Luna - Massa 2026',
+        date: '2026-08-01',    // opzionale: se omessa usa photoDate ?? date del post
+        // tags: omessi → eredita dal post
+        // postId: omesso → link al post padre
+      },
+      {
+        src: 'img/posts/2026/campeggio-massa-2026-3.jpg',
+        caption: 'Cena con barbecue (ed Elisa): spiedini e hamburger',
+        date: '2026-08-04',    // opzionale: se omessa usa photoDate ?? date del post
+        // tags: omessi → eredita dal post
+        // postId: omesso → link al post padre
+      },
+    ],
+    content: `
+      <h2>Un frigo nuovo per affrontare il caldo</h2>
+      <p>Dal trentuno luglio al sei agosto sono stato in campeggio con Elisa, sette giorni e sei notti a Marina di Massa, al Camping Luna. Non era la nostra prima esperienza: l'anno scorso avevamo già provato il campeggio, sul lago di Garda, con una tenda Bertoni usata comprata su Subito a trenta euro. Un buon affare nonostante qualche residuo di resina sul telo esterno e un odore poco piacevole, segno che era rimasta chiusa per anni in un garage. Per il resto dell'attrezzatura ci siamo appoggiati a quello che i miei genitori avevano tenuto da parte dai loro anni di campeggio giovanile: tavolo e sedie pieghevoli, il mobile per la cucina a gas, mollette e filo per stendere, stuoie. Tutta roba datata ma funzionante, che ci ha permesso di risparmiare parecchio sia l'anno scorso che quest'anno.</p>
+      <p>Tra questa attrezzatura di famiglia c'era anche un piccolo frigo da campeggio da ventiquattro litri, usato senza problemi l'estate scorsa. Quest'anno, però, con le temperature che sono state altissime, si è rivelato insufficiente. Ho scoperto, con una certa sorpresa da nerd della situazione, che non si trattava di un frigo a compressore come quelli di casa, ma di un modello termoelettrico: teneva gli alimenti al fresco, ma non li raffreddava davvero. A pochi giorni dalla partenza mi sono rimesso a cercare sul mercato dell'usato e su Vinted ho trovato una ragazza che vendeva un Mobicool MB40 quasi vicino a casa mia. Ci siamo accordati per uno scambio di persona, saltando i tempi di spedizione, e sono andato a ritirarlo la sera prima di partire. Centoquaranta euro contro un valore da nuovo di circa trecento: un ottimo risparmio.</p>
+      <img src="img/posts/2026/campeggio-massa-2026-2.jpg" alt="I due eroi di questa calda vacanza in campeggio: ventilatore e frigorifero">
+      <p>Il salto di qualità non è stato solo nella capienza, passata da ventiquattro a circa trentotto litri netti, ma soprattutto nella tecnologia: questo frigo funziona a compressore quando è collegato alla corrente a duecentotrenta volt, mentre passa in modalità termoelettrica quando è alimentato a dodici volt in auto, dove comunque tiene bene il fresco. Nel campeggio, attrezzato con la corrente, il compressore ha lavorato per tutta la vacanza, mentre la modalità da dodici volt è servita solo per le circa tre ore di viaggio. L'unico prezzo da pagare è l'ingombro maggiore, che si è fatto sentire un po' nello spazio in macchina.</p>
+
+      <h2>Le giornate al mare</h2>
+      <p>Per il resto è stata una vacanza al mare piuttosto classica e tranquilla: colazione in campeggio, spiaggia, ritorno per pranzo — a volte con i panini portati direttamente sotto l'ombrellone — e cena sempre in campeggio, con un paio di uscite per fare la spesa. Il weekend di apertura, però, è stato diverso dal resto: sulla spiaggia libera di fronte al campeggio si teneva un festival sponsorizzato, con personaggi radiofonici, musica a volume alto per tutto il giorno e chioschi degli sponsor che regalavano gadget. All'inizio la musica così alta mi ha dato fastidio, ma alla fine ho apprezzato che quei due giorni fossero diversi da quelli che sono seguiti. Passando in spiaggia abbiamo raccolto senza fare file bevande energetiche, caramelle e uno spruzzino per rinfrescarsi; le file più lunghe ai chioschi, sotto il sole, non ci sembravano valere la pena. Un piccolo aneddoto curioso: uno degli sponsor faceva un'estrazione tra chi seguiva la sua pagina Instagram, in palio un telo mare. Elisa ha iniziato a seguirla per gioco ed è stata estratta come terza vincitrice, comodamente sdraiata sotto l'ombrellone.</p>
+      <p>In due giornate diverse abbiamo preso la macchina per provare spiagge più lontane. La più riuscita è stata quella di Viareggio, spiaggia libera dove ci siamo portati ombrellone e sedie da casa, con una doccia proprio vicino al mare per togliersi il sale, cosa che apprezzo molto. Ci siamo fermati quasi tutta la giornata, pranzando con dei panini, ed è stata probabilmente la giornata di mare che mi è piaciuta di più. Un altro pomeriggio abbiamo provato una spiaggia più vicina al campeggio, solo per curiosità. Devo dire, con un po' di rammarico, che il mare toscano l'ho trovato meno pulito di come lo ricordavo dalle vacanze con i miei genitori: qualche alga, fondale sabbioso non paragonabile ai mari del sud Italia, anche se me lo aspettavo in parte.</p>
+
+      <h2>Una sera a Lerici</h2>
+      <p>Una sera abbiamo deciso di uscire a cena fuori, a Lerici. Nonostante la prenotazione e un discreto anticipo, quasi tutto il tempo a disposizione se n'è andato nella ricerca di parcheggio: due giri della città prima di trovare un posto a pagamento a quasi venti minuti a piedi dal ristorante. A parte questo fastidio iniziale, la serata è stata piacevole: un menù di pesce con frittura mista, salmone, gamberoni e il classico tiramisù per chiudere. Rientrando verso la macchina, ormai tardi, abbiamo comunque passeggiato un paio di chilometri sul lungomare. Siamo rientrati al campeggio pochi minuti dopo mezzanotte, giusto in tempo per trovare il cancello per le auto già chiuso fino al mattino: ho dovuto lasciare la macchina in un parcheggio esterno, gratuito di notte, e impostare la sveglia presto per spostarla di nuovo dentro prima delle otto.</p>
+
+      <h2>Il caldo che si fa sentire</h2>
+      <p>Una nota meno piacevole di questa vacanza è quanto il riscaldamento globale renda il campeggio più complicato di quanto dovrebbe essere. Nonostante ventilatore, acqua fresca e il nuovo frigo, le ore dopo pranzo, fino verso le quattro e mezza o le cinque, erano difficili da gestire dentro la tenda: anche con il gazebo, l'aria in campeggio girava poco. Preferivamo quindi tornare in spiaggia, dove almeno un po' di vento rendeva tutto più sopportabile. Il campeggio resta comunque una vacanza economicamente molto vantaggiosa rispetto ad altre soluzioni, ma questo caldo eccessivo ne penalizza un po' la qualità. Mi immagino che qualche decennio fa, quando i miei genitori facevano le loro vacanze in campeggio, le temperature fossero più basse e quelle ore centrali della giornata più gestibili.</p>
+
+      <h2>Barbecue e lettura sotto l'ombrellone</h2>
+      <p>Quest'anno ci siamo portati anche il mini barbecue comprato l'estate scorsa, e per due sere ho cucinato io: spiedini, hamburger, wurstel e qualche formaggio alla griglia. Una soddisfazione non da poco, perché fino all'anno scorso facevo fatica persino ad accendere la carbonella. Essendo poi riuscito a usarlo anche a casa nel corso dell'anno mi sono fatto un po' di pratica, e senza diventare un grande cuoco sono almeno arrivato al punto di sapermela cavare.</p>
+      <img src="img/posts/2026/campeggio-massa-2026-3.jpg" alt="Cena con barbecue (ed Elisa): spiedini e hamburger">
+      <p>Sotto l'ombrellone, invece, ho ripreso a leggere. Da bambino ero un lettore piuttosto accanito, poi con l'adolescenza ho quasi smesso, salvo qualche libro sparso ogni tanto d'estate — qualche anno fa, ad esempio, mi ero letto <em>Il ritratto di Dorian Gray</em>. Questa vacanza ho letto <em>Silicio</em> di Federico Faggin, un libro che si lega parecchio a quello che studio e mi appassiona. Faggin è stato il capo progetto dell'Intel 4004, il primo microprocessore al mondo, e ha poi fondato Zilog, con cui ha sviluppato lo Z80, un microprocessore diventato molto popolare e ancora oggi prodotto per alcuni utilizzi specifici, nonostante sia stato ampiamente superato dalle generazioni successive. Mi ha colpito scoprire che dietro l'invenzione del microprocessore, e ancora prima del processo stesso di produzione al silicio, ci fosse un italiano: una rivoluzione tecnologica che, a livello fisico, ammetto di non aver colto fino in fondo, ma che rimane affascinante anche solo nelle sue implicazioni.</p>
+      <p>Nella parte finale il libro si allontana dal racconto autobiografico, che personalmente ho apprezzato di più, per addentrarsi in una riflessione quasi filosofica sul rapporto tra intelligenza artificiale e uomo, tra macchina e coscienza — un tema quanto mai attuale. Faggin arriva a proporre una vera e propria ipotesi fisica: secondo quello che ho capito, sostiene che nelle particelle fondamentali sia già presente una forma primitiva e "inconscia" di ciò che, salendo di scala fino al mondo macroscopico, diventa la coscienza per come la intendiamo. Una macchina che si limita a eseguire calcoli e calcoli di probabilità, in questa visione, non potrà mai raggiungere quel livello di libertà. Tornato dalla vacanza, dopo aver letto in parte sul Kindle di Elisa, mi sono fatto prestare a tempo indeterminato quello inutilizzato di mia sorella, e ho già iniziato un nuovo libro: <em>Source Code</em> di Bill Gates, il fondatore di Microsoft.</p>
+
+      <h2>Il ritorno, tra Portofino sfumata e focaccia genovese</h2>
+      <p>Al ritorno ci siamo fermati a fare colazione in un bar, con l'idea di passare da Portofino per una passeggiata prima di tornare a casa. Usciti dall'autostrada a Rapallo, abbiamo seguito la costa fino a Portofino, ma siamo stati bloccati dalla polizia: il paese, in quei primi giorni di agosto, era così pieno da non far entrare più nessuno. Abbiamo quindi fatto inversione, siamo tornati in autostrada e ci siamo fermati a Genova per una focaccia, prima di rientrare definitivamente a casa. Il viaggio è stato un po' più lungo del previsto e Portofino resta da vedere in un'altra occasione, magari fuori stagione e con i mezzi pubblici.</p>
+
+      <h2>Bilancio</h2>
+      <p>Non sono un grande amante della vacanza al mare in senso stretto: soffro il caldo, il sale, la sabbia, e se dovessi scegliere preferirei sempre un lago con un prato o un fondo sassoso. Ma anche il mare, alla fine, ha il suo perché. E il campeggio in particolare mi piace molto, perché è una piccola vacanza di adattamento: non abbiamo fatto campeggio estremo — cucina, frigo, ventilatore, materasso gonfiabile alto e il mio iPad per i film la sera erano tutti presenti — ma mi piace comunque montare la tenda, arrangiarmi con corde e nodi. Tra l'altro ho imparato un nodo nuovo oltre alla gassa d'amante, uno leggermente più scorsoio, che mi ha permesso di tendere bene il filo per stendere gli asciugamani tra tenda e doccia. Ho anche provato a mettere un telo ombreggiante sopra la tenda per limitare il sole diretto del pomeriggio: non so quanto abbia davvero aiutato, ma contro un caldo del genere nessun telo può fare miracoli.</p>
+      <img src="img/posts/2026/campeggio-massa-2026-4.jpg" alt="La nostra piazzola al Camping Luna - Massa 2026">
+      <p>Alla fine, però, quello che conta di più è che è stata una bella vacanza con Elisa, e che ne vogliamo fare sempre di più — in campeggio o no, visto che abbiamo già in programma di prendere l'aereo e visitare nuovi paesi. Tempo e soldi permettendo.</p>
+      `
+  },
 
   { id: "esame-ingegneria-del-software-2026",
     title: "Ingegneria del Software: al terzo tentativo, ce l'ho fatta",
@@ -724,10 +786,10 @@ mode: single</code></pre>
       { id: 'concerto-palazzolo-vittuone-morricone-2026', label: "📖 Leggi com'è andata:" },
       { id: 'concerto-vittuone-palazzolo-morricone-2026', label: "La prima esecuzione a Vittuone:" },
     ],
-    excerpt: "Il concerto a tema Morricone: 2 bande e 1 coro! Nell'anfiteatro del Parco Lago Nord",
+    excerpt: "Il concerto a tema Morricone: 2 bande e 1 coro! Al cinema multisala Le Giraffe!",
     content: `
       <p>Dopo la trasferta di giugno a Vittuone, ecco la replica a Paderno Dugnano.</p>
-      <p>La collaborazione con la banda di Vittuone e il coro di Marcallo con Casone continua, nel bellissimo anfiteatro del Parco Lago Nord.</p>
+      <p>La collaborazione con la banda di Vittuone e il coro di Marcallo con Casone continua, al cinema Le Giraffe.</p>
       <p>Se volete sentire qualcosa in anticipo potete guardare <a href="https://youtu.be/u5Q90xXFBA4" target="_blank" rel="noopener">questo video su YouTube</a>, ma è garantito che dal vivo sarà ancora più bello. Vi aspettiamo!</p>
       <p>📅 27 Settembre 2026 · 16:30<br>📍 Paderno Dugnano, Anfiteatro Parco Lago Nord</p>
     `
