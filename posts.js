@@ -27,7 +27,7 @@
 //    ],
 //
 //  TAG DI CATEGORIA (almeno uno per post):
-//    musica · lavoro · media · tech · sport
+//    musica · lavoro · media · tech · sport · vita
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
@@ -103,7 +103,8 @@ const POSTS = [
     pinned: false,
     tags: ["lavoro", "università"],
     relatedPosts: [
-      { id: 'esame-reti-logiche-giugno-2026', label: 'Esame precedente:' },
+      { id: 'esame-reti-logiche-giugno-2026', label: '← Esame precedente:' },
+      { id: 'esame-interconnessioni-2026', label: "←← Esame ancora precedente:" },
     ],
     showInGallery: false,
     photos: [],
@@ -563,7 +564,8 @@ mode: single</code></pre>
     date: "2026-06-24",
     tags: ["lavoro", "univeristà"],
     relatedPosts: [
-      { id: 'esame-interconnessioni-2026', label: 'Esame precedente:' },
+      { id: 'esame-ingegneria-del-software-2026', label: '→ Esame successivo:' },
+      { id: 'esame-interconnessioni-2026', label: '← Esame precedente:' },
     ],
     excerpt: "Dopo due tentativi andati male in inverno, a giugno ho finalmente superato Reti Logiche con 25. Nel mezzo, anche una scena che non dimenticherò tanto presto.",
     cover: "img/posts/2026/esame-reti-logiche-2026.jpg",
@@ -609,9 +611,10 @@ mode: single</code></pre>
     cover: 'img/posts/2026/raduno-misinto-saronno-2026.jpg',
     photoDate: '2026-06-21',
     relatedPosts: [
-      { id: 'festival-del-pandino-2026', label: '→ Sabato pomeriggio: Festival del Pandino' },
-      { id: 'concerto-estate-cusano-2026', label: '→ Sabato sera: concerto d\'estate a Cusano' },
-      { id: 'festa-san-vito-gaggiano-2026', label: '→ Domenica mattina: festa di San Vito a Gaggiano' },
+      { id: 'festival-del-pandino-2026', label: '← Sabato pomeriggio: Festival del Pandino' },
+      { id: 'concerto-estate-cusano-2026', label: '← Sabato sera: concerto d\'estate a Cusano' },
+      { id: 'festa-san-vito-gaggiano-2026', label: '← Domenica mattina: festa di San Vito a Gaggiano' },
+      { id: 'concerto-seveso-2026', label: "→ L'ultimo concerto prima della pausa estiva:" },
     ],
     content: `
       <p>L'ultimo impegno del weekend era il pomeriggio di domenica con la Banda di Misinto a Saronno. Non era la prima volta che venivo chiamato a suonare con loro, quindi qualche faccia già la conoscevo. Il maestro mi aveva contattato chiedendomi disponibilità per un servizio domenica 21 giugno alle sedici e trenta — fin qui tutto chiaro. Poi, qualche giorno prima, è arrivato un aggiornamento: ritrovo alle quindici nella sede della banda a Misinto per una prova, visto che non avevo mai sfilato con loro. Orario anticipato di un'ora e mezza, ma comprensibile.</p>
@@ -634,8 +637,8 @@ mode: single</code></pre>
     cover: 'img/posts/2026/festa-san-vito-gaggiano-2026.jpg',
     photoDate: '2026-06-21',
     relatedPosts: [
-      { id: 'festival-del-pandino-2026', label: '→ Sabato pomeriggio: Festival del Pandino' },
-      { id: 'concerto-estate-cusano-2026', label: '→ Sabato sera: concerto d\'estate a Cusano' },
+      { id: 'festival-del-pandino-2026', label: '← Sabato pomeriggio: Festival del Pandino' },
+      { id: 'concerto-estate-cusano-2026', label: '← Sabato sera: concerto d\'estate a Cusano' },
       { id: 'raduno-misinto-saronno-2026', label: '→ Domenica pomeriggio: raduno bandistico a Saronno' },
     ],
     content: `
@@ -666,10 +669,11 @@ mode: single</code></pre>
       },
     ],
     relatedPosts: [
-      { id: 'festival-del-pandino-2026', label: '→ Il pomeriggio prima: Festival del Pandino' },
+      { id: 'festival-del-pandino-2026', label: '← Il pomeriggio prima: Festival del Pandino' },
       { id: 'festa-san-vito-gaggiano-2026', label: '→ Domenica mattina: festa di San Vito a Gaggiano' },
       { id: 'raduno-misinto-saronno-2026', label: '→ Domenica pomeriggio: raduno bandistico a Saronno' },
       { id: 'concerto-estate-cusano-2026-bacheca', label: '📌 Questo evento era stato annunciato qui:' },
+      { id: 'concerto-mamma-cusano-2026', label: '← Qui ne avevo già anticipato qualche brano:' },
     ],
     content: `
       <p>Tra tutti i concerti dell'anno, quello estivo della Banda di Cusano Milanino è quello che aspetto di più. Il maestro Stefano Bertoni ha un modo di costruire i programmi — e soprattutto gli arrangiamenti — che mi sfida ogni volta, e ogni anno torno a casa con la sensazione di aver suonato qualcosa che valeva la pena preparare. Quest'anno il tema era i cartoni animati, e già dall'annuncio sapevo che sarebbe stata una bella serata.</p>
@@ -809,6 +813,7 @@ mode: single</code></pre>
     relatedPosts: [
       { id: 'concerto-vittuone-palazzolo-morricone-2026-bacheca', label: "📌 Questo evento era stato annunciato qui:" },
       { id: 'concerto-palazzolo-vittuone-morricone-2026', label: "La replica a Paderno:" },
+      { id: 'concerto-anfiteatro-la-cava-2026', label: "← Evento precedente:" },
     ],
     content: `
       <p>Ieri sera concerto al Parco A. Lincoln di Vittuone, con una formazione un po' speciale: sul palco insieme a noi c'era il Corpo Musicale Giuseppe Verdi APS-ETS di Vittuone e il Coro Vis Canti APS di Marcallo con Casone. Il tema della serata era interamente dedicato a Ennio Morricone — un programma impegnativo e bellissimo, di cui avevo già scritto nell'annuncio in bacheca.</p>
@@ -836,10 +841,9 @@ mode: single</code></pre>
     showInGallery: false,
     pinned: false,
     tags: ["lavoro", "università"],
-    relatedPost: {
-      id: "",
-      label: ""
-    },
+    relatedPosts: [
+      { id: 'esame-reti-logiche-giugno-2026', label: '→ Esame successivo:' },
+    ],
     excerpt: "Tre parziali, fibra ottica, satelliti e reti di accesso. Voto: 28 — e sono contento così.",
     content: `
       <p>Oggi ho chiuso uno degli esami a scelta del terzo anno: <strong>Introduzione alle Tecnologie di Interconnessione</strong>.
@@ -871,10 +875,9 @@ mode: single</code></pre>
     photoDate: '2026-06-04',
     pinned: false,
     tags: ["musica", "lavoro"],
-    relatedPost: {
-      id: "",
-      label: "📌 Questo evento era stato annunciato qui:"
-    },
+    relatedPosts: [
+      { id: 'saggio-scuola-che-sbanda-2026', label: 'Saggio Scuola che sBanda' },
+    ],
     excerpt: "Una delle mie prime esperienze come ''tecnico audio''.",
     content: `
     <p>Se avete letto il post sul saggio della <a href="scuola-che-sbanda.html">Scuola che sBanda</a>, sapete già che in quell'occasione ho gestito l'audio con il <em>DoReMixer</em>
@@ -960,10 +963,11 @@ mode: single</code></pre>
     photoDate: '2026-05-28',
     pinned: false,
     tags: ["musica", "la scuola che sbanda"],
-    relatedPost: {
-      id: "saggio-scuola-che-sbanda-2026-bacheca",
-      label: "📌 Questo evento era stato annunciato qui:"
-    },
+    relatedPosts: [
+      { id: 'saggio-scuola-che-sbanda-2026-bacheca', label: '📌 Questo evento era stato annunciato qui:' },
+      { id: 'concerto-anfiteatro-la-cava-2026', label: '← Il concerto in cui ho iniziato con mixer e microfoni:' },
+      { id: 'saggio-seconda-elementare-2026', label: '→ Pochi giorni dopo, un\'altra occasione:' },
+    ],
     excerpt: "Tema Shrek, travestimenti, impianto audio da montare, niente cena e un pigiama da ciuchino. Il saggio di fine anno della Scuola che sBanda raccontato dall'interno.",
     content: `
       <p>Il saggio di fine anno della <a href="scuola-che-sbanda.html">Scuola che sBanda</a> è andato, ed è andato bene. Anzi, meglio che bene — sono uscito dalla palestra dell'oratorio di Palazzolo Milanese soddisfatto, sudato e con addosso un pigiama da asino. Ma per capire come ci sono arrivato, bisogna partire dal pomeriggio.</p>
@@ -1009,10 +1013,13 @@ mode: single</code></pre>
     photoDate: '2026-05-24',
     pinned: false,
     tags: ["musica", "banda palazzolo", "concerto"],
-    relatedPost: {
-      id: "concerto-palazzolo-cava-2026-bacheca",
-      label: "📌 Questo evento era stato annunciato qui:"
-    },
+    relatedPosts: [
+      { id: 'concerto-palazzolo-cava-2026-bacheca', label: '📌 Questo evento era stato annunciato qui:' },
+      { id: 'gita-banda-palazzolo-pergine-2026', label: '← Il mio "solito" Shure, prima di questo:' },
+      { id: 'saggio-scuola-che-sbanda-2026', label: '→ Da lì al primo saggio da "fonico":' },
+      { id: 'raduno-bandistico-cogliate-2026', label: "← Evento precedente:" },
+      { id: 'concerto-vittuone-palazzolo-morricone-2026', label: '→ Evento successivo:' },
+    ],
     excerpt: "Sole a picco, trentadue gradi, sudore sul bocchino del trombone e gelato alla fine. Il resoconto del concerto della Banda di Palazzolo all'Anfiteatro La Cava — terzo anno consecutivo a fonderci.",
     content: `
       <p>Sabato 24 maggio sono tornato all'Anfiteatro La Cava, nel Parco Lago Nord di Paderno Dugnano, per il concerto della <a href="banda-palazzolo.html">Banda di Palazzolo Milanese</a>. Terzo anno consecutivo in questa location. Bellissima, per carità — non tutte le città hanno un posto così. Ma il sole nel pomeriggio di fine maggio non perdona.</p>
@@ -1046,10 +1053,11 @@ mode: single</code></pre>
     cover: "img/posts/2026/raduno-bandistico-cogliate-2026.jpg",
     photoDate: '2026-05-17',
     tags: ["musica", "banda palazzolo", "servizio"],
-    relatedPost: {
-      id: "raduno-bandistico-cogliate-2026-bacheca",
-      label: "📌 Questo evento era stato annunciato qui:"
-    },
+    relatedPosts: [
+      { id: 'raduno-bandistico-cogliate-2026-bacheca', label: "📌 Questo evento era stato annunciato qui:" },
+      { id: 'gita-banda-palazzolo-pergine-2026', label: "← Evento precedente:" },
+      { id: 'concerto-anfiteatro-la-cava-2026', label: '→ Evento successivo:' },
+    ],
     excerpt: "Cinque bande, sole di maggio, marcette per le vie di Cogliate e un ottimo rinfresco. Un pomeriggio leggero e piacevole.",
     content: `
       <p>Domenica 17 maggio siamo andati a Cogliate per il raduno bandistico organizzato in occasione del centenario della loro banda. Cinque bande in tutto, ognuna partita da un punto diverso della città sfilando per le proprie vie, per poi convergere tutte insieme nella piazza centrale.</p>
@@ -1182,10 +1190,10 @@ mode: single</code></pre>
     photoDate: '2026-05-10',
     showInGallery: true,
     tags: ["musica", "banda cusano", "concerto"],
-    relatedPost: {
-      id: "concerto-mamma-cusano-2026-bacheca",
-      label: "📌 Questo evento era stato annunciato qui:"
-    },
+    relatedPosts: [
+      { id: 'concerto-mamma-cusano-2026-bacheca', label: '📌 Questo evento era stato annunciato qui:' },
+      { id: 'concerto-estate-cusano-2026', label: '→ L\'anticipazione si è avverata qui:' },
+    ],
     excerpt: "Un bel pomeriggio di musica al Teatro Papa Giovanni XXIII con la Banda di Cusano Milanino: dai brani dedicati alle mamme all'assaggio del concerto d'estate.",
     content: `
       <p>Il 10 maggio, come ormai tradizione degli ultimi anni, la <a href="banda-cusano.html">Banda di Cusano Milanino</a> ha celebrato la Festa della Mamma con il suo concerto al Teatro Papa Giovanni XXIII. Il pubblico di Cusano è sempre caloroso e affezionato, e anche questa volta non ha deluso.</p>
@@ -1213,6 +1221,9 @@ mode: single</code></pre>
     eventTime: "14:30",
     eventPlace: "Paderno Dugnano",
     tags: ["musica", "doremitici"],
+    relatedPosts: [
+      { id: 'doremitici-carnevale-2026', label: "← Evento precedente:" },
+    ],
     excerpt: "Secondo incontro con i DoReMitici alla scuola primaria Fisogni di Palazzolo Milanese, con la classe 4C. Parte del progetto \"Un Pentagramma di solidarietà\", nell'ambito del bando Ri-Generare Legami.",
     content: `
       <p>
@@ -1304,10 +1315,12 @@ mode: single</code></pre>
     photoDate: '2026-03-29',
     pinned: false,
     tags: ["musica", "banda palazzolo", "concerto", "gita"],
-    relatedPost: {
-      id: "gita-banda-palazzolo-2026-bacheca",
-      label: "📌 Questo evento era stato annunciato qui:"
-    },
+    relatedPosts: [
+      { id: 'gita-banda-palazzolo-pergine-2026-bacheca', label: '📌 Questo evento era stato annunciato qui:' },
+      { id: 'concerto-anfiteatro-la-cava-2026', label: '→ Il salto di qualità audio successivo:' },
+      { id: 'ricordo-vittime-covid-2026', label: "← Evento precedente:" },
+      { id: 'raduno-bandistico-cogliate-2026', label: '→ Evento successivo:' },
+    ],
     excerpt: "Un weekend tra castle, concerti, eroismi all'autogrill e promemoria notturni su Alexa. Il racconto della gita della banda di Palazzolo a Pergine Valsugana.",
     content: `
       <p>
@@ -1563,6 +1576,10 @@ mode: single</code></pre>
     showInGallery: false,
     pinned: false,
     tags: ["tech", "smart home"],
+    relatedPosts: [
+      { id: 'pubblicazioni-smart-home', label: '← Qui avevo annunciato che sarebbe arrivato:' },
+      { id: 'domotica-luci-soluzione-ibrida', label: '→ La soluzione ibrida, come promesso nel testo:' },
+    ],
     excerpt: "Lampadine smart, relè, Zigbee, dimmer, strisce LED: analisi completa di tutte le soluzioni per automatizzare l'illuminazione con Home Assistant, con vantaggi e svantaggi di ognuna.",
     content: `
       <div class="post-guida-v1">
@@ -1929,7 +1946,7 @@ mode: single</code></pre>
       `
   },
 
-  { id: "gita-banda-palazzolo-2026-bacheca",
+  { id: "gita-banda-palazzolo-pergine-2026-bacheca",
     title: "Trasferta e concerto a Pergine Valsugana",
     date: "2026-03-18",
     cover: "",
@@ -1991,6 +2008,9 @@ mode: single</code></pre>
     eventTime: "11:00",
     eventPlace: "Paderno Dugnano",
     tags: ["musica", "banda palazzolo", "servizio"],
+    relatedPosts: [
+      { id: 'gita-banda-palazzolo-pergine-2026', label: '→ Evento successivo:' },
+    ],
     excerpt: "Servizio con la banda di Palazzolo in memoria delle vittime del COVID-19",
     content: `
       <p>Questo è il quinto anno in cui viene celebrata questa giornata, in ricordo di tutte le persone venute a mancare a causa del Coronavirus</p>
@@ -2061,6 +2081,9 @@ mode: single</code></pre>
     showInGallery: false,
     pinned: false,
     tags: ["tech", "home assistant", "smart home"],
+    relatedPosts: [
+      { id: 'domotica-luci-home-assistant', label: '→ La promessa mantenuta:' },
+    ],
     excerpt: "Da alcuni anni uso Home Assistant, volevo provare a pubblicare alcune delle mie idee e configurazioni.",
     content: `
       <p>Home Assistant è diventato il centro della mia casa, ormai da qualche anno. Mio papà è vittima dei miei continui esperimenti.
@@ -2082,6 +2105,10 @@ mode: single</code></pre>
     eventTime: "16:00",
     eventPlace: "Paderno Dugnano",
     tags: ["musica", "doremitici", "servizio"],
+    relatedPosts: [
+      { id: 'doremitici-serata-gruppo-missionario', label: "← Evento precedente:" },
+      { id: 'doremitici-secondo-incontro-scuola-fisogni', label: '→ Evento successivo:' },
+    ],
     excerpt: "I DoReMitici hanno portato un po' di musica per carnevale, fuori dal centro commerciale.",
     content: `
       <p>Il 21 febbraio, come gruppo DoReMitici ci siamo presentati davanti all'ingresso del Centro commerciale Brianza di 
@@ -2108,6 +2135,9 @@ mode: single</code></pre>
     eventTime: "20:45",
     eventPlace: "Paderno Dugnano",
     tags: ["musica", "doremitici"],
+    relatedPosts: [
+      { id: 'doremitici-carnevale-2026', label: '→ Evento successivo:' },
+    ],
     excerpt: "I DoReMitici hanno partecipato a una serata organizzata dal Gruppo Missionario presso la Cineteca Milano Metropolis.",
     content: `
       <p>Il 18 febbraio è stata una serata piacevole e con grandi spunti di riflessione. Per leggere l'articolo completo sul sito dei DoReMitici, 
