@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Il grafo di vita — Davide Zanella</title>
+  <meta name="description" content="Esplora i collegamenti tra i post del sito: stessa serata, stesso weekend, una promessa mantenuta, una competenza che cresce.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕸️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="Davide Zanella">
+  <meta property="og:title"       content="Il grafo di vita — Davide Zanella">
+  <meta property="og:description" content="Esplora i collegamenti tra i post del sito: stessa serata, stesso weekend, una promessa mantenuta, una competenza che cresce.">
+  <meta property="og:url"         content="https://davidezanella.com/grafo.html">
+  <meta property="og:image"       content="https://davidezanella.com/img/profilo.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"      content="it_IT">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Il grafo di vita — Davide Zanella">
+  <meta name="twitter:description" content="Esplora i collegamenti tra i post del sito.">
+  <meta name="twitter:image"       content="https://davidezanella.com/img/profilo.jpg">
+
+  <link rel="canonical" href="https://davidezanella.com/grafo.html">
+  <meta name="theme-color" content="#f7f5f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+  <meta name="author" content="Davide Zanella">
+
+  <script>(function(){var v="?v="+Date.now();document.querySelectorAll('script[src],link[rel="stylesheet"]').forEach(function(e){var a=e.tagName==="LINK"?"href":"src",u=e.getAttribute(a);if(u&&u.indexOf("?")===-1&&!u.startsWith("http")&&!u.startsWith("//"))e.setAttribute(a,u+v);});})();</script>
+
+  <style>
+    body{ padding: var(--nav-h) 0 0 0; overflow: hidden; }
+    .graph-shell{ display:flex; flex-direction:column; height:calc(100vh - var(--nav-h)); }
+
+    .graph-header{ padding: 18px 20px 14px; max-width:820px; margin:0 auto; width:100%; box-sizing:border-box; }
+    @media (max-width: 640px){
+      .graph-header{ padding: 10px 16px 8px; }
+      .graph-header .page-sub{ display:none; }
+      .graph-header .page-title{ font-size: 1.3rem; margin-bottom:2px; }
+      .graph-header .breadcrumb{ margin-bottom: 6px; }
+    }
+
+    .graph-layout{ position:relative; flex:1; min-height:0; border-top:1px solid var(--border); overflow:hidden; }
+    .board-wrap{ position:absolute; inset:0; background:var(--bg); }
+    .board-wrap svg{ display:block; width:100%; height:100%; cursor:grab; }
+    .board-wrap svg:active{ cursor:grabbing; }
+
+    .legend{ position:absolute; top:14px; left:14px; display:flex; flex-wrap:wrap; gap:6px; max-width:min(90%,480px); z-index:5; }
+    .hint{
+      position:absolute; bottom:14px; left:14px; z-index:5;
+      font-size:.72rem; color:var(--muted); background:var(--card);
+      border:1px solid var(--border); padding:5px 12px; border-radius:20px;
+      box-shadow:var(--shadow); pointer-events:none;
+    }
+    @media (max-width: 640px){ .hint{ display:none; } }
+
+    .backdrop{
+      position:fixed; inset: var(--nav-h) 0 0 0; background:rgba(0,0,0,.14);
+      opacity:0; pointer-events:none; transition:opacity .25s; z-index:20;
+    }
+    body.panel-open .backdrop{ opacity:1; pointer-events:auto; }
+
+    .side-panel{
+      position:fixed; top:var(--nav-h); right:0; bottom:0; width:380px;
+      background:var(--card); border-left:1px solid var(--border);
+      box-shadow:-8px 0 32px rgba(0,0,0,.12);
+      transform:translateX(100%); transition:transform .3s ease;
+      z-index:21; overflow-y:auto; padding: 20px 24px 32px;
+    }
+    body.panel-open .side-panel{ transform:translateX(0); }
+    @media (max-width: 640px){ .side-panel{ width:100%; } }
+
+    .panel-close{
+      position:absolute; top:12px; right:12px; width:32px; height:32px;
+      border-radius:50%; border:1px solid rgba(255,255,255,.5); background:rgba(255,255,255,.8);
+      backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer; font-size:.95rem; color:#1a1a1a; line-height:1; z-index:3;
+      box-shadow:0 2px 10px rgba(0,0,0,.18);
+      transition:background .15s, transform .15s;
+    }
+    .panel-close:hover{ background:#fff; transform:scale(1.06); }
+
+    .panel-cover-wrap{ position:relative; margin: -20px -24px 18px; }
+    .panel-cover, .panel-cover-fallback{ width:100%; height:240px; object-fit:cover; display:block; }
+    .panel-cover-fallback{
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Playfair Display', serif; font-weight:700; font-size:2.6rem;
+    }
+    .panel-cover-fade{
+      position:absolute; left:0; right:0; bottom:0; height:30px;
+      background:linear-gradient(to bottom, rgba(0,0,0,0), var(--card));
+      pointer-events:none;
+    }
+
+    .panel-body{ padding-top: 2px; }
+    .panel-tag{
+      display:inline-block; font-size:.65rem; text-transform:uppercase; letter-spacing:.07em;
+      font-weight:600; padding:4px 11px; border-radius:20px; color:#fff; margin-bottom:11px;
+    }
+    .panel h2{
+      font-family:'Playfair Display', serif; font-weight:700; font-size:1.02rem;
+      line-height:1.35; margin-bottom:12px; letter-spacing:-.005em;
+    }
+    .panel .meta-pill{
+      display:inline-block; font-size:.7rem; font-weight:500; color:var(--muted);
+      background:var(--bg); border:1px solid var(--border); border-radius:20px;
+      padding:4px 11px; margin-bottom:16px;
+    }
+    .panel .excerpt{
+      font-size:.82rem; line-height:1.68; color:var(--text);
+      padding-top:14px; border-top:1px solid var(--border); margin-bottom:22px;
+    }
+    .panel-link{
+      display:flex; align-items:center; justify-content:center; gap:6px;
+      font-size:.83rem; font-weight:500; color:var(--card); background:var(--text);
+      text-decoration:none; padding:11px 16px; border-radius:10px; margin-bottom:26px; margin-top: 26px;
+    }
+    .panel-link:hover{ opacity:.85; }
+    .panel .conn-title{
+      font-size:.66rem; text-transform:uppercase; letter-spacing:.07em;
+      color:var(--muted); font-weight:600; margin-bottom:8px;
+    }
+    .conn-item{ display:flex; align-items:center; gap:11px; padding:10px 0; border-top:1px solid var(--border); cursor:pointer; }
+    .conn-item:hover .conn-post{ text-decoration:underline; }
+    .conn-thumb-box{ width:38px; height:38px; border-radius:8px; flex:none; overflow:hidden; border:1px solid var(--border); }
+    .conn-thumb-box img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .conn-thumb-box .fb{
+      width:100%; height:100%; display:flex; align-items:center; justify-content:center;
+      font-family:'Playfair Display', serif; font-weight:700; font-size:.85rem;
+    }
+    .conn-text{ min-width:0; }
+    .conn-item .conn-label{ color:var(--muted); font-size:.68rem; margin-bottom:2px; }
+    .conn-item .conn-post{ font-size:.82rem; font-weight:500; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .no-conn{ font-size:.82rem; color:var(--muted); font-style:italic; }
+
+    .link{ fill:none; stroke:#c9bfa9; stroke-width:1.6; opacity:.42; transition:opacity .2s, stroke .2s, stroke-width .2s; }
+    .link.dim{ opacity:.06; }
+    .link.active{ opacity:1; stroke:var(--text); stroke-width:2.2; }
+    .card-rect{ fill:var(--card); stroke:var(--border); stroke-width:1; filter:drop-shadow(0 2px 6px rgba(0,0,0,.14)); }
+    .card-rect.dim{ opacity:.22; }
+    .card-fallback.dim{ opacity:.22; }
+    .card-fallback-letter.dim{ opacity:.22; }
+    .card-label{ font-family:'DM Sans', sans-serif; font-size:11px; font-weight:500; fill:var(--text); pointer-events:none; }
+    .card-label.dim{ opacity:.22; }
+    .card-date{ font-family:'DM Sans', sans-serif; font-size:9px; fill:var(--muted); pointer-events:none; }
+    .card-date.dim{ opacity:.22; }
+    .card-cover.dim{ opacity:.22; }
+    .node-group{ cursor:pointer; }
+    .node-group.selected .card-rect{ stroke:var(--text); stroke-width:2; }
+  </style>
+</head>
+<body>
+
+<div class="graph-shell">
+  <div class="graph-header">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Grafo di vita</span>
+    </div>
+    <h1 class="page-title">Il grafo di vita</h1>
+    <p class="page-sub">Ogni cartolina è un post del sito, collegato dove il racconto si intreccia. Trascina i nodi, clicca per i dettagli.</p>
+  </div>
+
+  <div class="graph-layout">
+    <div class="board-wrap">
+      <div class="legend" id="legend"></div>
+      <span class="hint">👆 Clicca una cartolina per i dettagli</span>
+      <svg id="board"></svg>
+    </div>
+  </div>
+</div>
+
+<div class="backdrop" id="backdrop"></div>
+<div class="side-panel" id="panel">
+  <div class="panel-close" id="panelClose">✕</div>
+  <div id="panelContent"></div>
+</div>
+
+<script src="posts.js"></script>
+<script src="nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+initNav('grafo.html');
+
+/* ══════════════════════════════════════════════════════
+   In produzione: sostituire POSTS_RAW con l'import diretto
+   di POSTS da posts.js. La struttura dei campi (id, title,
+   date, tags, excerpt, cover, pinned, relatedPosts / relatedPost)
+   è già identica, quindi il resto del codice sotto funziona
+   senza modifiche.
+   ══════════════════════════════════════════════════════ */
+
+const TAG_HEX_RESOLVED = {
+  musica: '#b5451b', lavoro: '#2b5797', tech: '#2e7d5e',
+  vita: '#7c5cbf', media: '#c4752a', sport: '#4a7c3f'
+};
+
+/* ══════════════════════════════════════════════════════
+   Collegamento reale a posts.js: POSTS è la variabile globale
+   definita da quel file (caricato con <script src="posts.js">
+   prima di questo script). Non serve più copiare i dati a mano:
+   il grafo ora legge sempre l'elenco aggiornato dei post.
+   ══════════════════════════════════════════════════════ */
+const POSTS_RAW = POSTS;
+
+function normalizeRelated(post){
+  if(post.relatedPosts) return post.relatedPosts;
+  if(post.relatedPost && post.relatedPost.id) return [post.relatedPost];
+  return [];
+}
+
+const byId = {};
+POSTS_RAW.forEach(p => byId[p.id] = p);
+
+function isBacheca(post){ return post.pinned === true; }
+function isBachecaLink(entry){ return /📌|📖/.test(entry.label); }
+
+const NODES = POSTS_RAW.filter(p => !isBacheca(p));
+const nodeIds = new Set(NODES.map(n=>n.id));
+
+NODES.forEach(n => {
+  n.visibleRelated = normalizeRelated(n).filter(e => nodeIds.has(e.id) && !isBachecaLink(e));
+});
+
+const seenPairs = new Set();
+const LINKS = [];
+NODES.forEach(n => {
+  n.visibleRelated.forEach(e => {
+    const key = [n.id, e.id].sort().join('|');
+    if(!seenPairs.has(key)){ seenPairs.add(key); LINKS.push({source:n.id, target:e.id}); }
+  });
+});
+
+function cleanLabel(label){ return label.replace(/^[←→\s]+/, '').replace(/:\s*$/, '').trim(); }
+function fmtDate(iso){ const d = new Date(iso+'T00:00:00'); return d.toLocaleDateString('it-IT', {day:'numeric', month:'short', year:'numeric'}); }
+function initial(tag){ return tag.charAt(0).toUpperCase(); }
+
+/* ── inserisce in modo sicuro una cover (o il monogramma di fallback) in un contenitore, senza HTML inline fragile ── */
+function fillCoverBox(container, post, className, fbClassName){
+  container.innerHTML = '';
+  const tagColor = TAG_HEX_RESOLVED[post.tags[0]] || '#999';
+  function showFallback(){
+    container.innerHTML = '';
+    const fb = document.createElement('div');
+    fb.className = fbClassName;
+    fb.style.background = tagColor + '22';
+    fb.style.color = tagColor;
+    fb.textContent = initial(post.tags[0]);
+    container.appendChild(fb);
+  }
+  if(post.cover){
+    const img = document.createElement('img');
+    img.className = className;
+    img.alt = '';
+    img.onerror = showFallback;
+    img.src = post.cover;
+    container.appendChild(img);
+  } else {
+    showFallback();
+  }
+}
+
+const measureCanvas = document.createElement('canvas');
+const measureCtx = measureCanvas.getContext('2d');
+function textWidth(str, font){ measureCtx.font = font; return measureCtx.measureText(str).width; }
+function wrapTitle(title, maxWidth, font){
+  const words = title.split(' ');
+  const lines = [];
+  let current = '';
+  for(const w of words){
+    const test = current ? current + ' ' + w : w;
+    if(textWidth(test, font) > maxWidth && current){ lines.push(current); current = w; if(lines.length === 2) break; }
+    else { current = test; }
+  }
+  if(lines.length < 2 && current) lines.push(current);
+  if(lines.length === 2){
+    let last = lines[1];
+    while(textWidth(last + '…', font) > maxWidth && last.length > 1) last = last.slice(0, -1);
+    if(words.join(' ').length > lines.join(' ').length && !lines[1].endsWith('…')) lines[1] = last + '…';
+  }
+  return lines;
+}
+
+const CARD_W = 190, CARD_IMG_H = 96, CARD_H = 158;
+const FONT = '500 11px DM Sans, sans-serif';
+const PANEL_W = 380;
+
+const svg = d3.select('#board');
+const boardWrap = document.querySelector('.board-wrap');
+let width = boardWrap.clientWidth, height = boardWrap.clientHeight;
+svg.attr('viewBox', [0,0,width,height]);
+
+const defs = svg.append('defs');
+const zoomLayer = svg.append('g');
+const zoomBehavior = d3.zoom().scaleExtent([0.35, 2]).on('zoom', (e) => zoomLayer.attr('transform', e.transform));
+svg.call(zoomBehavior);
+
+const linkLayer = zoomLayer.append('g').attr('class','link-layer');
+const nodeLayer = zoomLayer.append('g').attr('class','node-layer');
+
+let selectedId = null;
+let activeTag = null;
+
+/* ══════════════════════════════════════════════════════
+   Chip, chiusura pannello e centratura vengono collegati
+   SUBITO, prima di disegnare il grafo: così restano
+   funzionanti anche se qualcosa nel disegno va storto.
+   ══════════════════════════════════════════════════════ */
+
+function openPanel(){ document.body.classList.add('panel-open'); }
+function closePanel(){
+  document.body.classList.remove('panel-open');
+  selectedId = null;
+  nodeLayer.selectAll('g.node-group').classed('selected', false);
+  linkLayer.selectAll('path').classed('dim', false).classed('active', false);
+}
+
+document.getElementById('panelClose').addEventListener('click', closePanel);
+document.getElementById('backdrop').addEventListener('click', closePanel);
+document.querySelector('.board-wrap').addEventListener('click', (e) => {
+  if(e.target.closest('.node-group')) return;
+  closePanel();
+});
+
+const legend = document.getElementById('legend');
+const usedTags = [...new Set(NODES.map(n=>n.tags[0]))];
+const resetChip = document.createElement('span');
+resetChip.className = 'tag active';
+resetChip.textContent = 'Tutti';
+resetChip.addEventListener('click', ()=>{ activeTag = null; applyFilter(); });
+legend.appendChild(resetChip);
+usedTags.forEach(tag=>{
+  const chip = document.createElement('span');
+  chip.className = 'tag';
+  chip.dataset.cat = tag;
+  chip.textContent = tag;
+  chip.addEventListener('click', ()=>{ activeTag = (activeTag === tag) ? null : tag; applyFilter(); });
+  legend.appendChild(chip);
+});
+
+function applyFilter(){
+  resetChip.classList.toggle('active', !activeTag);
+  legend.querySelectorAll('.tag[data-cat]').forEach(c=> c.classList.toggle('active', activeTag === c.dataset.cat));
+  nodeLayer.selectAll('g.node-group').select('rect.card-rect').classed('dim', d => activeTag && d.tags[0] !== activeTag);
+  nodeLayer.selectAll('g.node-group').select('rect.card-fallback').classed('dim', d => activeTag && d.tags[0] !== activeTag);
+  nodeLayer.selectAll('g.node-group').select('text.card-fallback-letter').classed('dim', d => activeTag && d.tags[0] !== activeTag);
+  nodeLayer.selectAll('g.node-group').select('image.card-cover').classed('dim', d => activeTag && d.tags[0] !== activeTag);
+  nodeLayer.selectAll('g.node-group').select('text.card-label').classed('dim', d => activeTag && d.tags[0] !== activeTag);
+  nodeLayer.selectAll('g.node-group').select('text.card-date').classed('dim', d => activeTag && d.tags[0] !== activeTag);
+  linkLayer.selectAll('path').classed('dim', l=>{
+    if(!activeTag) return false;
+    const s = byId[l.source.id || l.source], t = byId[l.target.id || l.target];
+    return s.tags[0] !== activeTag && t.tags[0] !== activeTag;
+  });
+}
+
+function centerOn(node){
+  const t = d3.zoomTransform(svg.node());
+  const scale = t.k || 1;
+  const panelOpen = document.body.classList.contains('panel-open');
+  const isDesktop = window.innerWidth > 640;
+  const availW = width - (panelOpen && isDesktop ? PANEL_W : 0);
+  const cx = availW/2, cy = height/2;
+  const tx = cx - node.x*scale;
+  const ty = cy - node.y*scale;
+  svg.transition().duration(550).call(zoomBehavior.transform, d3.zoomIdentity.translate(tx,ty).scale(scale));
+}
+
+function selectNode(id){
+  selectedId = id;
+  nodeLayer.selectAll('g.node-group').classed('selected', d=>d.id===id);
+  const d = byId[id];
+  const tagColor = TAG_HEX_RESOLVED[d.tags[0]] || '#999';
+
+  let connHtml = '';
+  if(!d.visibleRelated || d.visibleRelated.length === 0){
+    connHtml = `<div class="no-conn">Nessun collegamento ancora — un nodo che aspetta il suo filo.</div>`;
+  } else {
+    connHtml = `<div class="conn-title">Collegamenti (${d.visibleRelated.length})</div>` +
+      d.visibleRelated.map(e=>{
+        const other = byId[e.id];
+        return `<div class="conn-item" data-id="${e.id}">
+          <div class="conn-thumb-box" data-rel-id="${e.id}"></div>
+          <div class="conn-text">
+            <div class="conn-label">${cleanLabel(e.label)}</div>
+            <div class="conn-post">${other ? other.title : e.id}</div>
+          </div>
+        </div>`;
+      }).join('');
+  }
+
+  document.getElementById('panelContent').innerHTML = `
+    <div class="panel-cover-wrap">
+      <div class="panel-cover-box" id="panelCoverBox"></div>
+      <div class="panel-cover-fade"></div>
+    </div>
+    <div class="panel-body">
+      <span class="panel-tag" style="background:${tagColor}">${d.tags[0]}</span>
+      <h2>${d.title}</h2>
+      <div class="meta-pill">${fmtDate(d.date)}</div>
+      <div class="excerpt">${d.excerpt}</div>
+      <a class="panel-link" href="post.html?id=${d.id}">Leggi l'articolo →</a>
+      ${connHtml}
+    </div>
+  `;
+
+  fillCoverBox(document.getElementById('panelCoverBox'), d, 'panel-cover', 'panel-cover-fallback');
+  document.querySelectorAll('.conn-thumb-box').forEach(box=>{
+    const other = byId[box.dataset.relId];
+    if(other) fillCoverBox(box, other, '', 'fb');
+  });
+  document.querySelectorAll('.conn-item').forEach(el=>{
+    el.addEventListener('click', ()=> selectNode(el.dataset.id));
+  });
+
+  linkLayer.selectAll('path')
+    .classed('dim', l => { const sId=l.source.id||l.source, tId=l.target.id||l.target; return sId!==id && tId!==id; })
+    .classed('active', l => { const sId=l.source.id||l.source, tId=l.target.id||l.target; return sId===id || tId===id; });
+
+  openPanel();
+  requestAnimationFrame(() => centerOn(d));
+}
+
+/* ══════════════════════════════════════════════════════
+   Simulazione e disegno del grafo
+   ══════════════════════════════════════════════════════ */
+
+const sim = d3.forceSimulation(NODES)
+  .force('link', d3.forceLink(LINKS).id(d=>d.id).distance(220).strength(0.3))
+  .force('charge', d3.forceManyBody().strength(-460))
+  .force('center', d3.forceCenter(width/2, height/2))
+  .force('collide', d3.forceCollide(Math.sqrt((CARD_W/2)**2 + (CARD_H/2)**2) + 18))
+  .force('x', d3.forceX(width/2).strength(0.025))
+  .force('y', d3.forceY(height/2).strength(0.025));
+
+function linkPath(d){
+  const sx=d.source.x, sy=d.source.y, tx=d.target.x, ty=d.target.y;
+  const mx=(sx+tx)/2, my=(sy+ty)/2, dx=tx-sx, dy=ty-sy;
+  const cx = mx - dy*0.12, cy = my + dx*0.12;
+  return `M${sx},${sy} Q${cx},${cy} ${tx},${ty}`;
+}
+function rotFor(id){ return ((id.charCodeAt(2)+id.charCodeAt(5))%5 - 2); }
+
+function render(){
+  const links = linkLayer.selectAll('path').data(LINKS);
+  links.enter().append('path').attr('class','link').merge(links).attr('d', linkPath);
+  links.exit().remove();
+
+  const nodes = nodeLayer.selectAll('g.node-group').data(NODES, d=>d.id);
+  const enter = nodes.enter().append('g').attr('class','node-group')
+    .call(d3.drag()
+      .on('start', (e,d)=>{ if(!e.active) sim.alphaTarget(0.25).restart(); d.fx=d.x; d.fy=d.y; })
+      .on('drag', (e,d)=>{ d.fx=e.x; d.fy=e.y; })
+      .on('end', (e,d)=>{ if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }))
+    .on('click', (e,d)=>{ e.stopPropagation(); selectNode(d.id); });
+
+  enter.each(function(d){
+    defs.append('clipPath').attr('id', 'clip-' + d.id).append('rect')
+      .attr('x', -CARD_W/2).attr('y', -CARD_H/2).attr('width', CARD_W).attr('height', CARD_IMG_H).attr('rx', 8);
+  });
+
+  enter.append('rect').attr('class','card-rect');
+  enter.append('rect').attr('class','card-fallback');
+  enter.append('text').attr('class','card-fallback-letter');
+  enter.append('image').attr('class','card-cover');
+  enter.append('circle').attr('class','tag-dot').attr('r',4);
+  enter.append('text').attr('class','card-label');
+  enter.append('text').attr('class','card-date');
+
+  const merged = enter.merge(nodes);
+  merged.each(function(d){
+    const g = d3.select(this);
+    const rot = rotFor(d.id);
+    const tagColor = TAG_HEX_RESOLVED[d.tags[0]] || '#999';
+    const lines = wrapTitle(d.title, CARD_W - 22, FONT);
+
+    g.select('rect.card-rect').attr('x', -CARD_W/2).attr('y', -CARD_H/2).attr('width', CARD_W).attr('height', CARD_H).attr('rx', 10).attr('transform', `rotate(${rot})`);
+    g.select('rect.card-fallback').attr('x', -CARD_W/2).attr('y', -CARD_H/2).attr('width', CARD_W).attr('height', CARD_IMG_H).attr('rx', 8).attr('fill', tagColor).attr('opacity', 0.14).attr('transform', `rotate(${rot})`);
+    g.select('text.card-fallback-letter')
+      .attr('x', 0).attr('y', -CARD_H/2 + CARD_IMG_H/2 + 12).attr('text-anchor','middle')
+      .attr('font-family', "'Playfair Display', serif").attr('font-weight', 700).attr('font-size', 30)
+      .attr('fill', tagColor).attr('opacity', d.cover ? 0 : 0.38).attr('transform', `rotate(${rot})`)
+      .text(initial(d.tags[0]));
+
+    const img = g.select('image.card-cover')
+      .attr('x', -CARD_W/2).attr('y', -CARD_H/2).attr('width', CARD_W).attr('height', CARD_IMG_H)
+      .attr('preserveAspectRatio', 'xMidYMid slice').attr('clip-path', `url(#clip-${d.id})`)
+      .attr('transform', `rotate(${rot})`).style('display', d.cover ? null : 'none');
+    if(d.cover){
+      img.attr('href', d.cover).on('error', function(){
+        d3.select(this).style('display','none');
+        g.select('text.card-fallback-letter').attr('opacity', 0.38);
+      });
+    }
+
+    g.select('circle.tag-dot').attr('fill', tagColor).attr('transform', `translate(${-CARD_W/2+12},${CARD_H/2-14}) rotate(${rot})`);
+
+    const labelSel = g.select('text.card-label').attr('transform', `rotate(${rot})`);
+    labelSel.selectAll('tspan').remove();
+    lines.forEach((line,i)=> labelSel.append('tspan').attr('x', -CARD_W/2+11).attr('y', -CARD_H/2+CARD_IMG_H+20+i*14).text(line));
+
+    g.select('text.card-date').attr('transform', `rotate(${rot})`).attr('x', -CARD_W/2+22).attr('y', CARD_H/2-11).text(fmtDate(d.date));
+  });
+  nodes.exit().remove();
+  applyFilter();
+}
+
+sim.on('tick', () => {
+  linkLayer.selectAll('path').attr('d', linkPath);
+  nodeLayer.selectAll('g.node-group').attr('transform', d=>`translate(${d.x},${d.y})`);
+});
+
+render();
+
+window.addEventListener('resize', ()=>{
+  width = boardWrap.clientWidth; height = boardWrap.clientHeight;
+  svg.attr('viewBox', [0,0,width,height]);
+  sim.force('center', d3.forceCenter(width/2, height/2));
+  sim.force('x', d3.forceX(width/2).strength(0.025));
+  sim.force('y', d3.forceY(height/2).strength(0.025));
+  sim.alpha(0.3).restart();
+});
+
+/* ══════════════════════════════════════════════════════
+   Fix bfcache: tornando "indietro" (es. da un post a questa
+   pagina), alcuni browser ripristinano il grafo da uno
+   snapshot invece di ricaricarlo: l'SVG resta interattivo
+   (i click funzionano) ma non viene ridipinto. Se la pagina
+   viene ripristinata dalla cache, la ricarichiamo per davvero.
+   ══════════════════════════════════════════════════════ */
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted) location.reload();
+});
+
+</script>
+</body>
+</html>
