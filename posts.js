@@ -31,6 +31,44 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  { id: "sessione-settembre-2026",
+    title: "Due orali a sorpresa e ventinove crediti: la sessione di settembre",
+    date: "2026-09-15",
+    cover: "img/posts/2026/sessione-settembre-2026.jpg",
+    showInGallery: false,
+    tags: ["lavoro", "università"],
+    relatedPosts: [
+      { id: 'esame-ingegneria-del-software-2026', label: '← Esame precedente:' },
+      { id: 'esame-reti-logiche-giugno-2026', label: '←← Esame ancora precedente:' },
+      { id: 'esame-interconnessioni-2026', label: "←← Primo della sessione:" },
+    ],
+    excerpt: "Un mese passato quasi tutto sui libri, chiuso da due convocazioni all'orale che non mi aspettavo e da una sessione che, tra ansia e sorprese, si è rivelata la più proficua di sempre.",
+    content: `
+      <p>Dal <a href="post.html?id=campeggio-massa-2026">campeggio</a> in poi non è successo molto, o almeno così sembrava da fuori: agosto l'ho passato quasi interamente sui libri, senza altre vacanze oltre a quelle sei notti già raccontate. Ma sotto la superficie si stava preparando la sessione di esami più intensa che abbia mai affrontato, e a settembre è arrivata tutta insieme.</p>
+
+      <h2>Reti Logiche: un progetto, due viaggi in moto</h2>
+      <p>Il primo appuntamento era il progetto di Reti Logiche, consegnato il 28 agosto: un componente hardware in VHDL che doveva dialogare con una memoria esterna gestendo una lista di task ordinata per priorità. Le operazioni erano quattro — inserire un nuovo task nel punto giusto della lista, rimuovere quello con priorità più alta, svuotare tutto e, aumentare la priorità a tutti gli elementi rimasti.</p>
+      <p>Normalmente, da quello che mi raccontavano amici e compagni degli anni scorsi, bastava consegnare ed aspettare il voto. Io invece il 1° settembre mi sono ritrovato una convocazione all'orale per il 4, e agli orali, lo ammetto senza troppi giri di parole, soffro parecchio: molto più che a uno scritto, e infinitamente più che a un progetto fatto comodamente da casa.</p>
+      <p>La mattina dell'esame è stata surreale. Il professore non aveva specificato nulla nella mail di convocazione, così mi ero preparato a rispondere a domande sulla relazione. Invece voleva che portassimo il PC con Vivado installato per far girare le simulazioni davanti a lui. Io ero arrivato in moto e senza portatile: sono dovuto tornare a casa — mezz'ora di strada, per fortuna non abito lontano — recuperare il PC e ripresentarmi in università. Andata e ritorno due volte in una mattinata, ma pur di togliermi il pensiero l'ho accettato volentieri: rimandare avrebbe solo prolungato l'attesa.</p>
+      <p>Alla fine l'esame è stato semplice: sintesi, test, una sola domanda sul codice. Con un po' di malizia credo che il professore abbia scelto questo formato più per velocizzare le correzioni — vedendoci simulare il progetto dal vivo, due o tre studenti alla volta — che per reale necessità di approfondire. Il risultato è stato un bel 30, anche se pesa relativamente poco: un solo CFU.</p>
+
+      <h2>Il catering impossibile: DPLL e menu aziendali</h2>
+      <p>Il secondo progetto, per Algoritmi e Principi dell'Informatica, aveva un nome decisamente più evocativo: "il catering impossibile". Il programma doveva leggere un file con l'elenco dei piatti disponibili e, riga per riga, le preferenze di ogni dipendente di un'azienda — espresse come piatti graditi o piatti da escludere, in OR tra loro all'interno della stessa riga, in AND tra i vari dipendenti. L'obiettivo era determinare se esistesse un menu capace di accontentare tutti contemporaneamente.</p>
+      <p>Quando il menu perfetto non esisteva, il programma doveva iniziare a scartare dipendenti dal fondo della lista — che rappresentava, per ipotesi, l'ordine gerarchico dell'azienda, dai dirigenti in alto ai ruoli meno centrali in fondo — finché non si trovava una configurazione soddisfacibile, stampando quanti "sacrifici" erano stati necessari.</p>
+      <p>In pratica, quello che ho costruito è un piccolo DPLL. La valutazione qui era automatica, tramite un verificatore online a scaglioni di voto crescente: ho superato i test per il 21, ho provato a spingermi oltre ma avrebbe richiesto di stravolgere l'intero programma già scritto, e alla fine mi sono accontentato. Nessun colpo di scena: il voto è arrivato dritto sul portale.</p>
+
+      <h2>API: lo scritto, l'attesa, e tre ore dietro una vetrata</h2>
+      <p>Il pezzo più pesante era Algoritmi e Principi dell'Informatica, 10 crediti, l'esame che mi avrebbe fatto scendere sotto una soglia importante di CFU rimanenti — importante non solo a livello di percorso, ma anche economico, da fuori corso qual sono. Lo scritto l'ho affrontato il 3 settembre, proprio a ridosso dell'orale di Reti Logiche: due giornate consecutive parecchio intense.</p>
+      <p>Poi è arrivata l'attesa. Una settimana, fino al 10 settembre — il terzo anniversario con Elisa, tra l'altro — quando, mentre eravamo insieme, mi è arrivata la mail: convocazione all'orale per il 14, insieme al voto dello scritto. Un 28 che, sinceramente, non mi aspettavo affatto per un esame così tosto.</p>
+      <p>Tra il 10 e il 14 ho dormito male ogni notte. E l'attesa non è finita lì: l'orale, fissato per le 14, è iniziato puntuale ma io, con il cognome che inizia per Z, ero il penultimo di una ventina. Sono rimasto lì, in una sala tutta vetrate da cui si vedeva ogni studente entrare e uscire, per più di tre ore, chiedendo a ognuno com'era andata e rendendomi conto, uno dopo l'altro, di non conoscere bene le risposte alle domande poste dal professore.</p>
+      <p>Il mio turno, quando è arrivato, è durato al massimo un quarto d'ora — e non è andato benissimo. Il professore mi ha tolto due punti rispetto allo scritto: voto finale 26. Un peccato, ma resto comunque contento: anche solo il 28 iniziale era stata una sorpresa piacevole.</p>
+      <p>C'è un dettaglio che un po' mi punge ancora: un mio amico, con un cognome diverso e quindi in un altro scaglione, ha fatto lo scritto il mio stesso giorno, ma si è ritrovato il voto dritto sul portale, senza dover passare per l'orale. Sfortuna, semplicemente: sono capitato con professori più rigorosi, che non si sono accontentati dello scritto e hanno voluto verificare di persona la preparazione di ognuno.</p>
+
+      <h2>Il bilancio</h2>
+      <p>Messa in fila, questa sessione — da giugno a settembre, contando anche Introduzione alle Tecnologie di Interconnessione e Ingegneria del Software di cui ho già parlato — mi ha portato 29 crediti: probabilmente la sessione più proficua di sempre, sia per CFU che per voti. E se da un lato l'ansia degli orali a sorpresa l'ho sofferta parecchio, dall'altro un pensiero di mio padre mi è rimasto in testa: affrontare queste situazioni, in fondo, ti tempra. Non danno più valore alla laurea in sé, ma mi fanno sentire di aver messo alla prova qualcosa in più — e considerando che colloqui di lavoro e riunioni, prima o poi, saranno sempre orali, forse non è tempo del tutto sprecato.</p>
+    `
+  },
+
   { id: "campeggio-massa-2026",
     title: "Sette giorni in campeggio a Marina di Massa",
     date: "2026-08-09",
