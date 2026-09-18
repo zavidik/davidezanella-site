@@ -31,6 +31,37 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  { id: "pausa-banda-palazzolo-2026",
+    title: "Una pausa",
+    date: "2026-09-18",
+    cover: "img/posts/2026/pausa-banda-palazzolo-2026.jpg",
+    showInGallery: false,
+    pinned: false,
+    tags: ["musica"],
+    relatedPosts: [
+      { id: 'concerto-palazzolo-vittuone-morricone-2026', label: "📖 Leggi com'è andato il concerto:" },
+      { id: 'concerto-palazzolo-vittuone-morricone-2026-bacheca', label: "📌 Questo evento era stato annunciato qui: L'ultimo concerto prima della pausa" },
+      { id: 'concerto-vittuone-palazzolo-morricone-2026', label: "La prima esecuzione a Vittuone:" },
+    ],
+    excerpt: "Da questo mese mi prendo una pausa dalla Banda di Palazzolo Milanese. Lo studio viene prima, e questa decisione, una volta presa, mi ha dato più sollievo che rimpianto.",
+    content: `
+      <p>Ci sono le ultime due prove prima del concerto del 27 settembre — la replica di quello di giugno a tema Morricone — e poi mi fermo. Da questo mese mi prendo una pausa dalla <a href="banda-palazzolo.html">Banda di Palazzolo Milanese</a>. Una decisione che avevo comunicato al direttore già a maggio, a margine di uno dei concerti di primavera, e che ora è diventata realtà.</p>
+
+      <h2>Perché adesso</h2>
+      <p>Sono al traguardo: mancano 25 crediti alla laurea, e voglio arrivarci dando il massimo. Per come sono fatto (un po' come tutti), funziono meglio quando ho meno cose a cui pensare: se ho un esame in testa, voglio che occupi tutta la testa, senza altri impegni che continuano a girare in sottofondo. La banda di Palazzolo, con le prove settimanali e i servizi, era l'impegno più pesante in proporzione al resto. La scelta è stata quasi naturale.</p>
+
+      <p>Una decisione che, una volta presa, mi ha dato più sollievo che rimpianto.</p>
+
+      <h2>Non sparisco dalla musica</h2>
+      <p>Continuerò ad andare a suonare con la <a href="banda-cusano.html">Banda di Cusano Milanino</a>, anche se con una frequenza più ridotta — ne ho parlato col maestro e la cosa è stata accolta senza problemi. Continuo anche con le lezioni e le altre attività musicali che mi capitano, decisamente meno impegnative come frequenza.</p>
+
+      <h2>Una pausa, non un addio</h2>
+      <p>Le pause servono anche a questo: staccare, respirare, e scoprire cosa si sente davvero quando il rumore di fondo si abbassa.</p>
+
+      <p><em>Tempus omnia revelat.</em></p>
+    `,
+  },
+
   { id: "sessione-settembre-2026",
     title: "Due orali a sorpresa e ventinove crediti: la sessione di settembre",
     date: "2026-09-15",
