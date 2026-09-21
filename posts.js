@@ -31,6 +31,38 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  { id: "festa-addolorata-compleanno-2026",
+    title: "Un servizio speciale per il compleanno",
+    date: "2026-09-21",
+    tags: ["musica", "banda palazzolo"],
+    cover: "img/posts/2026/festa-addolorata-compleanno-2026.jpg",
+    relatedPosts: [
+      { id: 'concerto-palazzolo-vittuone-morricone-2026', label: "📖 Leggi com'è andato il concerto del 27 settembre:" },
+      { id: 'concerto-palazzolo-vittuone-morricone-2026-bacheca', label: "📌 Questo evento era stato annunciato qui: L'ultimo concerto prima della pausa" },
+      { id: 'pausa-banda-palazzolo-2026', label: "⏸️ Annuncio la mia pausa dalla banda di Palazzolo" },
+      { id: 'concerto-anfiteatro-la-cava-2026', label: '← Il concerto in cui ho iniziato con mixer e microfoni:' },
+      { id: 'concerto-vittuone-palazzolo-morricone-2026', label: "La prima replica a Vittuone:" },
+    ],
+    excerpt: "Prima della pausa, un ultimo servizio speciale: la Festa dell'Addolorata è caduta proprio il giorno del mio compleanno.",
+    content: `
+      <p>Come avevo raccontato nell'<a href="post.html?id=pausa-banda-palazzolo-2026">ultimo post, la mia pausa dalla banda</a> non è ancora iniziata: gli ultimi impegni rimasti sono la prova di venerdì 25 settembre e il concerto di domenica 27, quello davvero conclusivo. Nel frattempo, però, si è inserito un appuntamento che non potevo proprio saltare.</p>
+
+      <h2>La Festa dell'Addolorata</h2>
+      <p>Domenica scorsa, 20 settembre, era il mio compleanno, e per una bella coincidenza era anche il giorno del servizio per la Festa dell'Addolorata, la festa patronale di Palazzolo Milanese, la frazione di Paderno Dugnano da cui la banda prende il nome (siamo infatti il <a href="banda-palazzolo.html">Corpo Musicale Santa Cecilia 1900 di Palazzolo Milanese</a>, anche se ormai suoniamo per tutta la città). Ritrovo alle nove e mezza, breve sfilata dall'oratorio alla chiesa, poi ad aspettare per tutta la durata della messa, decisamente lunga, e infine ancora a suonare all'uscita, accompagnando anche il momento del concorso di torte che si teneva in piazza. Siamo tornati a casa verso mezzogiorno.</p>
+
+      <h3>Perché sono andato lo stesso</h3>
+      <p>Avrei potuto tranquillamente evitarlo, ma mi faceva piacere esserci, anche solo per non limitarmi a ringraziare gli auguri sul gruppo WhatsApp della banda. E in effetti non è stato un rimpianto: mi hanno fatto gli auguri di persona, e tutto sommato è stata una bella mattinata.</p>
+
+      <h2>La pausa resta la stessa idea</h2>
+      <p>Tornato a casa un po' stanco, dopo pranzo mi sono concesso mezz'ora di sonno, e nel pomeriggio sono arrivati i parenti per il compleanno: la giornata si è chiusa così, senza spazio per altro. È proprio questo il punto della pausa che ho deciso di prendermi: non è tanto una questione di ore, quanto di energie. Suonare mi piace, ma mi "costa" comunque qualcosa, ed è quel qualcosa che voglio recuperare.</p>
+
+      <h2>Una parentesi tecnica</h2>
+      <p>Mentre aspettavamo fuori dalla chiesa ho fatto due chiacchiere con Fabio, un trombettista della banda molto ferrato in informatica e reti: abbiamo parlato di sicurezza di rete, di come gestisco l'accesso remoto a Home Assistant e anche di LAN e VLAN. È lo stesso Fabio che mi aveva dato una mano con il mixer Behringer XR18 quando l'avevo comprato: tra musica e tecnologia, evidentemente in banda si trova un po' di tutto.</p>
+
+      <p>Ora restano davvero solo la prova del 25 e il concerto del 27, poi la pausa comincia sul serio. Se in futuro capiterà qualche esigenza particolare, magari qualche servizio sporadico non lo escludo, ma prova e concerto di Natale restano fuori, come già comunicato al maestro.</p>
+    `
+  },
+
   { id: "pausa-banda-palazzolo-2026",
     title: "Una pausa",
     date: "2026-09-18",
