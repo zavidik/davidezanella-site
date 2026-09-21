@@ -37,7 +37,7 @@ const POSTS = [
     cover: "img/posts/2026/pausa-banda-palazzolo-2026.jpg",
     showInGallery: false,
     pinned: false,
-    tags: ["musica"],
+    tags: ["musica", "banda palazzolo"],
     relatedPosts: [
       { id: 'concerto-palazzolo-vittuone-morricone-2026', label: "📖 Leggi com'è andato il concerto:" },
       { id: 'concerto-palazzolo-vittuone-morricone-2026-bacheca', label: "📌 Questo evento era stato annunciato qui: L'ultimo concerto prima della pausa" },
@@ -850,7 +850,7 @@ mode: single</code></pre>
   { id: "concerto-palazzolo-vittuone-morricone-2026-bacheca",
     title: "C'era una volta Ennio Morricone - Replica a Paderno",
     date: "2026-06-14",
-    cover: "img/posts/2026/locandina-concerto-vittuone-palazzolo-morricone-2026.jpg",
+    cover: "img/posts/2026/locandina-concerto-palazzolo-vittuone-morricone-2026.jpg",
     showInGallery: false,
     pinned: true,
     eventDate: "2026-09-27",
