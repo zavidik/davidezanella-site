@@ -31,6 +31,41 @@
 // ══════════════════════════════════════════════════════
 
 const POSTS = [
+  { id: "concerto-palazzolo-vittuone-morricone-2026",
+    title: "Morricone al Multisala Le Giraffe",
+    date: "2026-09-29",
+    tags: ["musica", "banda palazzolo", "concerto"],
+    cover: "img/posts/2026/concerto-palazzolo-vittuone-morricone-2026.jpg",
+    photoDate: "2026-09-27",
+    excerpt: "Il concerto con la banda di Vittuone e il coro di Marcallo con Casone, replica di quello di giugno a Vittuone: sala quasi piena, standing ovation e, come al solito, qualche imprevisto.",
+    relatedPosts: [
+      { id: 'pausa-banda-palazzolo-2026', label: "⏸️ Annuncio la mia pausa dalla banda di Palazzolo" },
+      { id: 'concerto-palazzolo-vittuone-morricone-2026-bacheca', label: "📌 Questo evento era stato annunciato qui: L'ultimo concerto prima della pausa" },
+      { id: 'concerto-vittuone-palazzolo-morricone-2026', label: "La prima replica a Vittuone:" },
+    ],
+    content: `
+      <p>Domenica 27 settembre è arrivato il concerto di cui avevo già parlato: <a href="post.html?id=pausa-banda-palazzolo-2026">l'ultimo prima della pausa</a>. Si è tenuto al multisala Le Giraffe di Paderno Dugnano, nella sala più grande, quella da 554 posti, ed era <a href="post.html?id=concerto-vittuone-palazzolo-morricone-2026">la replica del concerto fatto il 13 giugno a Vittuone</a> insieme alla banda di Vittuone e al coro di Marcallo con Casone.</p>
+
+      <p>La partecipazione è stata sorprendente: non proprio tutto esaurito, ma quasi. Evidentemente è stata fatta una buona pubblicità. Alle nostre spalle c'era il telo del proiettore, usato per proiettare le immagini delle colonne sonore che stavamo suonando: un bell'effetto, considerando che ci trovavamo comunque in un cinema, sarebbe stato da sciocchi non approfittarne.</p>
+      <img src="img/posts/2026/concerto-palazzolo-vittuone-morricone-2026-2.jpg" alt="Il pubblico presente in sala - Multisala Le Giraffe">
+
+      <p>Dal punto di vista musicale sono soddisfatto di come ho suonato, anche se dalla nostra postazione l'acustica lasciava a desiderare: dove ero io si sentiva pochissimo tutto quello che stava davanti, clarinetti e flauti quasi del tutto assenti. Qualcuno del pubblico che se ne intende ha confermato che non era il massimo, anche se ovviamente restiamo due bande e un coro di volontari, quindi il livello è sempre quello. Nonostante tutto il pubblico ha applaudito con calore, con tanto di standing ovation dopo il brano 'Moment for Morricone'.</p>
+
+      <p>Nota a margine: faceva un freddo pungente, aria condizionata da cinema anche con il maglioncino addosso. Non tutti se ne sono lamentati, quindi magari ero solo io particolarmente freddoloso, ma non ero l'unico.</p>
+
+      <p>Dopo il concerto è seguita la cena offerta nel pub di fronte, un buffet un po' caotico vista l'affluenza, con cena verso le dieci e mezza passate. E poi, verso mezzanotte, ancora un giro all'oratorio per scaricare strumenti, sedie e leggii. Una serata iniziata alle 18:45 e finita ben oltre la mezzanotte.</p>
+
+      <p>Ma anche questa è fatta. Ora inizia davvero la pausa: tempo di concentrarmi sullo sprint finale universitario.</p>
+
+      <p>Un'ultima cosa: al concerto era presente, come già in passato, un signore, Roberto Piva, che segue moltissimi concerti di bande e li registra sempre. Ormai l'ho conosciuto e gli ho scritto diverse volte per ringraziarlo. Ha già pubblicato i video di questo concerto, e con quelli ho messo insieme <a href="https://youtube.com/playlist?list=PLI7z5kPBmFlI&si=j67Ei_vhau7Le-UV" target="_blank">questa playlist</a>. In più ho intenzione di fare un video che unisce le clip ricevute su WhatsApp da varie persone in sala. Ho provato anche a registrare con il mio Shure MV88+, ma ho dovuto posizionarlo ai piedi del podio del direttore, quindi il risultato è piuttosto sbilanciato: si sentono soprattutto flauti e clarinetti. I video di Roberto invece sono stati fatti da circa metà sala, quindi il risultato è nettamente più equilibrato.</p>
+
+      <div class="youtube-embed">
+        <iframe src="https://www.youtube.com/embed/videoseries?si=ATLypZh4hxmhuo7B&amp;list=PLI7z5kPBmFlI" title="Playlist concerto Le Giraffe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+    `
+  },
+
   { id: "festa-addolorata-compleanno-2026",
     title: "Un servizio speciale per il compleanno",
     date: "2026-09-21",
