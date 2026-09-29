@@ -60,9 +60,8 @@ const POSTS = [
       <p>Un'ultima cosa: al concerto era presente, come già in passato, un signore, Roberto Piva, che segue moltissimi concerti di bande e li registra sempre. Ormai l'ho conosciuto e gli ho scritto diverse volte per ringraziarlo. Ha già pubblicato i video di questo concerto, e con quelli ho messo insieme <a href="https://youtube.com/playlist?list=PLI7z5kPBmFlI&si=j67Ei_vhau7Le-UV" target="_blank">questa playlist</a>. In più ho intenzione di fare un video che unisce le clip ricevute su WhatsApp da varie persone in sala. Ho provato anche a registrare con il mio Shure MV88+, ma ho dovuto posizionarlo ai piedi del podio del direttore, quindi il risultato è piuttosto sbilanciato: si sentono soprattutto flauti e clarinetti. I video di Roberto invece sono stati fatti da circa metà sala, quindi il risultato è nettamente più equilibrato.</p>
 
       <div class="youtube-embed">
-        <iframe src="https://www.youtube.com/embed/videoseries?si=ATLypZh4hxmhuo7B&amp;list=PLI7z5kPBmFlI" title="Playlist concerto Le Giraffe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PLI7z5kPBmFlI" title="Playlist concerto Le Giraffe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
-
     `
   },
 
