@@ -62,6 +62,7 @@ const POSTS = [
       <div class="youtube-embed">
         <iframe src="https://www.youtube.com/embed/videoseries?list=PLI7z5kPBmFlI" title="Playlist concerto Le Giraffe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
+      <p>La PlayList YouTube completa: <a href="https://youtube.com/playlist?list=PLI7z5kPBmFlI&si=EeUaQxhLCMVMPlPT" target="_blank">link →</a></p>
     `
   },
 
@@ -966,6 +967,10 @@ mode: single</code></pre>
       <p>Come anticipato nel post correlato in bacheca, ci sarà una <strong>replica</strong> di questo concerto a Paderno Dugnano, nell'Anfiteatro del Parco Lago Nord, il <strong>27 settembre 2026</strong>.</p>
 
       <p>Come faccio spesso, ho caricato il <a href="https://youtu.be/u5Q90xXFBA4" target="_blank" rel="noopener">video del concerto su YouTube</a>, questa volta però non ho registrato con microfoni e mixer, ma ho solo unito i vari video ricevuti dal pubblico.</p>
+
+      <div class="youtube-embed">
+        <iframe src="https://www.youtube.com/embed/u5Q90xXFBA4?si=0nBJonTeN5NlqZgJ" title="Playlist concerto Le Giraffe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     `
   },
 
@@ -1037,6 +1042,10 @@ mode: single</code></pre>
       Quando si lavora sul serio, non è per nulla banale: il sound check cambia non appena entra il pubblico, ogni sala si comporta diversamente,
       e fare in modo che il suono arrivi bene a chi ascolta è una competenza vera. Per ora sono agli inizi, ma l'idea di crescere in questa direzione
       non mi dispiace affatto.</p>
+
+    <div class="youtube-embed">
+        <iframe src="https://www.youtube.com/embed/TeFNr-ODGsI?si=177wH7a6ESkl5tNY" title="Playlist concerto Le Giraffe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     `,
   },
 
@@ -1138,6 +1147,10 @@ mode: single</code></pre>
       <p>È un bel progetto, la <a href="scuola-che-sbanda.html">Scuola che sBanda</a>. Siamo un gruppo di insegnanti giovani, e riusciamo a prenderlo sul serio senza smettere di divertirci — che è probabilmente la combinazione giusta per farlo funzionare. Tanti bambini non continueranno con la musica, è normale e ci sta, ma se anche solo qualcuno va avanti è già un successo più che sufficiente.</p>
 
       <p>Dopodiché, passata la mezzanotte, tutti gli insegnanti si sono ritrovati al McDonald's a recuperare la cena abbondantemente saltata. Fine della serata, decisamente meritata.</p>
+
+      <div class="youtube-embed">
+        <iframe src="https://www.youtube.com/embed/YNwoImvcq78?si=i2EjOw2rYCnYTwv1" title="Playlist concerto Le Giraffe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     `,
   },
 
@@ -1179,6 +1192,10 @@ mode: single</code></pre>
       <h2>Una riflessione sulla location</h2>
       <p>È il terzo anno che facciamo questo concerto all'Anfiteatro La Cava, e ogni volta la conversazione post-concerto tra i musicisti si concentra sullo stesso tema: il caldo. La location è davvero bella, ma le quattro e mezza di fine maggio è probabilmente l'orario peggiore possibile. Spero che in futuro si riesca a spostare il concerto in serata, magari dopo cena, quando la temperatura scende e anche la qualità sonora — per tutti, pubblico e musicisti — ne guadagna.</p>
       <p>La sera ero distrutto e non soddisfatto di come ho suonato — il caldo ha sicuramente fatto la sua parte.</p>
+
+      <div class="youtube-embed">
+        <iframe src="https://www.youtube.com/embed/Bmlzw7CcmCQ?si=hNJYnLjBwgGuQAEm" title="Playlist concerto Le Giraffe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     `,
   },
 
@@ -1212,6 +1229,10 @@ mode: single</code></pre>
       <h4>Il rinfresco</h4>
       <p>A evento concluso ci siamo spostati nell'oratorio per il rinfresco, e devo dire che l'hanno organizzato bene: diversi gazebo con zona salato, zona dolce, zona bevande — e birra alla spina. Un finale degno di una bella giornata.</p>
       <p>L'evento nel complesso è durato circa due ore, dalle tre e quaranta alle sei circa. Il formato leggero ha funzionato benissimo — meglio di certi eventi che cercano di fare le cose in grande e alla fine stancano. Questo era semplice, piacevole e ben calibrato. Promosso. 🎶</p>
+
+      <div class="youtube-embed">
+        <iframe src="https://www.youtube.com/embed/PiOScp2mbgg?si=MPuTDQCHppEFIr9H" title="Playlist concerto Le Giraffe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     `
   },
 
@@ -1315,6 +1336,10 @@ mode: single</code></pre>
 
       <h4>Ascolta la banda</h4>
       <p>Se vuoi seguire i concerti della <a href="banda-palazzolo.html">Banda di Palazzolo Milanese</a> e tutti i suoi progetti, puoi tenere d'occhio la mia playlist YouTube dedicata: <a href="https://youtube.com/playlist?list=PL1o1uYsfqEiNMoUeWcZdVanJ-cvprRj1a&si=E7f1Jjvo0TrGmrY0" target="_blank" rel="noopener">Banda di Palazzolo — playlist</a>.</p>
+
+      <div class="youtube-embed">
+        <iframe src="https://www.youtube.com/embed/-S_xtO8_XbA?si=YxgvP_ejjmOJLYG2" title="Playlist concerto Le Giraffe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     `
   },
 
@@ -1343,6 +1368,11 @@ mode: single</code></pre>
 
       <h4>Rivivi il concerto</h4>
       <p>Nei prossimi mesi usciranno su YouTube alcuni video dei brani eseguiti. Puoi seguire il canale ufficiale della <a href="https://www.youtube.com/@corpomusicales.cecilia-cus1333" target="_blank" rel="noopener">Banda di Cusano Milanino - Corpo Musicale S. Cecilia</a> — oppure il mio canale personale, dove pubblicherò alcuni spezzoni registrati direttamente dal mio leggio: <a href="https://www.youtube.com/@davide.zanella" target="_blank" rel="noopener">@davide.zanella</a>.</p>
+
+      <div class="youtube-embed">
+        <iframe src="https://www.youtube.com/embed/videoseries?si=J1WdiKZ3pNb1fbdl&amp;list=PL1o1uYsfqEiOK0zawbYIHl93nFWKKFVSt" title="Playlist concerto Le Giraffe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <p>La PlayList YouTube completa: <a href="https://youtube.com/playlist?list=PL1o1uYsfqEiOK0zawbYIHl93nFWKKFVSt&si=bUzgHl0Lr7gfRBz_" target="_blank">link →</a></p>
     `
   },
 
@@ -2257,6 +2287,11 @@ mode: single</code></pre>
       <p>Spezzo una lancia a nostro favore 😅 dicendo che l'esecuzione è stata inficiata anche dall'assenza delle percussioni che quindi ha
       reso ancora più difficile il nostro lavoro.
       </p>
+
+      <div class="youtube-embed">
+        <iframe src="https://www.youtube.com/embed/9z1t0qdJn4c?si=lExnPeILTVbrcsSO" title="Playlist concerto Le Giraffe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
     `
   },
 
@@ -2281,6 +2316,10 @@ mode: single</code></pre>
       <p>Suonare quelle musiche non è semplice perché ci vuole un buon controllo del suono nelle dinamiche come il piano e il pianissimo.
          Ho registrato con il mio microfono e riascoltando sono contento del risultato.
       </p>
+
+      <div class="youtube-embed">
+        <iframe src="https://www.youtube.com/embed/ZJgjnTZVER0?si=zWDMYiLmz38I7v8O" title="Playlist concerto Le Giraffe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     `
   },
 
